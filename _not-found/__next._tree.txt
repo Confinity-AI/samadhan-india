@@ -1,3 +1,8 @@
+:HL["/samadhan-india/_next/static/chunks/0rpp8esakeajy.css","style"]
+:HL["/samadhan-india/_next/static/chunks/41wxfxxfk43un.css","style"]
+:HL["/samadhan-india/_next/static/chunks/2gnqsvbxjr_pw.css","style"]
+:HL["/samadhan-india/_next/static/chunks/0d5uv8cyqjpo-.css","style"]
+:HL["/samadhan-india/images/art-fish.webp","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"fqrYIl0n01TrSnFyIOAf3","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
+0:{"b":"PfST3aWY0tvHpfWK8Fesw","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+
+Sitemap: https://confinity-ai.github.io/samadhan-india/samadhan-india/sitemap.xml

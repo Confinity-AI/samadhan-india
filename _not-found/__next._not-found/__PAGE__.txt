@@ -1,25 +1,30 @@
-1:"$Sreact.fragment"
-2:"/samadhan-india/_next/static/chunks/0umf92h1sb77c.js"
-3:I[39756,["$2"],"default"]
-4:I[37457,["$2"],"default"]
-b:I[97367,["$2"],"OutletBoundary"]
-c:"$Sreact.suspense"
-f:"ViewportBoundary"
-10:I[97367,["$2"],"$f"]
-11:"MetadataBoundary"
-12:I[97367,["$2"],"$11"]
-6:X
+2:"$Sreact.fragment"
+3:"/samadhan-india/_next/static/chunks/0nogfo9nbq__z.js"
+4:"/samadhan-india/_next/static/chunks/13ntij7gt9don.js"
+5:"/samadhan-india/_next/static/chunks/3ji_tbuu-7bl7.js"
+6:I[39756,["$3","$4","$5"],"default"]
+7:I[37457,["$3","$4","$5"],"default"]
+c:I[21247,["$3","$4","$5"],"ClientFlex"]
+d:I[91722,["$3","$4","$5"],"Button"]
+e:I[97367,["$3","$4","$5"],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[97367,["$3","$4","$5"],"$12"]
+14:"MetadataBoundary"
+15:I[97367,["$3","$4","$5"],"$14"]
+16:I[27201,["$3","$4","$5"],"IconMark"]
+:HL["/samadhan-india/images/art-fish.webp","image"]
 9:X
 9:C
-a:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":"$@e","v":null,"s":"$6"}}]]
-7:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@8","v":"$9","s":"$6"},"c":"$Qa"}]]
-0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/samadhan-india/_next/static/chunks/0umf92h1sb77c.js","async":true}]],["$","html",null,{"children":["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}]}]]}],"p":"$@5","v":null,"s":"$6"},"c":"$Q7"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L10",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":[]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@13","v":null,"s":"$6"}},"a":"$@14","u":"$@15","b":"fqrYIl0n01TrSnFyIOAf3"}
-d:null
-6:300
-15:true
-6:C
-14:0
+a:X
+b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","div",null,{"className":"display-flex position-relative pt-24 px-24 flex-column align-center min-width-0 fill-width ","style":{},"children":["$","div",null,{"className":"display-flex position-relative flex-column fill-width max-width-xl ","style":{},"children":["$","div",null,{"className":"paint-hero","children":[["$","img",null,{"src":"/samadhan-india/images/art-fish.webp","alt":"","width":1192,"height":600}],["$","$Lc",null,{"s":{"padding":"24"},"style":{"minHeight":"inherit"},"direction":"column","className":"paint-hero__content","theme":"dark","padding":"48","gap":"16","maxWidth":44,"fillHeight":true,"vertical":"end","children":[["$","span",null,{"className":"font-label font-strong font-s accent-on-background-medium","style":{"textTransform":"uppercase","letterSpacing":"0.12em"},"children":"Page not found"}],["$","h1",null,{"className":"font-display font-strong font-l neutral-on-background-strong","style":{"textWrap":"balance"},"children":"This page has moved"}],["$","span",null,{"className":"font-body font-default font-xl neutral-on-background-medium","style":{},"children":"Our website is new. The page you wanted may have a new address."}],"$undefined"]}]]}]}]}],["$","section",null,{"className":"display-flex position-relative px-24 py-64 page-background flex-column align-center min-width-0 fill-width ","style":{},"children":["$","div",null,{"className":"display-flex position-relative g-40 flex-column fill-width max-width-xl ","style":{},"children":[["$","span",null,{"className":"font-body font-default font-l neutral-on-background-weak","style":{},"children":"Try one of these:"}],["$","div",null,{"className":"display-flex position-relative g-12 flex-wrap ","style":{},"children":[["$","$Ld",null,{"href":"/","children":"Home"}],["$","$Ld",null,{"href":"/families","variant":"secondary","children":"For families"}],["$","$Ld",null,{"href":"/our-work","variant":"secondary","children":"Our work"}],["$","$Ld",null,{"href":"/donate","variant":"secondary","children":"Donate"}]]}],["$","h2",null,{"className":"font-heading font-strong font-m neutral-on-background-strong hindi","style":{"textWrap":"balance"},"lang":"hi","children":"यह पेज नहीं मिला।"}],["$","div",null,{"className":"display-flex position-relative ","style":{},"children":["$","$Ld",null,{"href":"/hi/families","variant":"secondary","children":["$","span",null,{"lang":"hi","children":"परिवारों के लिए जानकारी"}]}]}]]}]}]],null,["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$a"}}]]
+1:[["children",{"s":"/_not-found","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@8","v":"$9","s":"$a"},"c":"$Qb"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#233A73"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"SAMADHAN India: therapy and school for children with intellectual disabilities"}],["$","meta","1",{"name":"description","content":"Therapy, early intervention and special education for children with intellectual disabilities in low-income neighbourhoods of New Delhi, since 1981."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"icon","href":"/samadhan-india/icon.png"}],["$","link","4",{"rel":"apple-touch-icon","href":"/samadhan-india/icon.png"}],["$","$L16","5",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":null,"s":"$a"}},"a":"$@18","u":"$@19","b":"PfST3aWY0tvHpfWK8Fesw"}
+10:null
+19:true
+a:300
+a:C
+18:0
 8:"$undefined"
-5:"$undefined"
-13:"$undefined"
-e:"$undefined"
+17:"$undefined"
+11:"$undefined"
