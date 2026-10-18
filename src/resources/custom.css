@@ -1,69 +1,163 @@
-/* :root {
-  /*
-  /* Override default variables here */
-  /*
-  --font-size-display-multiplier:   1;
-  --font-size-heading-multiplier:   1;
-  --font-size-body-multiplier:      1;
-  --font-size-label-multiplier:     1;
+:root {
+  --font-size-display-multiplier: 0.96;
+  --line-height-body-multiplier: 1.08;
+  --default-border: var(--neutral-alpha-medium);
+}
 
-  --line-height-display-multiplier: 1;
-  --line-height-heading-multiplier: 1;
-  --line-height-body-multiplier:    1;
-  --line-height-label-multiplier:   1;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
 
-  --default-border:        var(--neutral-border-medium);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
-  /*
-  /* Example setup for custom colors */
-  /* Generate at: https://once-ui.com/customize */
-  /*
-  --scheme-brand-100: #08002f;
-  --scheme-brand-200:  #04025c;
-  --scheme-brand-300:  #1f398e;
-  --scheme-brand-400:  #3856ae;
-  --scheme-brand-500:  #5071cc;
-  --scheme-brand-600:  #6f94f1;
-  --scheme-brand-700:  #8db3ff;
-  --scheme-brand-800:  #b2dbff;
-  --scheme-brand-900:  #bfe8ff;
-  --scheme-brand-1000: #ccf6ff;
-  --scheme-brand-1100: #d2fcff;
-  --scheme-brand-1200: #d2fcff;
-  --scheme-brand-600-10: rgba(111,148,241,0.1);
-  --scheme-brand-600-30: rgba(111,148,241,0.3);
-  --scheme-brand-600-50: rgba(111,148,241,0.5);
+/* Headings in the serif carry optical sizing; keep display text a touch tighter */
+h1,
+h2 {
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
 
-  --scheme-accent-100:  #030b10;
-  --scheme-accent-200:  #0d181d;
-  --scheme-accent-300:  #364248;
-  --scheme-accent-400:  #505d64;
-  --scheme-accent-500:  #69777e;
-  --scheme-accent-600:  #8a989f;
-  --scheme-accent-700:  #a8b7bf;
-  --scheme-accent-800:  #c8d7df;
-  --scheme-accent-900:  #d5e4ec;
-  --scheme-accent-1000: #e2f1f9;
-  --scheme-accent-1100: #e9f8ff;
-  --scheme-accent-1200: #efffff;
-  --scheme-accent-600-10: rgba(138,152,159,0.1);
-  --scheme-accent-600-30: rgba(138,152,159,0.3);
-  --scheme-accent-600-50: rgba(138,152,159,0.5);
+:focus-visible {
+  outline: 3px solid var(--accent-solid-strong);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  /*
-}*/
+.hindi,
+[lang="hi"] {
+  font-family: var(--font-hindi), var(--font-body), sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 10;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--brand-solid-strong);
+  color: var(--brand-on-solid-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.quote {
+  font-family: var(--font-heading), serif;
+  text-wrap: pretty;
+}
+
+/* Children's paintings, used as a texture band between sections */
+.art-band__strip {
+  height: clamp(72px, 10vw, 140px);
+  overflow: hidden;
+}
+.art-band__tile {
+  flex: 1 1 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.link-card {
+  display: flex;
+  height: 100%;
+}
+.link-card__inner {
+  height: 100%;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.link-card:hover .link-card__inner {
+  border-color: var(--brand-border-strong);
+  transform: translateY(-2px);
+}
+
+/* Child journey: sticky chapter index beside scrolling chapters */
+.journey__index {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+}
+.journey__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-border-strong);
+  background: transparent;
+  flex-shrink: 0;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+.journey__step[data-active="true"] .journey__dot {
+  background: var(--accent-solid-strong);
+  border-color: var(--accent-solid-strong);
+  transform: scale(1.25);
+}
+.journey__step[data-active="true"] {
+  color: var(--neutral-on-background-strong);
+}
+.journey__chapter {
+  scroll-margin-top: 112px;
+}
+
+.stat-value {
+  font-family: var(--font-heading), serif;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Slide deck */
+.deck {
+  width: 100%;
+}
+.deck__slide {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  break-after: page;
+  page-break-after: always;
+}
+@media print {
+  @page {
+    size: 1600px 900px;
+    margin: 0;
+  }
+  header,
+  footer,
+  .skip-link,
+  .deck__chrome {
+    display: none !important;
+  }
+  .deck__slide {
+    width: 1600px;
+    height: 900px;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  .deck__gap {
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+}

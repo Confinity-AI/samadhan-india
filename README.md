@@ -1,67 +1,39 @@
-# Once UI for Next.js
+# SAMADHAN India — Institutional Platform & 2026 Strategy Deck
 
-A design system for indie builders, startups and freelancers. Once UI combines the simplicity of low-code with the power of code: write 70% less compared to shadcn + Tailwind. Includes 100+ advanced, open-source components.
+Built with **Once UI (`@once-ui-system/core`)** and **Next.js App Router** for **SAMADHAN** (*Society for the Aid of Mentally and Developmentally Handicapped*, founded in December 1981 in New Delhi, Reg. No. 12183, FCRA Reg. No. 231650031, NGOsource US 501(c)(3) Equivalency Certified).
 
-Check the demo [here](https://demo.once-ui.com).
+## Architecture & Routes
 
-![Once UI](public/images/og/home.jpg)
+The legacy 36-page fragmented WordPress site has been consolidated into a clean, high-conversion 7-route architecture tailored to SAMADHAN's 4 primary user personas (Parents/Families, Corporate CSR Heads, International/NRI Donors, and Clinical Interns/Volunteers):
 
-## Features
+1. `/` — **Institutional Overview**: 44-year clinical mission, audited FY 2024–25 metrics, 4-persona interactive routing gateway, 7 clinical programmes, longitudinal child case studies, and philanthropic unit costs.
+2. `/programmes` — **Cradle-to-Livelihood Clinical Continuum**: Deep dive into Early Intervention (0–6 yrs), Disha & Inclusive School Bridge (6–18 yrs), SMAS ABA Therapy Room, JCB Sugamya Quissa Pitara Accessible Library, Matrika Maternal Mental Health, Vocational Sheltered Workshop, and Community Outreach.
+3. `/centres` — **Centres & Parent Referral Protocol**: Dakshinpuri (South Delhi), Dwarka Sector 13 (West Delhi), and Tigri Community Outreach Hub with direct telephone lines, maps, and 4-step parent intake workflow.
+4. `/impact-reports` — **12-Year Audited Report Vault & Child Outcomes**: Full PDF archive from FY 2012–13 through FY 2024–25, statutory registrations (Societies Act, FCRA, RPwD Sec 51(2), 80G/12A, National Trust, NGOsource ED), and 8 longitudinal child outcome audits.
+5. `/about` — **44-Year Heritage & Governance**: Founding story of clinical psychologist Pramila Balasundaram (Dec 1981), the Mother-Child clinical thesis, 18-milestone chronology (1981–2025), and leadership directory.
+6. `/donate` — **80G Domestic & MHA FCRA Remittance Hub**: Dual one-click copy banking cards for Indian Rupee (Union Bank of India, Yusuf Sarai) and Foreign Currency (State Bank of India FCRA New Delhi Main Branch, SWIFT `SBININBB104`), plus 6 unit-cost sponsorship tiers.
+7. `/strategy` — **Interactive 5-Slide Executive Presentation**:
+   - **Slide 1**: Competitor Benchmark (Tamana, Action For Autism, Muskaan, ASTHA, Ummeed)
+   - **Slide 2**: Search Engine Dominance & Keyword Outranking ROI Matrix
+   - **Slide 3**: CSR, Crowdfunding & Global Grant Syndication (8 Platforms)
+   - **Slide 4**: Strategic Partnerships (Pediatric Hospitals, RCI Universities, Corporate CSR, ESG Gifting)
+   - **Slide 5**: 90-Day Execution Roadmap
+8. `/contact` — **Direct Clinical & CSR Intake Desk**
 
-A lightweight starter template with the [Once UI Core](https://github.com/once-ui-system/core) package and our recommended setup.
+## Design System (Once UI)
 
-* **Customization**: Manage design config in a single file.
-* **Components**: Access advanced components with simple APIs.
-* **Data-viz**: Add responsive charts with a few lines of code.
-* **SEO**: Use our SEO components to simplify meta and schema setup.
-* **PRO**: Launch ready-made apps with minimal coding with Once UI Pro.
+- **Typography**: `Newsreader` (Editorial Display Serif) + `Plus Jakarta Sans` (Clinical UI & Body Sans) + `JetBrains Mono` (Statutory Registrations, IFSC/SWIFT & Audited Figures).
+- **Color Palette**: Warm Alabaster Paper (`#FAF7F2`), Deep Indigo-Navy (`#14244B` / `#233A73`), Warm Terracotta & Marigold Ochre (`#C2621A` / `#E48F45`), and Sage Clinical Green (`#2D6A4F`).
 
-## Documentation
+## Development
 
-Learn how to build with Once UI at [docs.once-ui.com](https://docs.once-ui.com/once-ui/quick-start).
-
-## Quick start
-
-[Magic Portfolio](https://once-ui.com/products/magic-portfolio) (FREE): Portfolio starter used and loved by thousands of creatives. Simple, customizable, responsive.
-
-[Magic Docs](https://once-ui.com/products/magic-docs) (FREE): Documentation generator. Just add your MDX files and let Magic Docs handle the rest.
-
-[Magic Convert](https://once-ui.com/products/magic-convert) (PRO): Conversion-optimized landing page and dashboard template.
-
-[Once UI Blocks](https://once-ui.com/blocks) (PRO): Copy-paste pre-designed blocks and deploy fully-functional sites with lightning speed.
-
-[Get Once UI Pro](https://once-ui.com/pricing)
-
-## Design
-
-The design counterpart of the Once UI system is available [here](https://once-ui.com/figma).
-
-## Get started
-
-Clone the starter template from GitHub:
 ```bash
-git clone https://github.com/once-ui-system/nextjs-starter.git
+npm install
+npm run dev
 ```
 
-## Creators
+## Production Build (Static Export Ready)
 
-Connect with us!
-
-**Lorant One**: [Site](https://lorant.one)
-
-**Design Engineers Club**: [Site](https://designengineers.club)
-
-## Contribute
-
-Please use the Once UI Core [GitHub repository](https://github.com/once-ui-system/core) for design system contributions.
-
-## Sponsors
-
-Once UI is an indie project. [Sponsor us](https://github.com/sponsors/once-ui-system) and get featured on our site!
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-## Deploy to Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fnextjs-starter&project-name=nextjs-starter&repository-name=nextjs-starter&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fnextjs-starter&demo-title=Next.js%20Starter&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.nextjs-starter.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fnextjs-starter%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+```bash
+npm run build
+```

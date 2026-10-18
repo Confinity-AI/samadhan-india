@@ -1,32 +1,45 @@
-import '@once-ui-system/core/css/styles.css';
-import '@once-ui-system/core/css/tokens.css';
-import '@/resources/custom.css'
+import "@once-ui-system/core/css/styles.css";
+import "@once-ui-system/core/css/tokens.css";
+import "@/resources/custom.css";
 
 import classNames from "classnames";
-
-import { baseURL, meta } from "@/resources/seo";
+import { Column, Flex, ThemeInit } from "@once-ui-system/core";
+import { Providers } from "@/components/Providers";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { fonts, style, dataStyle } from "@/resources/once-ui.config";
-import { Meta, Schema,  Column, Flex, Mask, MatrixFx, ThemeInit} from "@once-ui-system/core";
-import { Providers } from '@/components/Providers';
+import type { Metadata } from "next";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: meta.home.title,
-    description: meta.home.description,
-    baseURL: baseURL,
-    path: meta.home.path,
-    canonical: meta.home.canonical,
-    image: meta.home.image,
-    robots: meta.home.robots,
-    alternates: meta.home.alternates,
-  });
-}
+export const metadata: Metadata = {
+  title:
+    "SAMADHAN India | Early Intervention, Special Education & Intellectual Disability Care in New Delhi (Est. 1981)",
+  description:
+    "Founded in 1981 in Dakshinpuri and Dwarka, New Delhi, SAMADHAN provides early intervention, ABA therapy, inclusive education, maternal mental health counseling, and vocational training for children and adults with intellectual and developmental disabilities.",
+  keywords: [
+    "SAMADHAN India",
+    "early intervention centre Delhi",
+    "intellectual disability NGO New Delhi",
+    "ABA therapy Dwarka",
+    "special education Dakshinpuri",
+    "Disha early intervention National Trust Delhi",
+    "autism therapy low income families Delhi",
+    "CSR disability NGO India FCRA",
+  ],
+  openGraph: {
+    title:
+      "SAMADHAN India — 44 Years of Clinical Care for Children with Intellectual Disabilities",
+    description:
+      "Serving 120+ children daily and 50,000+ community families across Dakshinpuri, Dwarka, and Tigri in New Delhi. FCRA, 80G, and US 501(c)(3) Equivalency Certified.",
+    type: "website",
+    locale: "en_IN",
+  },
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <Flex
       suppressHydrationWarning
@@ -37,16 +50,9 @@ export default function RootLayout({
         fonts.heading.variable,
         fonts.body.variable,
         fonts.label.variable,
-        fonts.code.variable,
+        fonts.code.variable
       )}
     >
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={meta.home.title}
-        description={meta.home.description}
-        path={meta.home.path}
-      />
       <head>
         <ThemeInit
           config={{
@@ -55,29 +61,29 @@ export default function RootLayout({
             accent: style.accent,
             neutral: style.neutral,
             solid: style.solid,
-            'solid-style': style.solidStyle,
+            "solid-style": style.solidStyle,
             border: style.border,
             surface: style.surface,
             transition: style.transition,
             scaling: style.scaling,
-            'viz-style': dataStyle.variant,
+            "viz-style": dataStyle.variant,
           }}
         />
       </head>
       <Providers>
-        <Column as="body" background="page" fillWidth margin="0" padding="0">
-          <Column fillWidth maxHeight="100dvh" aspectRatio="1" horizontal="center" position="absolute" top="0" left="0">
-            <Mask maxWidth="m" x={50} y={0} radius={50}>
-              <MatrixFx
-                size={1.5}
-                spacing={5}
-                fps={24}
-                colors={["brand-solid-strong"]}
-                flicker
-              />
-            </Mask>
+        <Column
+          as="body"
+          background="page"
+          fillWidth
+          margin="0"
+          padding="0"
+          style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+        >
+          <SiteHeader />
+          <Column as="main" fillWidth flex={1}>
+            {children}
           </Column>
-          {children}
+          <SiteFooter />
         </Column>
       </Providers>
     </Flex>
