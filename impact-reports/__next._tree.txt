@@ -1,0 +1,13 @@
+:HL["/samadhan-india/_next/static/chunks/3t0bde4mr3fuo.css","style"]
+:HL["/samadhan-india/_next/static/chunks/1trerp16a8ww9.css","style"]
+:HL["/samadhan-india/_next/static/chunks/3csnd031x9ozg.css","style"]
+:HL["/samadhan-india/_next/static/chunks/20gfwphx5gp06.css","style"]
+:HL["/samadhan-india/_next/static/chunks/2lxenp8_0l6o5.css","style"]
+:HL["/samadhan-india/_next/static/media/051742360c26797e-s.p.1bkzbscqrt8rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/samadhan-india/_next/static/media/5f402bd2d8eef81a-s.p.40bho2kviej2o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/samadhan-india/_next/static/media/9433d1a810498265-s.p.1hij5ex6k3v9q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/samadhan-india/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":"impact-reports","h":64,"c":"$Q3"}]]
+1:[["children",{"s":"(main)","h":48,"c":"$Q2"}]]
+0:{"b":"fqrYIl0n01TrSnFyIOAf3","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
