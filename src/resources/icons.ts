@@ -1,76 +1,25 @@
-import type { IconType } from "react-icons";
-import {
-  HiOutlineAcademicCap,
-  HiOutlineArrowDownTray,
-  HiOutlineArrowLeft,
-  HiOutlineArrowRight,
-  HiOutlineArrowTopRightOnSquare,
-  HiOutlineBanknotes,
-  HiOutlineBookOpen,
-  HiOutlineBuildingLibrary,
-  HiOutlineBuildingOffice2,
-  HiOutlineCalendarDays,
-  HiOutlineChartBar,
-  HiOutlineCheckBadge,
-  HiOutlineCheckCircle,
-  HiOutlineChevronRight,
-  HiOutlineClipboardDocumentCheck,
-  HiOutlineClock,
-  HiOutlineDocumentText,
-  HiOutlineEnvelope,
-  HiOutlineGlobeAlt,
-  HiOutlineHandRaised,
-  HiOutlineHeart,
-  HiOutlineHome,
-  HiOutlineLightBulb,
-  HiOutlineMapPin,
-  HiOutlinePhone,
-  HiOutlinePresentationChartLine,
-  HiOutlineScale,
-  HiOutlineShieldCheck,
-  HiOutlineSparkles,
-  HiOutlineSun,
-  HiOutlineTrophy,
-  HiOutlineUserGroup,
-  HiOutlineUsers,
-} from "react-icons/hi2";
+import type { IconComponent } from "@once-ui-system/core";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
+import { HiOutlineBars3, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2";
 
-export const iconLibrary: Record<string, IconType> = {
-  academic: HiOutlineAcademicCap,
-  arrowDown: HiOutlineArrowDownTray,
-  arrowLeft: HiOutlineArrowLeft,
-  arrowRight: HiOutlineArrowRight,
-  arrowUpRight: HiOutlineArrowTopRightOnSquare,
-  banknotes: HiOutlineBanknotes,
-  book: HiOutlineBookOpen,
-  building: HiOutlineBuildingOffice2,
-  calendar: HiOutlineCalendarDays,
-  chart: HiOutlineChartBar,
-  check: HiOutlineCheckCircle,
-  checkBadge: HiOutlineCheckBadge,
-  chevronRight: HiOutlineChevronRight,
-  clipboard: HiOutlineClipboardDocumentCheck,
-  clock: HiOutlineClock,
-  document: HiOutlineDocumentText,
-  download: HiOutlineArrowDownTray,
-  email: HiOutlineEnvelope,
-  globe: HiOutlineGlobeAlt,
-  hand: HiOutlineHandRaised,
-  heart: HiOutlineHeart,
-  home: HiOutlineHome,
-  library: HiOutlineBuildingLibrary,
-  lightbulb: HiOutlineLightBulb,
-  mapPin: HiOutlineMapPin,
-  people: HiOutlineUserGroup,
+declare module "@once-ui-system/core" {
+  interface IconLibraryOverrides {
+    phone: true;
+    whatsapp: true;
+    mapPin: true;
+    menu: true;
+    facebook: true;
+    instagram: true;
+    linkedin: true;
+  }
+}
+
+export const appIcons: Record<string, IconComponent> = {
   phone: HiOutlinePhone,
-  presentation: HiOutlinePresentationChartLine,
-  scale: HiOutlineScale,
-  shield: HiOutlineShieldCheck,
-  spark: HiOutlineSparkles,
-  sun: HiOutlineSun,
-  trophy: HiOutlineTrophy,
-  users: HiOutlineUsers,
+  whatsapp: FaWhatsapp,
+  mapPin: HiOutlineMapPin,
+  menu: HiOutlineBars3,
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  linkedin: FaLinkedinIn,
 };
-
-export type IconLibrary = typeof iconLibrary;
-export type IconName = keyof IconLibrary;
