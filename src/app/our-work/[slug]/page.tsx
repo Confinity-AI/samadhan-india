@@ -94,7 +94,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
           <Grid columns="2" m={{ columns: "1" }} gap="32" style={{ alignItems: "center" }}>
             <Heading as="h2" variant="display-strong-s">Need help for your child?</Heading>
             <Column gap="16">
-              <Text variant="body-default-l" onBackground="neutral-weak">Call or WhatsApp. We reply in Hindi or English.</Text>
+              <Text variant="body-default-l" onBackground="neutral-weak">Call or WhatsApp either centre.</Text>
               <ContactButtons />
             </Column>
           </Grid>

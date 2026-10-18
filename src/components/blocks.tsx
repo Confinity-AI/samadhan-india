@@ -210,7 +210,7 @@ export function ContactButtons({ lang }: { lang?: "hi" }) {
       </Button>
       {centres.map((c) => (
         <Button key={c.id} href={c.phones[0].href} prefixIcon="phone" variant="secondary" size="l">
-          {hi ? `कॉल: ${c.nameHi}` : `Call ${c.name.replace(" centre", "")}`}
+          {hi ? `${c.nameHi} पर कॉल करें` : `Call ${c.name.replace(" centre", "")}`}
         </Button>
       ))}
     </Row>
@@ -314,14 +314,14 @@ export function DonateBand() {
             Keep a child in therapy this year
           </Heading>
           <Text variant="body-default-xl" onBackground="neutral-medium">
-            Indian donors get 80G tax relief. We accept international gifts through our FCRA account.
+            Gifts from Indian taxpayers qualify for deduction under section 80G. We accept international gifts through our FCRA account.
           </Text>
           <Row gap="12" wrap>
             <Button href="/donate" size="l" className="btn-accent" prefixIcon="heart">
               Donate
             </Button>
             <Button href="/get-involved/partner" size="l" variant="tertiary">
-              CSR and foundations
+              Foundations and companies
             </Button>
           </Row>
         </Column>

@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 
 const projects = [
   { image: "girl-early-intervention", title: "Early intervention", body: "Assessment and home programmes for children under six." },
-  { image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotics and mobility aids." },
+  { image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
   { image: "child-writing", title: "A classroom for a year", body: "Teachers and materials for a class of five." },
   { image: "mothers-kitchen", title: "Mothers' enterprise", body: "Training, equipment and market access." },
   { image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
@@ -22,7 +22,7 @@ const projects = [
 export default function Partner() {
   return (
     <>
-      <PaintHero art="art-strokes" eyebrow="Partner with us" title="Fund work you can visit" intro="Our centres are a short drive from Gurugram and central Delhi." />
+      <PaintHero art="art-strokes" eyebrow="Partner with us" title="Fund work you can visit" intro="Visit either centre before you fund." />
       <Section paddingY="64">
         <Breadcrumb items={[{ label: "Get involved", href: "/get-involved" }, { label: "Partner with us" }]} />
         <EasyRead>Companies and foundations can pay for one of our programmes.</EasyRead>
@@ -38,7 +38,7 @@ export default function Partner() {
         </Grid>
         <Row gap="12" wrap>
           <Button href={`mailto:${org.email}?subject=${encodeURIComponent("CSR partnership")}`} size="l" prefixIcon="mail">
-            Talk to us about CSR
+            Talk to us about funding
           </Button>
           <Button href="/accountability" size="l" variant="secondary">
             Registrations and reports
@@ -46,7 +46,7 @@ export default function Partner() {
         </Row>
       </Section>
       <Section tone="surface" label="Due diligence">
-        <SectionTitle eyebrow="Due diligence" title="Registrations" intro="CSR-1, 12A and NGO Darpan numbers will be added here shortly." />
+        <SectionTitle eyebrow="Due diligence" title="Registrations" intro="We are confirming our CSR-1 registration. Ask us for its status before you commit CSR funds." />
         <TrustBar />
       </Section>
       <Section label="Partners">

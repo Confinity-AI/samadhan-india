@@ -31,7 +31,7 @@ export default function People() {
       <PaintHero art="art-fish" eyebrow="Our people" title="The people behind the work" />
       <Section paddingY="64">
         <Breadcrumb items={[{ label: "About", href: "/about" }, { label: "Our people" }]} />
-        <EasyRead>These people run SAMADHAN. Many of our staff live near our centres.</EasyRead>
+        <EasyRead>These people run SAMADHAN.</EasyRead>
         <Grid columns="3" m={{ columns: "1" }} gap="24">
           {leaders.map((l) => (
             <Column key={l.name} gap="8" padding="24" radius="l" border background="surface">
@@ -41,13 +41,13 @@ export default function People() {
           ))}
         </Grid>
         <Text variant="body-default-m" onBackground="neutral-weak">
-          The full seven-member Executive Board for 2026 is listed in our annual report.
+          Our Executive Board for 2026 has seven members, led by President Prabodh Bhambal.
         </Text>
       </Section>
       <Section tone="surface" label="Our team">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
-            <SectionTitle eyebrow="Our team" title="One team around each child" />
+            <SectionTitle eyebrow="Our team" title="The people who work with children" />
             <Grid columns="2" gap="12">
               {team.map((t) => (
                 <Row key={t} paddingY="12" borderBottom>

@@ -52,7 +52,7 @@ export const stories: Story[] = [
     quote:
       "When I joined SAMADHAN 10 years ago, I was not very confident about myself. Today, I have made sure that both my daughters are well educated and I feel more in control of my life.",
     body: [
-      "Renu joined the mothers' group a decade ago. The group meets for support, trains together and makes laddoos, spices, Nutri-mix and papier-mâché to sell.",
+      "In our 2020-21 annual report, Renu said she had been with the mothers' group for ten years. The group meets for support, trains together and makes laddoos, spices, Nutri-mix and papier-mâché to sell.",
     ],
   },
 ];

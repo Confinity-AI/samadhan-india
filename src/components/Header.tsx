@@ -40,7 +40,7 @@ export function Header() {
             </Button>
           ))}
           <Button href="/families" variant="tertiary" size="s" weight="default">
-            For families <span lang="hi">(हिंदी)</span>
+            For families · <span lang="hi">परिवारों के लिए</span>
           </Button>
         </Row>
         <Row gap="8" vertical="center">

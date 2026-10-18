@@ -10,10 +10,9 @@ export const metadata = pageMeta({
 
 const facts = [
   { year: "1981", text: "Founds SAMADHAN in New Delhi." },
-  { year: "1992", text: "SAMADHAN runs India's first national drama therapy workshop, drawing on her training with Dr Sue Jennings." },
+  { year: "1992", text: "SAMADHAN holds its first national drama therapy workshop, drawing on her training with Dr Sue Jennings." },
   { year: "1993", text: "President of the YWCA of Delhi, 1993 to 1994." },
   { year: "1998", text: "Inclusion International award of recognition." },
-  { year: "2001", text: "World Bank award for linking disability, poverty and women's empowerment." },
   { year: "2005", text: "Publishes Sunny's Story." },
   { year: "2011", text: "Hind Prabha award." },
 ];

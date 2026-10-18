@@ -14,7 +14,7 @@ export const metadata = pageMeta({
 export default function OurWork() {
   return (
     <>
-      <PaintHero art="art-strokes" eyebrow="Our work" title="Five ways we stand with a child" intro="From the first months of life to the teenage years, and the mothers who carry them." />
+      <PaintHero art="art-strokes" eyebrow="Our work" title="Our five programmes" intro="From the first months of life to the teenage years, with support for mothers too." />
       <Section paddingY="64">
         <EasyRead>We help children at every age. We help their mothers too.</EasyRead>
         <Column gap="80">

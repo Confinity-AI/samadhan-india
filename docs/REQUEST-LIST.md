@@ -12,7 +12,8 @@ The preview site is built from the 2020-21 annual report and the current website
 2. **Registration numbers.** 80G (number and validity), 12A, CSR-1, NGO Darpan ID, PAN. These go in the trust bar and the accountability page. Corporate donors look for them first.
 3. **Consent for photos and stories.** For each photo marked "confirm" in `content/assets.json`, a yes or no from the family or adult shown. For the nine success stories on the old site, a yes or no to republishing with first name only.
 4. **Donation link.** The Razorpay (or other) payment link behind the "Donate From India" button, and whether UPI is accepted. We will not build a checkout without it.
-5. **Spelling and dates.** Founder's name (Prameela or Pramila), World Bank award year (2001 or 2002), which email inbox is checked daily.
+5. **Spelling and dates.** Founder's name (Prameela or Pramila), World Bank award year (2001 or 2002; the award is hidden until confirmed), which email inbox is checked daily.
+5a. **Services to confirm.** Do you help families apply for UDID cards? Is early intervention for ages 0 to 6? Do you answer calls in Hindi and English? Is the US equivalency determination still valid? Each line is hedged or removed on the site until you confirm.
 
 ## Makes the site better
 
@@ -29,3 +30,4 @@ The preview site is built from the 2020-21 annual report and the current website
 13. **Domain access.** Who controls samadhanindia.org DNS (Hostinger? Cloudflare?). We need to point it to the new site.
 14. **Google Search Console and Analytics.** Add ryan@amalgam-inc.com as a user so we can move the site without losing search ranking.
 15. **WordPress export.** If you can, a full media export from WordPress (Tools, Export). Cloudflare blocks us from downloading the images on the current site.
+16. **Annual report PDFs.** The ten reports from 2014-15 to 2024-25 (except 2020-21) on your current site. We will host them on the new site so the links survive the move.

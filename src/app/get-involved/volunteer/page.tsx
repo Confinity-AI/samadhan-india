@@ -13,7 +13,7 @@ const roles = [
   { title: "In the classroom", body: "Help teachers with reading, writing and play." },
   { title: "Art, music and play", body: "Run a session in something you love." },
   { title: "Events and outings", body: "Diwali, sports days and trips need extra hands." },
-  { title: "Home visits", body: "Join community workers on visits to families." },
+  { title: "Community events", body: "Help at puppet shows and health camps with our community workers." },
   { title: "Office and design", body: "Writing, photos, accounts and social media." },
   { title: "Fundraising", body: "Run a drive at your school, office or society." },
 ];
@@ -25,7 +25,7 @@ export default function Volunteer() {
         crumbs={[{ label: "Get involved", href: "/get-involved" }, { label: "Volunteer" }]}
         eyebrow="Volunteer"
         title="Give a few hours a week"
-        intro="Volunteering is unpaid. We may cover small costs like local travel."
+        intro="Volunteering is unpaid."
         easyRead="You can come and help at our centres. Tell us what you are good at."
         image="volunteer-writing"
         actions={

@@ -34,7 +34,7 @@ const memberships = [
 export default function Accountability() {
   return (
     <>
-      <PaintHero art="art-flowers" eyebrow="Accountability" title="Registered, reported, open to questions" />
+      <PaintHero art="art-flowers" eyebrow="Accountability" title="Our registrations and annual reports" />
       <Section paddingY="64">
         <EasyRead>Here you can check our government registrations and read our yearly reports.</EasyRead>
         <SectionTitle eyebrow="Registrations" title="Our registrations" />
@@ -44,7 +44,7 @@ export default function Accountability() {
         </Text>
       </Section>
       <Section tone="surface" label="Annual reports">
-        <SectionTitle eyebrow="Annual reports" title="Eleven years of reports" intro="Email us for any report not linked here. We are moving them all onto this site." />
+        <SectionTitle eyebrow="Annual reports" title="Our annual reports" intro="Email us for any report not linked here. We are moving them all onto this site." />
         <Grid columns="4" m={{ columns: "3" }} s={{ columns: "2" }} gap="12">
           {reports.map((r) => (
             <Row key={r.year} padding="16" radius="l" border background="page" horizontal="between" vertical="center" gap="8">

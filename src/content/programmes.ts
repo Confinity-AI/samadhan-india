@@ -18,19 +18,19 @@ export const programmes: Programme[] = [
   {
     slug: "early-intervention",
     title: "Early intervention",
-    kicker: "Ages 0 to 6",
+    kicker: "Babies and pre-school children",
     short: "Help in the first years, when it changes the most.",
     metaDescription:
-      "Early intervention for babies and young children with developmental delays in Dakshinpuri and Dwarka, New Delhi.",
+      "Early intervention for babies and young children with developmental delays in Dakshinpuri and Dwarka, New Delhi. Ask us about fees and government schemes.",
     easyRead: "We help babies and small children who are learning slowly. We also teach parents what to do at home.",
-    hero: "girl-early-intervention",
-    ages: "0 to 6 years",
+    hero: "child-handprint-painting",
+    ages: "From birth to pre-school",
     where: "Dakshinpuri and Dwarka",
     steps: [
       { title: "Find", body: "Community workers go door to door and to local schools, looking for children who need help early." },
-      { title: "Assess", body: "A paediatrician, therapists and a psychologist see the child together, with the parents in the room." },
-      { title: "Home plan", body: "Parents learn simple daily exercises. For children under three, most of the work happens at home." },
-      { title: "Nutrition", body: "Families get advice on food and health, and Nutri-mix made by the mothers' group." },
+      { title: "Assess", body: "A paediatrician, therapists and a psychologist assess the child." },
+      { title: "Home plan", body: "Parents learn simple exercises to do at home every day." },
+      { title: "Nutrition", body: "Families get advice on food and health." },
     ],
     facts: [
       { value: "44", label: "children in early intervention, 2020-21" },
@@ -45,7 +45,7 @@ export const programmes: Programme[] = [
   {
     slug: "therapy",
     title: "Therapy and rehabilitation",
-    kicker: "One team, one plan",
+    kicker: "Ages 0 to 16",
     short: "Speech, movement, play and drama, under one roof.",
     metaDescription:
       "Occupational therapy, speech therapy, psychology and drama therapy for children with intellectual disabilities at SAMADHAN's Delhi clinics.",
@@ -57,10 +57,10 @@ export const programmes: Programme[] = [
       { title: "Occupational therapy", body: "Movement, balance and everyday skills like eating and dressing." },
       { title: "Speech therapy", body: "Words, signs and other ways for a child to be understood." },
       { title: "Psychology", body: "Assessment, behaviour support and counselling for the family." },
-      { title: "Creative therapies", body: "Drama, music, art and creative movement. SAMADHAN ran India's first national drama therapy workshop in 1992." },
+      { title: "Creative therapies", body: "Drama, music, art and creative movement. SAMADHAN held its first national drama therapy workshop in 1992." },
     ],
     facts: [
-      { value: "15", label: "children given orthotic or mobility devices, 2020-21" },
+      { value: "15", label: "children given orthotic or prosthetic devices, 2020-21" },
       { value: "35", label: "children enrolled in Niramaya health cover, 2020-21" },
     ],
     gallery: ["therapy-one-to-one", "child-standing-frame", "child-swing", "child-handprint-painting"],
@@ -81,8 +81,8 @@ export const programmes: Programme[] = [
     ages: "6 to 14 years, pre-vocational 12 to 16",
     where: "Dakshinpuri",
     steps: [
-      { title: "Small classes", body: "About one teacher for every five children, five days a week." },
-      { title: "A plan for each child", body: "Individual education plans, reviewed with parents." },
+      { title: "Small classes", body: "About one teacher for every five children." },
+      { title: "A plan for each child", body: "A plan for each child, shared with parents." },
       { title: "Into mainstream", body: "When a child is ready, we help them join a regular school nearby." },
       { title: "Pre-vocational unit", body: "Block printing, card making, bookbinding, gardening and housekeeping for ages 12 to 16." },
     ],
@@ -95,8 +95,8 @@ export const programmes: Programme[] = [
   {
     slug: "mothers",
     title: "Mothers and livelihoods",
-    kicker: "Carers and earners",
-    short: "Support for mothers, and work that pays.",
+    kicker: "For mothers",
+    short: "Counselling for mothers, and food and craft units that earn an income.",
     metaDescription:
       "SAMADHAN's mothers' group: counselling, training and income from laddoos, spices, Nutri-mix and papier-mâché in New Delhi.",
     easyRead: "Mothers meet, talk and learn together. They also make food and crafts and earn money.",
@@ -104,9 +104,9 @@ export const programmes: Programme[] = [
     where: "Dwarka and Dakshinpuri",
     steps: [
       { title: "Support circles", body: "Counselling and time with other mothers who understand." },
-      { title: "Training", body: "Food safety, packaging, accounts and selling." },
+      { title: "Training", body: "Training for the food and craft units." },
       { title: "Income units", body: "Nutritious laddoos, SAMADHAN Spices, Nutri-mix and papier-mâché, made by the mothers." },
-      { title: "Garden project", body: "Started in 2020: vegetables grown and shared by the group." },
+      { title: "Garden project", body: "Started in 2020." },
     ],
     facts: [
       { value: "50 kg", label: "of Nutri-mix made by the group in 2020" },
@@ -131,12 +131,12 @@ export const programmes: Programme[] = [
     steps: [
       { title: "Surveys", body: "Door-to-door and school surveys of children up to 12 years old." },
       { title: "Awareness", body: "Puppet shows, health camps and talks in community spaces." },
-      { title: "Rights and schemes", body: "Help with disability certificates, UDID cards, Niramaya and guardianship." },
+      { title: "Rights and schemes", body: "Help with disability certificates, Niramaya and guardianship." },
       { title: "Training local women", body: "Women from the neighbourhood train as community workers." },
     ],
     facts: [
       { value: "1998", label: "community-based rehabilitation began" },
-      { value: "300,000", label: "people live in Dakshinpuri, where it started" },
+      { value: "300,000+", label: "people in the Dakshinpuri community (2020-21 annual report)" },
     ],
     gallery: ["parents-workshop", "legal-awareness", "diwali-rangoli", "friends-gifts"],
   },

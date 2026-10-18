@@ -5,21 +5,21 @@ import { pageMeta } from "@/lib/meta";
 export const metadata = pageMeta({
   title: "About us",
   description:
-    "SAMADHAN was founded in 1981 in Dakshinpuri, New Delhi, to bring therapy and school to children with intellectual disabilities in low-income neighbourhoods.",
+    "SAMADHAN was registered in New Delhi in 1981 and opened its first special education unit in Dakshinpuri in 1983, to bring therapy and school to children with intellectual disabilities in low-income neighbourhoods.",
   path: "/about",
 });
 
 export default function About() {
   return (
     <>
-      <PaintHero art="art-flowers" eyebrow="About us" title="Started in one Delhi neighbourhood in 1981. Still there." intro="Our name, समाधान, means “solution”." />
+      <PaintHero art="art-flowers" eyebrow="About us" title="Working with Delhi’s children since 1981" intro={<>Our name, <span lang="hi">समाधान</span>, means “solution”.</>} />
       <Section paddingY="64">
         <EasyRead>SAMADHAN started in 1981. We work in Dakshinpuri and Dwarka in Delhi.</EasyRead>
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
             <SectionTitle eyebrow="Our mission" title="Help close to home" />
             <Text variant="body-default-xl" onBackground="neutral-medium">
-              Accessible services for children with intellectual disabilities in low-income areas, starting with babies and pre-school children. As far as possible, run by people from the same community.
+              To establish an infrastructure of accessible service for persons with intellectual disability living in low socio-economic areas and primarily for infants and pre-school children, using as far as possible human resources available within the target communities with active community participation leading towards an inclusive society.
             </Text>
           </Column>
           <Grid columns="2" gap="12">
@@ -30,8 +30,8 @@ export default function About() {
         <Grid columns="4" m={{ columns: "2" }} gap="32">
           <Stat value="1981" label="registered in New Delhi" />
           <Stat value="1988" label="first Indian member of Inclusion International" />
-          <Stat value="1992" label="first national drama therapy workshop in India" />
-          <Stat value="2001" label="World Bank award" />
+          <Stat value="1992" label="our first national drama therapy workshop" />
+          <Stat value="1998" label="Inclusion International award, The Hague" />
         </Grid>
       </Section>
       <Section tone="surface" label="Founder's words">

@@ -5,11 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { asset } from "@/content/assets";
 
 const chapters = [
-  { id: "find", label: "Find", title: "We knock on doors", body: "Community workers find children who need help, often before anyone else has noticed.", image: "parents-workshop", href: "/our-work/community" },
-  { id: "assess", label: "Assess", title: "One team sees the whole child", body: "A paediatrician, therapists and a psychologist, with the parents in the room.", image: "therapy-one-to-one", href: "/our-work/therapy" },
-  { id: "early", label: "Early years", title: "The first years count most", body: "Daily exercises at home and at the centre, from birth to six.", image: "child-handprint-painting", href: "/our-work/early-intervention" },
-  { id: "school", label: "School", title: "A class of five, a plan for one", body: "Small classes, and a path into the neighbourhood school when a child is ready.", image: "volunteer-writing", href: "/our-work/special-education" },
-  { id: "beyond", label: "Beyond", title: "Skills for a working life", body: "Gardening, printing and craft for teenagers. Training and income for their mothers.", image: "vocational-gardening", href: "/our-work/mothers" },
+  { id: "find", label: "Find", title: "We knock on doors", body: "Community workers find children who need help, often before anyone else has noticed.", image: "parents-workshop", href: "/our-work/community", link: "More about community outreach" },
+  { id: "assess", label: "Assess", title: "Doctors and therapists assess each child", body: "A paediatrician, therapists and a psychologist look at how the child moves, speaks and learns.", image: "therapy-one-to-one", href: "/our-work/therapy", link: "More about therapy" },
+  { id: "early", label: "Early years", title: "The first years count most", body: "Exercises at home every day, and regular visits to the centre.", image: "child-handprint-painting", href: "/our-work/early-intervention", link: "More about early intervention" },
+  { id: "school", label: "School", title: "Small classes, about one teacher to five children", body: "Small classes, and a path into the neighbourhood school when a child is ready.", image: "volunteer-writing", href: "/our-work/special-education", link: "More about special education" },
+  { id: "beyond", label: "Beyond", title: "Skills for a working life", body: "Gardening, printing and craft for teenagers. Training and income for their mothers.", image: "vocational-gardening", href: "/our-work/mothers", link: "More about mothers and livelihoods" },
 ];
 
 export function ChildJourney() {
@@ -29,7 +29,7 @@ export function ChildJourney() {
 
   return (
     <div className="journey">
-      <nav className="journey__index" aria-label="A child's path">
+      <nav className="journey__index" aria-label="Steps in a child's path">
         {chapters.map((c, i) => (
           <a key={c.id} href={`#${c.id}`} className="journey__dot" aria-current={active === c.id ? "step" : undefined}>
             <span className="tabular">{`0${i + 1}`}</span> {c.label}
@@ -63,7 +63,7 @@ export function ChildJourney() {
                   {c.body}
                 </Text>
                 <SmartLink href={c.href} suffixIcon="arrowRight">
-                  {c.label === "Beyond" ? "Mothers and livelihoods" : "See how"}
+                  {c.link}
                 </SmartLink>
               </Column>
             </section>

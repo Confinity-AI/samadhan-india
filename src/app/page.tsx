@@ -69,7 +69,7 @@ export default function Home() {
       {/* Proof strip */}
       <Column fillWidth horizontal="center" paddingX="24" paddingBottom="64">
         <Grid maxWidth="xl" columns="4" m={{ columns: "2" }} gap="32">
-          <Stat value="1981" label="working in the same neighbourhoods" />
+          <Stat value="1981" label="registered in New Delhi" />
           <Stat value="50,000+" label="families reached, by our founder's count" />
           <Stat value="2" label="centres, in Dakshinpuri and Dwarka" />
           <Stat value="0–16" label="the ages we work with" />
@@ -88,7 +88,7 @@ export default function Home() {
       <Section tone="surface" label="Mothers">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="32">
-            <SectionTitle eyebrow="Mothers" title="Carers, and earners" intro="Mothers meet for support, train together and run food and craft units." />
+            <SectionTitle eyebrow="Mothers" title="Support and income for mothers" intro="Mothers meet for support, train together and run food and craft units." />
             <Quote text="When I joined SAMADHAN 10 years ago, I was not very confident about myself. Today, I have made sure that both my daughters are well educated and I feel more in control of my life." by="Renu Gupta, mothers' group" />
             <SmartLink href="/our-work/mothers" suffixIcon="arrowRight">
               Mothers and livelihoods
@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* Year in numbers */}
       <Section label="A year in numbers">
-        <SectionTitle eyebrow={`A year in numbers, ${yearInNumbers.year}`} title="What one year looked like" intro="From our latest published annual report. New figures are on the way." />
+        <SectionTitle eyebrow={`A year in numbers, ${yearInNumbers.year}`} title="What we did in 2020-21" intro="Figures from our 2020-21 annual report." />
         <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="32">
           {yearInNumbers.items.map((s) => (
             <Stat key={s.label} value={s.value} label={s.label} />
@@ -123,7 +123,7 @@ export default function Home() {
         </Row>
         <Grid columns="3" m={{ columns: "1" }} gap="32">
           {stories.map((s) => (
-            <LinkCard key={s.slug} href={`/stories/${s.slug}`} image={s.image} title={`“${s.title}”`} body={`${s.person}, ${s.role}`} ratio="5 / 4" />
+            <LinkCard key={s.slug} href={`/stories/${s.slug}`} image={s.image} title={s.title} body={`${s.person}, ${s.role}`} ratio="5 / 4" />
           ))}
         </Grid>
       </Section>
@@ -147,7 +147,7 @@ export default function Home() {
 
       {/* Trust */}
       <Section label="Recognition and partners">
-        <SectionTitle eyebrow="Recognition" title="Trusted for 45 years" />
+        <SectionTitle eyebrow="Recognition" title="Awards and partners" />
         <Grid columns="5" m={{ columns: "3" }} s={{ columns: "1" }} gap="24">
           {awards.map((a) => (
             <Column key={a.year} gap="8" borderTop="brand-alpha-strong" paddingTop="16">
@@ -186,7 +186,7 @@ export default function Home() {
         <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
           <Column gap="20" lang="hi">
             <Heading as="h2" variant="display-strong-s" className="hindi">
-              क्या आपका बच्चा देर से सीख रहा है?
+              क्या आपका बच्चा धीरे सीख रहा है?
             </Heading>
             <Text variant="body-default-xl" onBackground="neutral-weak" className="hindi">
               हमें कॉल या व्हाट्सऐप करें। हम आपके बच्चे से मिलेंगे और आगे का रास्ता बताएंगे।

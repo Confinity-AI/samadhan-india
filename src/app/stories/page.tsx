@@ -13,7 +13,7 @@ export const metadata = pageMeta({
 export default function Stories() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Stories" title="In their own words" intro="Families tell it better than we can." />
+      <PaintHero art="art-fish" eyebrow="Stories" title="In their own words" />
       <Section paddingY="64">
         <EasyRead>Here, mothers tell us what changed for their family.</EasyRead>
         <Column gap="64">
@@ -40,7 +40,7 @@ export default function Stories() {
           })}
         </Column>
         <Text variant="body-default-s" onBackground="neutral-weak">
-          First names only, as published in our annual report. We never show a child without their family's consent.
+          Children are named by first name only, as published in our annual report.
         </Text>
       </Section>
       <DonateBand />

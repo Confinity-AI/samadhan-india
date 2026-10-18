@@ -13,7 +13,12 @@ export default function NotFound() {
           <Button href="/our-work" variant="secondary">Our work</Button>
           <Button href="/donate" variant="secondary">Donate</Button>
         </Row>
-        <Heading as="h2" variant="heading-strong-m" lang="hi" className="hindi">पेज नहीं मिला। ऊपर दिए गए लिंक देखें।</Heading>
+        <Heading as="h2" variant="heading-strong-m" lang="hi" className="hindi">यह पेज नहीं मिला।</Heading>
+        <Row>
+          <Button href="/hi/families" variant="secondary">
+            <span lang="hi">परिवारों के लिए जानकारी</span>
+          </Button>
+        </Row>
       </Section>
     </>
   );

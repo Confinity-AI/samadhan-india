@@ -74,7 +74,7 @@ export const registrations = [
   { label: "Income Tax", value: "80G registered" },
   { label: "RPwD Act 2016", value: "Registered, s.51(2)" },
   { label: "National Trust", value: "Registered member" },
-  { label: "US donors", value: "Equivalency determination held" },
+  { label: "US donors", value: "Equivalency determination (ask us for current status)" },
 ];
 
 export type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
@@ -150,7 +150,6 @@ export const awards = [
   { year: "2020", title: "Collective of Leaders for Persons with Disabilities", by: "PVR Nest and Ummeed" },
   { year: "2018", title: "Most Promising Social Programme", by: "Coffee Because, Delhi" },
   { year: "2005", title: "Good Practice Award", by: "Dubai International Award for Best Practices" },
-  { year: "2001", title: "Disability, poverty and women's empowerment", by: "World Bank" },
   { year: "1998", title: "Award of Recognition", by: "Inclusion International, The Hague" },
 ];
 
@@ -161,7 +160,7 @@ export const yearInNumbers = {
     { value: "22", label: "children in special education" },
     { value: "6", label: "moved into mainstream schools" },
     { value: "35", label: "enrolled in Niramaya health cover" },
-    { value: "15", label: "given orthotic or mobility devices" },
+    { value: "15", label: "given orthotic or prosthetic devices" },
     { value: "50 kg", label: "of Nutri-mix made by the mothers' group" },
   ],
 };

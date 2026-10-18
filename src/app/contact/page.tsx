@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 export default function Contact() {
   return (
     <>
-      <PaintHero art="art-flowers" eyebrow="Contact" title="Call, message or visit" intro="We answer in Hindi and English." />
+      <PaintHero art="art-flowers" eyebrow="Contact" title="Call, message or visit" intro="Two centres in South and South-West Delhi." />
       <Section paddingY="64">
         <EasyRead>Call us or send a WhatsApp message. You can also visit our centres.</EasyRead>
         <ContactButtons />

@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/meta";
 export const metadata = pageMeta({
   title: "Donate",
   description:
-    "Donate to SAMADHAN by bank transfer from India (80G tax relief) or from abroad through our FCRA account. Support therapy and school for children with intellectual disabilities.",
+    "Donate to SAMADHAN by bank transfer from India (80G) or from abroad through our FCRA account. Support therapy and school for children with intellectual disabilities.",
   path: "/donate",
 });
 
@@ -40,7 +40,7 @@ function Details({ rows }: { rows: { k: string; v: string }[] }) {
 
 const uses = [
   { image: "therapy-one-to-one", title: "Therapy sessions", body: "Speech, movement and play therapy." },
-  { image: "child-standing-frame", title: "Devices", body: "Standing frames, orthotics and mobility aids." },
+  { image: "child-standing-frame", title: "Devices", body: "Standing frames, orthotic and prosthetic devices." },
   { image: "child-writing", title: "School", body: "Teachers and materials for small classes." },
   { image: "mothers-counselling", title: "Mothers", body: "Counselling, training and income." },
 ];
@@ -48,7 +48,7 @@ const uses = [
 export default function Donate() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Donate" title="Help a child start early" intro="Every gift goes to therapy, school and support for families who could not pay for it themselves." />
+      <PaintHero art="art-fish" eyebrow="Donate" title="Help a child start early" intro="Your gift pays for therapy and school for children whose families have low incomes." />
       <Section paddingY="64">
         <EasyRead>You can give money to SAMADHAN. It pays for therapy and school for children.</EasyRead>
         <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
@@ -62,7 +62,7 @@ export default function Donate() {
         </Grid>
       </Section>
       <Section tone="surface" label="How to give">
-        <SectionTitle eyebrow="How to give" title="Bank transfer, from India or abroad" intro="Online card and UPI giving is coming soon. Until then, a bank transfer reaches us directly." />
+        <SectionTitle eyebrow="How to give" title="Bank transfer, from India or abroad" intro="A bank transfer reaches us directly." />
         <Grid columns="2" m={{ columns: "1" }} gap="24">
           <Column gap="16" padding="32" s={{ padding: "20" }} radius="l" background="page" border>
             <Eyebrow>From India</Eyebrow>
@@ -100,7 +100,7 @@ export default function Donate() {
           </Column>
           <Column gap="8" paddingTop="16" borderTop="accent-alpha-strong">
             <Text variant="heading-strong-l">Companies</Text>
-            <Text variant="body-default-m" onBackground="neutral-weak">CSR and employee-giving partnerships.</Text>
+            <Text variant="body-default-m" onBackground="neutral-weak">Employee giving and company partnerships.</Text>
             <Button href="/get-involved/partner" variant="tertiary" suffixIcon="arrowRight" size="s">Partner with us</Button>
           </Column>
         </Grid>

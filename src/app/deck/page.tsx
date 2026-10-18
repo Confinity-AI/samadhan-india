@@ -47,7 +47,7 @@ function Kicker({ children }: { children: ReactNode }) {
 
 function Dots({ n }: { n: number }) {
   return (
-    <Row gap="4" aria-label={`${n} out of 5`}>
+    <Row gap="4" role="img" aria-label={`${n} out of 5`}>
       {[1, 2, 3, 4, 5].map((i) => (
         <span key={i} style={{ width: 12, height: 12, borderRadius: 6, background: i <= n ? "var(--accent-solid-strong)" : "var(--neutral-alpha-medium)" }} />
       ))}
@@ -85,11 +85,11 @@ export default function Deck() {
         <Slide n={1} dark art="art-strokes">
           <Kicker>Where SAMADHAN stands</Kicker>
           <Heading as="h2" variant="display-strong-l" onBackground="neutral-strong">
-            45 years of work. Almost invisible online.
+            45 years of work, and hard to find online.
           </Heading>
           <Grid columns="2" gap="16" fillWidth>
             {[
-              ["3 others", "organisations come up for “samadhan ngo”. Ours does not."],
+              ["3 other", "organisations come up for “samadhan ngo”. Ours does not."],
               ["404", "on /donate. No way for an Indian donor to give online."],
               ["9", "dead or empty pages in the main menu."],
               ["3 of 108", "images have alt text. The footer still says “Mentally Handicapped”."],
@@ -108,7 +108,7 @@ export default function Deck() {
         {/* 2 */}
         <Slide n={2}>
           <Kicker>Who is winning, and why</Kicker>
-          <Heading as="h2" variant="display-strong-m">Three peers own the searches parents and donors make</Heading>
+          <Heading as="h2" variant="display-strong-m">Three peers own most parent and donor searches outside our core term</Heading>
           <Column gap="0" fillWidth>
             <Grid columns="5" gap="16" paddingY="8" borderBottom>
               <span />
@@ -128,7 +128,7 @@ export default function Deck() {
           <Grid columns="3" gap="16" fillWidth>
             <Text variant="body-default-s" onBackground="neutral-weak"><b>Tamana:</b> a deep page per centre; 4 of the top 5 results for “autism NGO Delhi”.</Text>
             <Text variant="body-default-s" onBackground="neutral-weak"><b>Manovikas:</b> closest twin. Easy Read, trust bar, instant 80G receipts.</Text>
-            <Text variant="body-default-s" onBackground="neutral-weak"><b>Also watch:</b> Ashish Foundation in Dwarka; Action for Autism’s corporate backers.</Text>
+            <Text variant="body-default-s" onBackground="neutral-weak"><b>Also watch:</b> Ashish Foundation in Dwarka. Rankings from a general web search, not Google India.</Text>
           </Grid>
           <Text variant="label-default-xs" onBackground="neutral-weak">Scores are our assessment from public sites and search results, October 2026.</Text>
         </Slide>
@@ -136,13 +136,13 @@ export default function Deck() {
         {/* 3 */}
         <Slide n={3} art="art-fish">
           <Kicker>How we outrank them</Kicker>
-          <Heading as="h2" variant="display-strong-m">Own the niche nobody else targets</Heading>
+          <Heading as="h2" variant="display-strong-m">Win the South Delhi niche Manovikas does not reach</Heading>
           <Text variant="body-default-l" onBackground="neutral-weak">Intellectual disability, low-income families and mothers, in South and West Delhi.</Text>
           <Grid columns="2" gap="16" fillWidth>
             {[
               ["01", "Fix brand search", "One name, NGO schema, claimed listings."],
               ["02", "Google Business Profiles", "Both centres, with a parents’ review drive."],
-              ["03", "Hindi pages for parents", "Nobody serves Hindi parent searches well."],
+              ["03", "Hindi pages for parents", "Only Tamana has Hindi, and it does not target parent searches."],
               ["04", "Neighbourhood pages", "Early intervention in Dakshinpuri and Dwarka."],
               ["05", "Parent guides", "UDID, Niramaya, Disha, guardianship. These earn links."],
               ["06", "Google Ad Grants", "Up to $10k a month of free search ads."],
@@ -193,7 +193,7 @@ export default function Deck() {
                   </Row>
                 ))}
               </Column>
-              <Text variant="body-default-m" onBackground="neutral-medium">Enrolling the full 30 eligible children could add about ₹8 lakh a year. Ad Grants add up to $120k a year in free ads.</Text>
+              <Text variant="body-default-m" onBackground="neutral-medium">Claiming for the scheme’s maximum of 30 children could add roughly ₹8 lakh a year (our estimate). Ad Grants add up to $120k a year in free ads.</Text>
             </Column>
             <Column gap="12">
               {[

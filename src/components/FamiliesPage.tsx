@@ -28,7 +28,9 @@ export function FamiliesPage({ copy }: { copy: FamiliesCopy }) {
             <ContactButtons lang={lang} />
             <EasyRead lang={lang}>{copy.easyRead}</EasyRead>
           </Column>
-          <Photo id="girl-early-intervention" ratio="4 / 5" caption={false} priority sizes="(max-width: 900px) 100vw, 560px" />
+          <div lang="en-IN">
+            <Photo id="girl-early-intervention" ratio="4 / 5" caption={false} priority sizes="(max-width: 900px) 100vw, 560px" />
+          </div>
         </Grid>
       </Column>
 
@@ -84,14 +86,18 @@ export function FamiliesPage({ copy }: { copy: FamiliesCopy }) {
         <Grid columns="2" m={{ columns: "1" }} gap="32">
           {centres.map((c) => (
             <Grid key={c.id} columns="2" s={{ columns: "1" }} gap="20" style={{ alignItems: "center" }}>
-              <Photo id={c.photo} ratio="1 / 1" caption={false} sizes="300px" />
+              <div lang="en-IN">
+                <Photo id={c.photo} ratio="1 / 1" caption={false} sizes="300px" />
+              </div>
               <Column gap="8">
                 <Text variant="heading-strong-xl" className={cls}>{hi ? c.nameHi : c.name}</Text>
                 {c.address.map((l) => (
-                  <Text key={l} variant="body-default-m" onBackground="neutral-weak">{l}</Text>
+                  <Text key={l} variant="body-default-m" onBackground="neutral-weak" lang="en-IN">{l}</Text>
                 ))}
                 {c.phones.map((p) => (
-                  <Button key={p.href} href={p.href} variant="secondary" prefixIcon="phone" size="s" style={{ alignSelf: "start" }}>{p.label}</Button>
+                  <Button key={p.href} href={p.href} variant="secondary" prefixIcon="phone" size="s" style={{ alignSelf: "start" }}>
+                    <span lang="en-IN">{p.label}</span>
+                  </Button>
                 ))}
                 <Button href={c.map} variant="tertiary" prefixIcon="mapPin" size="s" style={{ alignSelf: "start" }}>
                   {hi ? "रास्ता देखें" : "Directions"}

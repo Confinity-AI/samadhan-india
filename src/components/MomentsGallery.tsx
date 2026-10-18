@@ -26,7 +26,10 @@ export function MomentsGallery() {
           </Button>
         ))}
       </Row>
-      <div className="masonry" aria-live="polite">
+      <Text variant="label-default-s" onBackground="neutral-weak" aria-live="polite">
+        {`Showing ${shown.length} photos`}
+      </Text>
+      <div className="masonry">
         {shown.map((a) => (
           <Column as="figure" key={a.id} gap="8" margin="0">
             <div className="frame">
