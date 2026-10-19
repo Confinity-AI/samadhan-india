@@ -47,6 +47,7 @@ export default function Founder() {
             <Column gap="40">
               <Quote text="Listening skills, Humility. Patience. Three qualities I learnt the hard way on my long journey." by="Prameela Balasundaram" />
               <Quote text="The question we were most often asked was, ‘Is it my karma?’ The answer, of course, was that it was no one's karma." by="Prameela Balasundaram" />
+              <Quote text="So never react but respond, is our mantra." by="Prameela Balasundaram" />
             </Column>
             <Column gap="16">
               <Heading as="h2" variant="display-strong-xs">Training and work</Heading>

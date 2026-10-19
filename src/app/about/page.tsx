@@ -19,7 +19,7 @@ export default function About() {
       <Section paddingY="64">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
-            <SectionTitle eyebrow="Our mission" title="Help close to home" intro="Therapy and school in the neighbourhoods where families live, with local people trained to help. Our mission statement says:" />
+            <SectionTitle eyebrow="Our mission" title="Help close to home" intro="Any person with an intellectual disability can be helped if the right services come in time. So we bring therapy and school to the neighbourhoods where families live. Our mission statement says:" />
             <Text variant="body-default-xl" onBackground="neutral-medium">
               To establish an infrastructure of accessible service for persons with intellectual disability living in low socio-economic areas and primarily for infants and pre-school children, using as far as possible human resources available within the target communities with active community participation leading towards an inclusive society.
             </Text>

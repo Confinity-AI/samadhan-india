@@ -81,7 +81,7 @@ export default function Volunteer() {
       </Section>
       <Section tone="surface" label="Get in touch">
         <Grid columns="2" m={{ columns: "1" }} gap="32" style={{ alignItems: "center" }}>
-          <SectionTitle title="Tell us how you would like to help" intro="Say which centre suits you, when you are free and what you are good at." />
+          <SectionTitle title="Tell us how you would like to help" intro="Say which centre suits you, when you are free and what you are good at. Volunteers agree to keep what they learn about families private." />
           <Actions />
         </Grid>
       </Section>

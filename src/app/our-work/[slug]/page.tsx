@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/meta";
 const orderLink = `${whatsapp.base}?text=${encodeURIComponent("Hello, I would like to order from the SAMADHAN mothers' group.")}`;
 
 const products = [
-  { image: "laddoo-boxes", title: "Laddoos", body: "Laddoos made and packed by the mothers' group." },
+  { image: "laddoo-boxes", title: "Laddoos", body: "Made with peanuts, soya bean, lentils and wheat germ, and packed by the mothers' group." },
   { image: "mothers-kitchen", title: "Spices and Nutri-mix", body: "SAMADHAN Spices from the mothers at our Dwarka centre, and Nutri-mix made by the group." },
   { image: "papier-mache-birds", title: "Papier-mâché", body: "Painted birds and decorations, made by hand." },
 ];

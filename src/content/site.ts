@@ -47,7 +47,7 @@ export const centres: Centre[] = [
     name: "Dakshinpuri centre",
     nameHi: "दक्षिणपुरी केंद्र",
     role: "Clinic and school",
-    address: ["F-Block Main Park, Sector V", "Dakshinpuri, New Delhi 110062"],
+    address: ["F-Block Main Park, near Durbalnath Mandir, Sector V", "Dakshinpuri, New Delhi 110062"],
     postal: { street: "F-Block Main Park, Sector V, Dakshinpuri", locality: "New Delhi", code: "110062" },
     phones: [{ label: "+91 11 2605 6812", href: "tel:+911126056812" }],
     map: "https://www.google.com/maps/search/?api=1&query=Samadhan+F-Block+Main+Park+Sector+V+Dakshinpuri+New+Delhi+110062",
@@ -145,6 +145,13 @@ export const partners = {
     "Delhi Legal Services Authority",
     "Inclusion International",
     "Ummeed and PVR Nest",
+    "Ministry of Environment, Forest and Climate Change",
+    "India International Centre",
+    "Japanese Volunteers Group",
+    "Tokuri-Kai",
+    "Vibrant Women",
+    "XL Group",
+    "Edgeware Technologies",
   ],
 };
 

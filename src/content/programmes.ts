@@ -60,7 +60,7 @@ export const programmes: Programme[] = [
       { title: "Occupational therapy", body: "Movement, balance and everyday skills like eating and dressing." },
       { title: "Speech therapy", body: "Words, signs and other ways for a child to be understood." },
       { title: "Psychology", body: "Assessments and counselling for parents." },
-      { title: "Creative therapies", body: "Drama, music, art and creative movement." },
+      { title: "Creative therapies", body: "Drama, music, art and creative movement. Our drama therapy began as THE A.R.T.S: art, recreation, therapy and song, adapted to Indian culture." },
     ],
     facts: [
       { value: "15", label: "children given braces, splints or artificial limbs, 2020-21" },
@@ -130,7 +130,7 @@ export const programmes: Programme[] = [
       "Door-to-door surveys, health camps, parent workshops and legal awareness for families of children with disabilities in South and South-West Delhi.",
     easyRead: "We visit homes and schools to find children who need help. We tell families about their rights.",
     hero: "parents-workshop",
-    where: "Dakshinpuri, Dwarka and nearby areas",
+    where: "Dakshinpuri, Madangir, Khanpur, Tigri and Dwarka",
     steps: [
       { title: "Surveys", body: "Door-to-door and school surveys to find children up to 12 years old who need help." },
       { title: "Awareness", body: "Puppet shows, street plays, health camps and talks." },
