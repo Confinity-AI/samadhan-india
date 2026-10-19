@@ -1,21 +1,30 @@
 import { Button, Column, Grid, Heading, Text } from "@once-ui-system/core";
-import { EasyRead, Photo, PhotoHero, Section } from "@/components/blocks";
+import { Photo, PhotoHero, Quote, Section } from "@/components/blocks";
 import { org } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
   title: "Volunteer",
-  description: "Volunteer at SAMADHAN in Dakshinpuri or Dwarka, New Delhi: classroom help, art and play, events, home visits and office support.",
+  description:
+    "Volunteer at SAMADHAN in Dakshinpuri or Dwarka, New Delhi: classroom help, therapy support, art and play, community work and professional skills.",
   path: "/get-involved/volunteer",
 });
 
 const roles = [
-  { title: "In the classroom", body: "Help teachers with reading, writing and play." },
-  { title: "Art, music and play", body: "Run a session in something you love." },
-  { title: "Events and outings", body: "Diwali, sports days and trips need extra hands." },
-  { title: "Community events", body: "Help at puppet shows and health camps with our community workers." },
-  { title: "Office and design", body: "Writing, photos, accounts and social media." },
-  { title: "Fundraising", body: "Run a drive at your school, office or society." },
+  { title: "In the classroom", body: "Help teachers with the daily routine, or run an activity for a small group." },
+  { title: "Be a child's buddy", body: "Spend regular time with one child." },
+  { title: "Help our therapists", body: "Write up assessments and case studies, and keep records and schedules." },
+  { title: "Art, music and sport", body: "Share a skill: art and craft, dance, music, sports or indoor games." },
+  { title: "In the community", body: "Help at health camps, events, conferences and art exhibitions." },
+  { title: "Research and training", body: "Support our research, workshops and training programmes." },
+  { title: "Professional skills", body: "Advise us on HR, marketing, finance, logistics or our online presence." },
+  { title: "Proposals and stories", body: "Write grant proposals, or interview parents and staff for stories." },
+  { title: "Fundraising", body: "Hold a fundraising event, or introduce us at your workplace." },
+];
+
+const quotes = [
+  { text: "The staff at SAMADHAN are the most dedicated bunch of people I’ve come across.", by: "Kavitha, volunteer" },
+  { text: "Even though I worked with Samadhan for a very short period they made me feel welcomed and gave me the required exposure.", by: "Nikita, volunteer" },
 ];
 
 export default function Volunteer() {
@@ -24,8 +33,8 @@ export default function Volunteer() {
       <PhotoHero
         crumbs={[{ label: "Get involved", href: "/get-involved" }, { label: "Volunteer" }]}
         eyebrow="Volunteer"
-        title="Give a few hours a week"
-        intro="Volunteering is unpaid."
+        title="Give your time or skills"
+        intro="Volunteering is unpaid. We may cover some costs of your work with us."
         easyRead="You can come and help at our centres. Tell us what you are good at."
         image="volunteer-writing"
         actions={
@@ -34,8 +43,8 @@ export default function Volunteer() {
           </Button>
         }
       />
-      <Section tone="surface" label="Ways to help">
-        <Heading as="h2" variant="display-strong-s">Ways to help</Heading>
+      <Section tone="surface" label="Ways to volunteer">
+        <Heading as="h2" variant="display-strong-s">Ways to volunteer</Heading>
         <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
           {roles.map((r) => (
             <Column key={r.title} gap="8" paddingTop="16" borderTop="accent-alpha-strong">
@@ -45,7 +54,13 @@ export default function Volunteer() {
           ))}
         </Grid>
       </Section>
-      <Section label="Photos">
+      <Section label="What volunteers say">
+        <Heading as="h2" variant="display-strong-s">What volunteers say</Heading>
+        <Grid columns="2" m={{ columns: "1" }} gap="48">
+          {quotes.map((q) => (
+            <Quote key={q.by} text={q.text} by={q.by} />
+          ))}
+        </Grid>
         <Grid columns="3" s={{ columns: "1" }} gap="12">
           <Photo id="vocational-diyas" ratio="4 / 3" />
           <Photo id="diwali-rangoli" ratio="4 / 3" />

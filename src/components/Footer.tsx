@@ -11,7 +11,7 @@ export function Footer() {
           <Column gap="16">
             <Brand />
             <Text variant="body-default-s" onBackground="neutral-weak">
-              Therapy and school for children with intellectual disabilities, in the neighbourhoods where they live.
+              Therapy and school for children with intellectual disabilities in Dakshinpuri and Dwarka, New Delhi.
             </Text>
             <Row gap="8">
               <IconButton icon="whatsapp" variant="secondary" href={whatsapp.href} ariaLabel="WhatsApp" />
@@ -40,9 +40,9 @@ export function Footer() {
             <Text variant="label-strong-m">More</Text>
             {[
               { label: "Stories", href: "/stories" },
-              { label: "Moments", href: "/moments" },
+              { label: "Photos", href: "/moments" },
               { label: "For families", href: "/families" },
-              { label: "परिवारों के लिए", href: "/hi/families", lang: "hi" },
+              { label: "हिंदी में जानकारी", href: "/hi/families", lang: "hi" },
               { label: "Donate", href: "/donate" },
               { label: "Contact", href: "/contact" },
             ].map((l) => (
@@ -79,7 +79,7 @@ export function Footer() {
         <Line />
         <Row horizontal="between" gap="16" wrap s={{ direction: "column" }}>
           <Text variant="body-default-xs" onBackground="neutral-weak" style={{ maxWidth: 720 }}>
-            © {year} {org.legalName}. Society reg. {registrations[0].value}. FCRA {registrations[1].value}.
+            © {year} SAMADHAN. Registered society {registrations[0].value}. FCRA {registrations[1].value}.
           </Text>
           <Row gap="16">
             <SmartLink href="/accountability">

@@ -13,9 +13,9 @@ export const metadata = pageMeta({
 export default function Stories() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Stories" title="In their own words" />
+      <PaintHero art="art-fish" eyebrow="Stories" title="Mothers, in their own words" />
       <Section paddingY="64">
-        <EasyRead>Here, mothers tell us what changed for their family.</EasyRead>
+        <EasyRead>Mothers say what changed for their family.</EasyRead>
         <Column gap="64">
           {stories.map((s, i) => {
             const a = asset(s.image);

@@ -5,43 +5,47 @@ import {
   DonateBand,
   EasyRead,
   Eyebrow,
-  LinkCard,
   PaintBand,
   Photo,
-  Quote,
+  PhotoStat,
   Section,
   SectionTitle,
   Stat,
-  TrustBar,
+  StoryCard,
 } from "@/components/blocks";
 import { asset } from "@/content/assets";
-import { awards, partners, yearInNumbers } from "@/content/site";
+import { awards, partners, registrations, yearInNumbers } from "@/content/site";
 import { stories } from "@/content/stories";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
   title: "SAMADHAN India: therapy and school for children with intellectual disabilities in Delhi",
   description:
-    "SAMADHAN gives early intervention, therapy and special education to children with intellectual disabilities in Dakshinpuri and Dwarka, New Delhi, and supports their mothers. Since 1981.",
+    "Since 1981, SAMADHAN has given early intervention, therapy and special education to children with intellectual disabilities in Dakshinpuri and Dwarka, New Delhi, and support to their mothers.",
   path: "/",
 });
 
-const heroImages = ["children-play-garden", "therapy-one-to-one", "child-handprint-painting"];
-const momentsPreview = ["child-swing", "vocational-diyas", "mothers-garden-harvest", "diwali-rangoli", "boy-drawing-floor", "papier-mache-birds", "legal-awareness", "child-drawing-umbrella"];
+const heroImages = ["children-play-garden", "vocational-diyas", "boy-drawing-floor"];
+const yearTiles = [
+  { image: "vocational-pot-painting", index: 0 },
+  { image: "volunteer-writing", index: 1 },
+  { image: "child-drawing-umbrella", index: 2 },
+];
+const momentsPreview = ["diwali-rangoli", "mothers-counselling", "centre-dakshinpuri", "legal-awareness", "friends-gifts", "centre-dwarka"];
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <Column fillWidth horizontal="center" paddingX="24" paddingTop="48" paddingBottom="64">
+      <Column fillWidth horizontal="center" paddingX="24" paddingTop="48" paddingBottom="64" s={{ paddingTop: "32", paddingBottom: "48" }}>
         <Grid maxWidth="xl" columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
             <Eyebrow>Dakshinpuri and Dwarka, New Delhi · since 1981</Eyebrow>
             <Heading as="h1" variant="display-strong-xl">
-              Every child can learn. We help them start early.
+              Therapy and school for children with intellectual disabilities
             </Heading>
-            <Text variant="body-default-xl" onBackground="neutral-weak" style={{ maxWidth: 560 }}>
-              Therapy, early intervention and school for children with intellectual disabilities, in the neighbourhoods where they live.
+            <Text variant="body-default-xl" onBackground="neutral-medium" style={{ maxWidth: 560 }}>
+              Early help for babies, small classes for older children, and support for their mothers.
             </Text>
             <Row gap="12" wrap>
               <Button href="/families" size="l" prefixIcon="person">
@@ -58,7 +62,15 @@ export default function Home() {
               const a = asset(id);
               return (
                 <div key={id} className="frame">
-                  <Media src={a.src} alt={a.alt} fillWidth aspectRatio="auto" sizes="(max-width: 900px) 60vw, 380px" priority={i === 0} style={{ height: "100%" }} />
+                  <Media
+                    src={a.src}
+                    alt={a.alt}
+                    fillWidth
+                    aspectRatio="auto"
+                    sizes={i === 0 ? "(max-width: 900px) 100vw, 680px" : "(max-width: 900px) 50vw, 340px"}
+                    priority={i === 0}
+                    style={{ height: "100%" }}
+                  />
                 </div>
               );
             })}
@@ -69,8 +81,8 @@ export default function Home() {
       {/* Proof strip */}
       <Column fillWidth horizontal="center" paddingX="24" paddingBottom="64">
         <Grid maxWidth="xl" columns="4" m={{ columns: "2" }} gap="32">
-          <Stat value="1981" label="registered in New Delhi" />
-          <Stat value="50,000+" label="families reached, by our founder's count" />
+          <Stat value="45" label="years in Delhi" />
+          <Stat value="50,000+" label="families reached since 1981, according to our founder" />
           <Stat value="2" label="centres, in Dakshinpuri and Dwarka" />
           <Stat value="0–16" label="the ages we work with" />
         </Grid>
@@ -84,14 +96,46 @@ export default function Home() {
         <ChildJourney />
       </Section>
 
+      {/* Help for families */}
+      <Section tone="surface" label="Help for families">
+        <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
+          <Column gap="20">
+            <Eyebrow>For families</Eyebrow>
+            <Heading as="h2" variant="display-strong-m">
+              Worried your child is learning slowly?
+            </Heading>
+            <Text variant="body-default-xl" onBackground="neutral-medium">
+              Call or WhatsApp us. We will meet you and your child and talk about what can help.
+            </Text>
+            <ContactButtons />
+            <Row gap="16" wrap vertical="center">
+              <SmartLink href="/families" suffixIcon="arrowRight">
+                What happens when you contact us
+              </SmartLink>
+              <Button href="/hi/families" variant="tertiary" size="m" hrefLang="hi">
+                <span lang="hi" className="hindi">
+                  हिंदी में पढ़ें
+                </span>
+              </Button>
+            </Row>
+          </Column>
+          <Row horizontal="center">
+            <Photo id="girl-early-intervention" ratio="4 / 5" cap sizes="(max-width: 900px) 100vw, 420px" />
+          </Row>
+        </Grid>
+      </Section>
+
       {/* Mothers */}
-      <Section tone="surface" label="Mothers">
+      <Section label="Mothers">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
-          <Column gap="32">
-            <SectionTitle eyebrow="Mothers" title="Support and income for mothers" intro="Mothers meet for support, train together and run food and craft units." />
-            <Quote text="When I joined SAMADHAN 10 years ago, I was not very confident about myself. Today, I have made sure that both my daughters are well educated and I feel more in control of my life." by="Renu Gupta, mothers' group" />
+          <Column gap="24">
+            <SectionTitle
+              eyebrow="Mothers"
+              title="Support and income for mothers"
+              intro="Mothers meet for support. They make laddoos, spices, Nutri-mix and papier-mâché birds to sell."
+            />
             <SmartLink href="/our-work/mothers" suffixIcon="arrowRight">
-              Mothers and livelihoods
+              More about support for mothers
             </SmartLink>
           </Column>
           <Grid columns="2" gap="12" className="made-grid">
@@ -104,51 +148,55 @@ export default function Home() {
       </Section>
 
       {/* Year in numbers */}
-      <Section label="A year in numbers">
-        <SectionTitle eyebrow={`A year in numbers, ${yearInNumbers.year}`} title="What we did in 2020-21" intro="Figures from our 2020-21 annual report." />
-        <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="32">
-          {yearInNumbers.items.map((s) => (
-            <Stat key={s.label} value={s.value} label={s.label} />
-          ))}
+      <Section tone="surface" label="A year in numbers">
+        <SectionTitle eyebrow="A year in numbers" title={`What we did in ${yearInNumbers.year}`} />
+        <Grid columns="3" m={{ columns: "2" }} gap="24">
+          {yearTiles.map((t) => {
+            const item = yearInNumbers.items[t.index];
+            return <PhotoStat key={item.label} image={t.image} value={item.value} label={item.label} />;
+          })}
         </Grid>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          Also that year, 35 children joined Niramaya health cover, 15 received orthotic or prosthetic devices, and the mothers' group made 50 kg of Nutri-mix. Figures from our {yearInNumbers.year} annual report.
+        </Text>
       </Section>
 
       {/* Stories */}
-      <Section tone="surface" label="Stories">
+      <Section label="Stories">
         <Row horizontal="between" vertical="end" gap="24" wrap>
-          <SectionTitle eyebrow="Stories" title="In their own words" />
+          <SectionTitle eyebrow="Stories" title="What mothers tell us" />
           <Button href="/stories" variant="tertiary" suffixIcon="arrowRight">
             All stories
           </Button>
         </Row>
-        <Grid columns="3" m={{ columns: "1" }} gap="32">
+        <Grid columns="3" m={{ columns: "1" }} gap="24">
           {stories.map((s) => (
-            <LinkCard key={s.slug} href={`/stories/${s.slug}`} image={s.image} title={s.title} body={`${s.person}, ${s.role}`} ratio="5 / 4" />
+            <StoryCard key={s.slug} href={`/stories/${s.slug}`} quote={s.quote} by={`${s.person}, ${s.role}`} />
           ))}
         </Grid>
       </Section>
 
-      {/* Moments */}
-      <Section label="Moments">
+      {/* Photos */}
+      <Section tone="surface" label="Photos">
         <Row horizontal="between" vertical="end" gap="24" wrap>
-          <SectionTitle eyebrow="Moments" title="A day at SAMADHAN" />
+          <SectionTitle eyebrow="Photos" title="Children, mothers and our centres" />
           <Button href="/moments" variant="tertiary" suffixIcon="arrowRight">
             See every photo
           </Button>
         </Row>
-        <div className="masonry">
+        <Grid columns="3" m={{ columns: "2" }} gap="16">
           {momentsPreview.map((id) => (
-            <Photo key={id} id={id} sizes="(max-width: 900px) 50vw, 300px" />
+            <Photo key={id} id={id} ratio="4 / 3" sizes="(max-width: 900px) 50vw, 460px" />
           ))}
-        </div>
+        </Grid>
       </Section>
 
       <DonateBand />
 
       {/* Trust */}
-      <Section label="Recognition and partners">
+      <Section label="Awards and partners">
         <SectionTitle eyebrow="Recognition" title="Awards and partners" />
-        <Grid columns="5" m={{ columns: "3" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
           {awards.map((a) => (
             <Column key={a.year} gap="8" borderTop="brand-alpha-strong" paddingTop="16">
               <Text className="stat-value" onBackground="accent-strong" style={{ fontSize: 36 }}>
@@ -161,7 +209,7 @@ export default function Home() {
             </Column>
           ))}
         </Grid>
-        <Column gap="16" paddingTop="32">
+        <Column gap="16" paddingTop="16">
           <Text variant="label-strong-s" onBackground="neutral-weak" style={{ textTransform: "uppercase", letterSpacing: "0.12em" }}>
             Partners over the years
           </Text>
@@ -178,26 +226,14 @@ export default function Home() {
             ))}
           </Row>
         </Column>
-        <TrustBar />
-      </Section>
-
-      {/* Hindi families */}
-      <Section tone="surface" label="For families, in Hindi">
-        <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
-          <Column gap="20" lang="hi">
-            <Heading as="h2" variant="display-strong-s" className="hindi">
-              क्या आपका बच्चा धीरे सीख रहा है?
-            </Heading>
-            <Text variant="body-default-xl" onBackground="neutral-weak" className="hindi">
-              हमें कॉल या व्हाट्सऐप करें। हम आपके बच्चे से मिलेंगे और आगे का रास्ता बताएंगे।
-            </Text>
-            <ContactButtons lang="hi" />
-            <SmartLink href="/hi/families" suffixIcon="arrowRight">
-              <span className="hindi">परिवारों के लिए पूरी जानकारी</span>
-            </SmartLink>
-          </Column>
-          <Photo id="girl-early-intervention" ratio="4 / 3" />
-        </Grid>
+        <Row gap="16" wrap vertical="center" paddingTop="16" borderTop>
+          <Text variant="body-default-m" onBackground="neutral-weak" className="tabular">
+            Society reg. {registrations[0].value} · FCRA {registrations[1].value} · 80G
+          </Text>
+          <SmartLink href="/accountability" suffixIcon="arrowRight">
+            Registrations and annual reports
+          </SmartLink>
+        </Row>
       </Section>
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Column, Media, Row, Text } from "@once-ui-system/core";
+import { Button, Column, Media, Text } from "@once-ui-system/core";
 import { useState } from "react";
 import { type Theme, assets, themeLabels } from "@/content/assets";
 
@@ -12,7 +12,7 @@ export function MomentsGallery() {
 
   return (
     <Column gap="32">
-      <Row gap="8" wrap role="group" aria-label="Filter photos">
+      <div className="chip-row" role="group" aria-label="Filter photos">
         {filters.map((f) => (
           <Button
             key={f}
@@ -25,7 +25,7 @@ export function MomentsGallery() {
             {f === "all" ? `All (${assets.length})` : themeLabels[f]}
           </Button>
         ))}
-      </Row>
+      </div>
       <Text variant="label-default-s" onBackground="neutral-weak" aria-live="polite">
         {`Showing ${shown.length} photos`}
       </Text>
@@ -33,7 +33,7 @@ export function MomentsGallery() {
         {shown.map((a) => (
           <Column as="figure" key={a.id} gap="8" margin="0">
             <div className="frame">
-              <Media src={a.src} alt={a.alt} aspectRatio={a.ratio} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 320px" enlarge />
+              <Media src={a.src} alt={a.alt} aspectRatio={a.ratio} sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 320px" enlarge />
             </div>
             <Text as="figcaption" variant="label-default-s" onBackground="neutral-weak">
               {a.caption}

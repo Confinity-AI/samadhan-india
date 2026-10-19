@@ -13,12 +13,14 @@ export function FamiliesPage({ copy }: { copy: FamiliesCopy }) {
       <Column fillWidth horizontal="center" paddingX="24" paddingTop="40" paddingBottom="64">
         <Grid maxWidth="xl" columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
           <Column gap="20">
-            <Row horizontal="between" vertical="center" gap="16" wrap>
-              <Eyebrow>{copy.eyebrow}</Eyebrow>
+            <Row>
               <Button href={copy.switchHref} variant="secondary" size="s" hrefLang={hi ? "en" : "hi"}>
-                <span lang={hi ? "en" : "hi"}>{copy.switchLabel}</span>
+                <span lang={hi ? "en" : "hi"} className={hi ? undefined : "hindi"}>
+                  {copy.switchLabel}
+                </span>
               </Button>
             </Row>
+            <Eyebrow>{copy.eyebrow}</Eyebrow>
             <Heading as="h1" variant="display-strong-l" className={cls}>
               {copy.title}
             </Heading>
@@ -28,9 +30,9 @@ export function FamiliesPage({ copy }: { copy: FamiliesCopy }) {
             <ContactButtons lang={lang} />
             <EasyRead lang={lang}>{copy.easyRead}</EasyRead>
           </Column>
-          <div lang="en-IN">
-            <Photo id="girl-early-intervention" ratio="4 / 5" caption={false} priority sizes="(max-width: 900px) 100vw, 560px" />
-          </div>
+          <Row lang="en-IN" horizontal="center">
+            <Photo id="girl-early-intervention" caption={false} cap priority sizes="(max-width: 900px) 100vw, 420px" />
+          </Row>
         </Grid>
       </Column>
 

@@ -14,7 +14,7 @@ const photos = ["centre-dakshinpuri", "child-handprint-painting", "mothers-kitch
 export default function History() {
   return (
     <>
-      <PaintHero art="art-trees" eyebrow="Our history" title="45 years, one year at a time" />
+      <PaintHero art="art-trees" eyebrow="Our history" title="45 years in Delhi, 1981 to 2026" />
       <Section paddingY="64">
         <Breadcrumb items={[{ label: "About", href: "/about" }, { label: "Our history" }]} />
         <EasyRead>This is what happened at SAMADHAN, year by year.</EasyRead>

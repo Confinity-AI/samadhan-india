@@ -19,18 +19,18 @@ export const programmes: Programme[] = [
     slug: "early-intervention",
     title: "Early intervention",
     kicker: "Babies and pre-school children",
-    short: "Help in the first years, when it changes the most.",
+    short: "Help for babies and young children, with exercises parents can do at home.",
     metaDescription:
       "Early intervention for babies and young children with developmental delays in Dakshinpuri and Dwarka, New Delhi. Ask us about fees and government schemes.",
     easyRead: "We help babies and small children who are learning slowly. We also teach parents what to do at home.",
     hero: "child-handprint-painting",
-    ages: "From birth to pre-school",
+    ages: "From birth to 6 years",
     where: "Dakshinpuri and Dwarka",
     steps: [
       { title: "Find", body: "Community workers go door to door and to local schools, looking for children who need help early." },
       { title: "Assess", body: "A paediatrician, therapists and a psychologist assess the child." },
       { title: "Home plan", body: "Parents learn simple exercises to do at home every day." },
-      { title: "Nutrition", body: "Families get advice on food and health." },
+      { title: "Nutrition", body: "Mothers get advice on breastfeeding and feeding their child." },
     ],
     facts: [
       { value: "44", label: "children in early intervention, 2020-21" },
@@ -44,9 +44,9 @@ export const programmes: Programme[] = [
   },
   {
     slug: "therapy",
-    title: "Therapy and rehabilitation",
+    title: "Therapy",
     kicker: "Ages 0 to 16",
-    short: "Speech, movement, play and drama, under one roof.",
+    short: "Speech, movement and creative therapies at both centres.",
     metaDescription:
       "Occupational therapy, speech therapy, psychology and drama therapy for children with intellectual disabilities at SAMADHAN's Delhi clinics.",
     easyRead: "Our therapists help children move, speak and play. Drama, music and art are part of therapy too.",
@@ -56,8 +56,8 @@ export const programmes: Programme[] = [
     steps: [
       { title: "Occupational therapy", body: "Movement, balance and everyday skills like eating and dressing." },
       { title: "Speech therapy", body: "Words, signs and other ways for a child to be understood." },
-      { title: "Psychology", body: "Assessment, behaviour support and counselling for the family." },
-      { title: "Creative therapies", body: "Drama, music, art and creative movement. SAMADHAN held its first national drama therapy workshop in 1992." },
+      { title: "Psychology", body: "Assessments and counselling for parents." },
+      { title: "Creative therapies", body: "Drama, music, art and creative movement." },
     ],
     facts: [
       { value: "15", label: "children given orthotic or prosthetic devices, 2020-21" },
@@ -73,17 +73,17 @@ export const programmes: Programme[] = [
     slug: "special-education",
     title: "Special education",
     kicker: "Ages 6 to 14",
-    short: "Small classes, a plan for every child, and a path to mainstream school.",
+    short: "Small classes with a plan for each child. Some children move on to a regular school.",
     metaDescription:
       "Special education for children aged 6 to 14 with intellectual disabilities: small classes, individual plans and a pre-vocational unit in New Delhi.",
     easyRead: "Our school has small classes. Each child has their own plan. Some children move to a regular school.",
     hero: "child-writing",
-    ages: "6 to 14 years, pre-vocational 12 to 16",
+    ages: "6 to 14 years (12 to 16 in the pre-vocational unit)",
     where: "Dakshinpuri",
     steps: [
       { title: "Small classes", body: "About one teacher for every five children." },
-      { title: "A plan for each child", body: "A plan for each child, shared with parents." },
-      { title: "Into mainstream", body: "When a child is ready, we help them join a regular school nearby." },
+      { title: "A plan for each child", body: "Teachers write a learning plan for each child." },
+      { title: "Moving to a regular school", body: "When a child is ready, we help them join a regular school nearby." },
       { title: "Pre-vocational unit", body: "Block printing, card making, bookbinding, gardening and housekeeping for ages 12 to 16." },
     ],
     facts: [
@@ -94,12 +94,12 @@ export const programmes: Programme[] = [
   },
   {
     slug: "mothers",
-    title: "Mothers and livelihoods",
+    title: "Support for mothers",
     kicker: "For mothers",
     short: "Counselling for mothers, and food and craft units that earn an income.",
     metaDescription:
       "SAMADHAN's mothers' group: counselling, training and income from laddoos, spices, Nutri-mix and papier-mâché in New Delhi.",
-    easyRead: "Mothers meet, talk and learn together. They also make food and crafts and earn money.",
+    easyRead: "Mothers meet and help each other. They make food and crafts to sell.",
     hero: "mothers-kitchen",
     where: "Dwarka and Dakshinpuri",
     steps: [
@@ -110,7 +110,7 @@ export const programmes: Programme[] = [
     ],
     facts: [
       { value: "50 kg", label: "of Nutri-mix made by the group in 2020" },
-      { value: "2000", label: "the year income generation for mothers began" },
+      { value: "2000", label: "the year the mothers' income units started" },
     ],
     gallery: ["mothers-kitchen", "laddoo-boxes", "mothers-garden-harvest", "mothers-counselling", "papier-mache-birds"],
     quote: {
@@ -121,22 +121,22 @@ export const programmes: Programme[] = [
   {
     slug: "community",
     title: "Community outreach",
-    kicker: "Out in the lanes",
+    kicker: "Door to door",
     short: "Surveys, camps and workshops where families live.",
     metaDescription:
-      "Door-to-door surveys, health camps, parent workshops and legal awareness for families of children with disabilities in South and West Delhi.",
-    easyRead: "We go into the community. We find children who need help and teach families about their rights.",
+      "Door-to-door surveys, health camps, parent workshops and legal awareness for families of children with disabilities in South and South-West Delhi.",
+    easyRead: "We visit homes and schools to find children who need help. We tell families about their rights.",
     hero: "parents-workshop",
     where: "Dakshinpuri, Dwarka and nearby areas",
     steps: [
-      { title: "Surveys", body: "Door-to-door and school surveys of children up to 12 years old." },
-      { title: "Awareness", body: "Puppet shows, health camps and talks in community spaces." },
-      { title: "Rights and schemes", body: "Help with disability certificates, Niramaya and guardianship." },
+      { title: "Surveys", body: "Door-to-door and school surveys to find children up to 12 years old who need help." },
+      { title: "Awareness", body: "Puppet shows, street plays, health camps and talks." },
+      { title: "Rights and schemes", body: "Help with Niramaya health cover and legal guardianship." },
       { title: "Training local women", body: "Women from the neighbourhood train as community workers." },
     ],
     facts: [
       { value: "1998", label: "community-based rehabilitation began" },
-      { value: "300,000+", label: "people in the Dakshinpuri community (2020-21 annual report)" },
+      { value: "300,000+", label: "people live in Dakshinpuri, where our first centre is (2020-21 annual report)" },
     ],
     gallery: ["parents-workshop", "legal-awareness", "diwali-rangoli", "friends-gifts"],
   },

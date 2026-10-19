@@ -45,7 +45,7 @@ export const centres: Centre[] = [
     id: "dakshinpuri",
     name: "Dakshinpuri centre",
     nameHi: "दक्षिणपुरी केंद्र",
-    role: "Clinic, school and registered office",
+    role: "Clinic and school",
     address: ["F-Block Main Park, Sector V", "Dakshinpuri, New Delhi 110062"],
     postal: { street: "F-Block Main Park, Sector V, Dakshinpuri", locality: "New Delhi", code: "110062" },
     phones: [{ label: "+91 11 2605 6812", href: "tel:+911126056812" }],
@@ -56,7 +56,7 @@ export const centres: Centre[] = [
     id: "dwarka",
     name: "Dwarka centre",
     nameHi: "द्वारका केंद्र",
-    role: "Clinic, training and administrative office",
+    role: "Clinic and main office",
     address: ["Centre for Human Resources, Sector 2, Pocket 2", "Dwarka, New Delhi 110075"],
     postal: { street: "Centre for Human Resources, Sector 2, Pocket 2, Dwarka", locality: "New Delhi", code: "110075" },
     phones: [
@@ -87,12 +87,12 @@ export const nav: NavItem[] = [
       { label: "Early intervention", href: "/our-work/early-intervention" },
       { label: "Therapy", href: "/our-work/therapy" },
       { label: "Special education", href: "/our-work/special-education" },
-      { label: "Mothers and livelihoods", href: "/our-work/mothers" },
+      { label: "Support for mothers", href: "/our-work/mothers" },
       { label: "Community outreach", href: "/our-work/community" },
     ],
   },
   { label: "Stories", href: "/stories" },
-  { label: "Moments", href: "/moments" },
+  { label: "Photos", href: "/moments" },
   {
     label: "About",
     href: "/about",
@@ -124,7 +124,6 @@ export const partners = {
     "Art for Change Foundation",
     "Friends of SAMADHAN, Australia",
     "GlobalGiving",
-    "Irish Aid",
     "The Leprosy Mission",
   ],
   companies: [
@@ -140,6 +139,7 @@ export const partners = {
   public: [
     "The National Trust",
     "Ministry of Culture",
+    "Irish Aid",
     "Delhi Legal Services Authority",
     "Inclusion International",
     "Ummeed and PVR Nest",

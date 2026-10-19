@@ -1,17 +1,22 @@
-import { Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
+import { Column, Grid, Row, Text } from "@once-ui-system/core";
 import { Breadcrumb, EasyRead, PaintHero, Photo, Section, SectionTitle } from "@/components/blocks";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
-  title: "Our people",
-  description: "SAMADHAN's executive board, leadership and multidisciplinary team of doctors, therapists, psychologists and special educators.",
+  title: "Our board and team",
+  description:
+    "SAMADHAN's executive board and leadership, and the paediatrician, therapists, psychologist and special educators who work with children.",
   path: "/about/people",
 });
 
-const leaders = [
-  { name: "Prameela Balasundaram", role: "Founder" },
-  { name: "Sumathi Morgan", role: "Executive Director and Secretary" },
-  { name: "Prabodh Bhambal", role: "President, Executive Board" },
+const board = [
+  { name: "Prabodh Bhambal", role: "President", work: "Freelance consultant" },
+  { name: "Sumathi Morgan", role: "Secretary", work: "Executive Director of SAMADHAN" },
+  { name: "Janak Kumar Gandhi", role: "Treasurer", work: "Technical Officer (retired), Council of Scientific and Industrial Research" },
+  { name: "Prameela Balasundaram", role: "Founder member", work: "Founder of SAMADHAN" },
+  { name: "Ratan Kumar Gurtoo", role: "Member", work: "Chartered accountant, partner at A.K. Kar & Company" },
+  { name: "CDR Reena Magdalene", role: "Member", work: "Retired government official" },
+  { name: "Dr Alex Joseph", role: "Member", work: "Social work consultant" },
 ];
 
 const team = [
@@ -22,27 +27,25 @@ const team = [
   "Special educators",
   "Drama, music and art therapists",
   "Community workers",
-  "Mothers' group coordinators",
 ];
 
 export default function People() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Our people" title="The people behind the work" />
+      <PaintHero art="art-fish" eyebrow="Our people" title="Our board and team" />
       <Section paddingY="64">
         <Breadcrumb items={[{ label: "About", href: "/about" }, { label: "Our people" }]} />
-        <EasyRead>These people run SAMADHAN.</EasyRead>
-        <Grid columns="3" m={{ columns: "1" }} gap="24">
-          {leaders.map((l) => (
-            <Column key={l.name} gap="8" padding="24" radius="l" border background="surface">
-              <Text variant="label-default-s" onBackground="accent-medium">{l.role}</Text>
-              <Heading as="h2" variant="heading-strong-xl">{l.name}</Heading>
-            </Column>
+        <EasyRead>These people run SAMADHAN and work with the children.</EasyRead>
+        <SectionTitle eyebrow="Executive Board" title="Our board in 2026" />
+        <Column as="ul" gap="0" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+          {board.map((b) => (
+            <Grid as="li" key={b.name} columns="3" m={{ columns: "1" }} gap="8" paddingY="16" borderBottom>
+              <Text variant="heading-strong-m">{b.name}</Text>
+              <Text variant="label-strong-m" onBackground="accent-medium">{b.role}</Text>
+              <Text variant="body-default-m" onBackground="neutral-weak">{b.work}</Text>
+            </Grid>
           ))}
-        </Grid>
-        <Text variant="body-default-m" onBackground="neutral-weak">
-          Our Executive Board for 2026 has seven members, led by President Prabodh Bhambal.
-        </Text>
+        </Column>
       </Section>
       <Section tone="surface" label="Our team">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
@@ -56,7 +59,7 @@ export default function People() {
               ))}
             </Grid>
           </Column>
-          <Photo id="therapy-one-to-one" />
+          <Photo id="mothers-counselling" cap />
         </Grid>
       </Section>
     </>

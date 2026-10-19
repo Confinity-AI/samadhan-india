@@ -1,4 +1,4 @@
-import { Button, Column, Grid, Heading, Media, Row, SmartLink, Tag, Text } from "@once-ui-system/core";
+import { Button, Column, Grid, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import type { ReactNode } from "react";
 import { artworks, asset } from "@/content/assets";
 import { centres, registrations, whatsapp } from "@/content/site";
@@ -67,12 +67,14 @@ export function SectionTitle({ eyebrow, title, intro, align = "start" }: { eyebr
 
 export function EasyRead({ children, lang }: { children: ReactNode; lang?: "hi" }) {
   return (
-    <Row gap="12" vertical="start" padding="16" radius="l" background="accent-alpha-weak" border="accent-alpha-medium" maxWidth={40}>
-      <Tag scheme="accent" size="s" label={lang === "hi" ? "आसान भाषा" : "Easy Read"} />
-      <Text variant="body-default-m" onBackground="neutral-strong" lang={lang}>
+    <Column gap="4" className="easy-read">
+      <Text variant="label-strong-xs" onBackground="accent-medium" style={{ textTransform: "uppercase", letterSpacing: "0.1em" }}>
+        {lang === "hi" ? "आसान भाषा" : "Easy Read"}
+      </Text>
+      <Text variant="body-default-l" onBackground="neutral-strong" lang={lang}>
         {children}
       </Text>
-    </Row>
+    </Column>
   );
 }
 
@@ -81,17 +83,19 @@ export function Photo({
   ratio,
   caption = true,
   priority,
+  cap,
   sizes = "(max-width: 900px) 100vw, 50vw",
 }: {
   id: string;
   ratio?: string;
   caption?: boolean;
   priority?: boolean;
+  cap?: boolean;
   sizes?: string;
 }) {
   const a = asset(id);
   return (
-    <Column as="figure" gap="8" margin="0" fillWidth>
+    <Column as="figure" gap="8" margin="0" fillWidth style={cap ? { maxWidth: a.width } : undefined}>
       <div className="frame">
         <Media src={a.src} alt={a.alt} aspectRatio={ratio ?? a.ratio} sizes={sizes} priority={priority} />
       </div>
@@ -138,9 +142,7 @@ export function PaintHero({
     <Column fillWidth horizontal="center" paddingX="24" paddingTop="24">
       <Column maxWidth="xl">
         <div className="paint-hero">
-          {/* biome-ignore lint/performance/noImgElement: background painting */}
-          <img src={a.src} alt="" width={a.width} height={a.height} />
-          <Column className="paint-hero__content" theme="dark" padding="48" s={{ padding: "24" }} gap="16" maxWidth={44} fillHeight vertical="end" style={{ minHeight: "inherit" }}>
+          <Column theme="dark" padding="48" m={{ padding: "32" }} s={{ padding: "24" }} gap="16" vertical="end">
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
             <Heading as="h1" variant="display-strong-l" onBackground="neutral-strong" lang={lang}>
               {title}
@@ -152,6 +154,10 @@ export function PaintHero({
             )}
             {children}
           </Column>
+          <div className="paint-hero__art">
+            {/* biome-ignore lint/performance/noImgElement: decorative painting */}
+            <img src={a.src} alt="" width={a.width} height={a.height} />
+          </div>
         </div>
       </Column>
     </Column>
@@ -299,13 +305,16 @@ export function PhotoHero({
           {easyRead && <EasyRead>{easyRead}</EasyRead>}
           {actions}
         </Column>
-        <Photo id={image} ratio="5 / 4" priority sizes="(max-width: 900px) 100vw, 640px" />
+        <Row fillWidth horizontal="center">
+          <Photo id={image} cap priority sizes="(max-width: 900px) 100vw, 640px" />
+        </Row>
       </Grid>
     </Column>
   );
 }
 
-export function DonateBand() {
+export function DonateBand({ art = "art-trees" }: { art?: string }) {
+  const painting = asset(art);
   return (
     <Section tone="brand" label="Donate">
       <Grid columns="2" m={{ columns: "1" }} gap="40" style={{ alignItems: "center" }}>
@@ -314,21 +323,58 @@ export function DonateBand() {
             Keep a child in therapy this year
           </Heading>
           <Text variant="body-default-xl" onBackground="neutral-medium">
-            Gifts from Indian taxpayers qualify for deduction under section 80G. We accept international gifts through our FCRA account.
+            If you pay tax in India, you can claim a deduction under section 80G. Donors abroad can give through our FCRA account.
           </Text>
           <Row gap="12" wrap>
             <Button href="/donate" size="l" className="btn-accent" prefixIcon="heart">
               Donate
             </Button>
             <Button href="/get-involved/partner" size="l" variant="tertiary">
-              Foundations and companies
+              Partner with us
             </Button>
           </Row>
         </Column>
         <div className="frame">
-          <Media src={asset("art-trees").src} alt={asset("art-trees").alt} aspectRatio="16 / 9" sizes="(max-width: 900px) 100vw, 50vw" />
+          <Media src={painting.src} alt={painting.alt} aspectRatio="16 / 9" sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </Grid>
     </Section>
+  );
+}
+
+export function StoryCard({ href, quote, by }: { href: string; quote: string; by: string }) {
+  return (
+    <SmartLink href={href} unstyled className="story-card">
+      <Column gap="20" padding="32" s={{ padding: "24" }} radius="l" background="surface" border fillWidth>
+        <span className="story-card__mark" aria-hidden>
+          “
+        </span>
+        <Text as="p" className="story-card__quote" onBackground="neutral-strong" style={{ margin: 0 }}>
+          {quote}
+        </Text>
+        <Text variant="label-strong-m" onBackground="neutral-weak" style={{ marginTop: "auto" }}>
+          {by}
+        </Text>
+      </Column>
+    </SmartLink>
+  );
+}
+
+export function PhotoStat({ image, value, label }: { image: string; value: string; label: string }) {
+  const a = asset(image);
+  return (
+    <Column gap="16" className="photo-stat">
+      <div className="frame">
+        <Media src={a.src} alt={a.alt} aspectRatio="4 / 3" sizes="(max-width: 900px) 50vw, 420px" />
+      </div>
+      <Column gap="4">
+        <Text className="stat-value" onBackground="brand-strong">
+          {value}
+        </Text>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          {label}
+        </Text>
+      </Column>
+    </Column>
   );
 }

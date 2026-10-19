@@ -16,7 +16,7 @@ export default function OurWork() {
     <>
       <PaintHero art="art-strokes" eyebrow="Our work" title="Our five programmes" intro="From the first months of life to the teenage years, with support for mothers too." />
       <Section paddingY="64">
-        <EasyRead>We help children at every age. We help their mothers too.</EasyRead>
+        <EasyRead>We help children from birth to age 16. We help their mothers too.</EasyRead>
         <Column gap="80">
           {programmes.map((p, i) => {
             const a = asset(p.hero);

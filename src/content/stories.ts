@@ -22,7 +22,6 @@ export const stories: Story[] = [
     quote:
       "Thanks to SAMADHAN, we were able to give her exercises at home after getting instructions from the doctors and teachers.",
     body: [
-      "At SAMADHAN, doctors, therapists and teachers show parents what to practise with their child at home.",
       "Asha learned Navya's exercises from the team, so the work carried on at home between visits.",
     ],
   },
@@ -46,13 +45,13 @@ export const stories: Story[] = [
     title: "More in control",
     person: "Renu Gupta",
     role: "Mothers' group",
-    programme: { label: "Mothers and livelihoods", href: "/our-work/mothers" },
+    programme: { label: "Support for mothers", href: "/our-work/mothers" },
     image: "mothers-kitchen",
     imageNote: "The mothers' kitchen at SAMADHAN.",
     quote:
       "When I joined SAMADHAN 10 years ago, I was not very confident about myself. Today, I have made sure that both my daughters are well educated and I feel more in control of my life.",
     body: [
-      "In our 2020-21 annual report, Renu said she had been with the mothers' group for ten years. The group meets for support, trains together and makes laddoos, spices, Nutri-mix and papier-mâché to sell.",
+      "Renu's words are from our 2020-21 annual report. The mothers' group meets for support and makes laddoos, spices, Nutri-mix and papier-mâché to sell.",
     ],
   },
 ];

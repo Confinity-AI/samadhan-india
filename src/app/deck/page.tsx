@@ -137,7 +137,7 @@ export default function Deck() {
         <Slide n={3} art="art-fish">
           <Kicker>How we outrank them</Kicker>
           <Heading as="h2" variant="display-strong-m">Win the South Delhi niche Manovikas does not reach</Heading>
-          <Text variant="body-default-l" onBackground="neutral-weak">Intellectual disability, low-income families and mothers, in South and West Delhi.</Text>
+          <Text variant="body-default-l" onBackground="neutral-weak">Intellectual disability, low-income families and mothers, in South and South-West Delhi.</Text>
           <Grid columns="2" gap="16" fillWidth>
             {[
               ["01", "Fix brand search", "One name, NGO schema, claimed listings."],
