@@ -25,7 +25,7 @@ export const programmes: Programme[] = [
     metaDescription:
       "Early intervention for babies and young children with developmental delays in Dakshinpuri and Dwarka, New Delhi. Ask us about fees and government schemes.",
     easyRead: "We help babies and small children who are learning slowly. We also teach parents what to do at home.",
-    hero: "girl-early-intervention",
+    hero: "boy-drawing-floor",
     ages: "From birth to 6 years",
     where: "Dakshinpuri and Dwarka",
     steps: [
@@ -38,7 +38,7 @@ export const programmes: Programme[] = [
       { value: "44", label: "children in early intervention, 2020-21" },
       { value: "10", label: "children on the National Trust Disha scheme, 2020-21" },
     ],
-    gallery: ["children-play-garden", "boy-drawing-floor", "child-drawing-umbrella"],
+    gallery: ["children-play-garden", "child-drawing-umbrella"],
     quote: {
       text: "Thanks to SAMADHAN, we were able to give her exercises at home after getting instructions from the doctors and teachers.",
       by: "Asha, Navya's mother",

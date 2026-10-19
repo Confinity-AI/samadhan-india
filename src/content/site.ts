@@ -127,6 +127,9 @@ export const partners = {
     "Friends of SAMADHAN, Australia",
     "GlobalGiving",
     "The Leprosy Mission",
+    "Japanese Volunteers Group",
+    "Tokuri-Kai",
+    "Vibrant Women",
   ],
   companies: [
     "The Walt Disney Company",
@@ -137,6 +140,8 @@ export const partners = {
     "Carlson Wagonlit Travel",
     "GAP International",
     "Shoppers Stop",
+    "XL Group",
+    "Edgeware Technologies",
   ],
   public: [
     "The National Trust",
@@ -147,11 +152,6 @@ export const partners = {
     "Ummeed and PVR Nest",
     "Ministry of Environment, Forest and Climate Change",
     "India International Centre",
-    "Japanese Volunteers Group",
-    "Tokuri-Kai",
-    "Vibrant Women",
-    "XL Group",
-    "Edgeware Technologies",
   ],
 };
 

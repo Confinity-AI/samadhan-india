@@ -22,7 +22,7 @@ const steps = [
     label: "Early years",
     title: "Help in the first years",
     body: "Parents learn exercises to do at home every day, with regular visits to the centre.",
-    image: "child-standing-frame",
+    image: "boy-drawing-floor",
     href: "/our-work/early-intervention",
     link: "Early intervention",
   },

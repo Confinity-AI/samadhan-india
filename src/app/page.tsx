@@ -25,13 +25,13 @@ export const metadata = pageMeta({
   path: "/",
 });
 
-const heroImages = ["children-play-garden", "vocational-diyas", "boy-drawing-floor"];
+const heroImages = ["children-play-garden", "vocational-diyas", "vocational-pot-painting"];
 const yearTiles = [
   { image: "girl-early-intervention", index: 0 },
-  { image: "vocational-pot-painting", index: 1 },
+  { image: "child-drawing-umbrella", index: 1 },
   { image: "volunteer-writing", index: 2 },
 ];
-const momentsPreview = ["diwali-rangoli", "centre-dakshinpuri", "art-flowers", "child-drawing-umbrella", "friends-gifts", "centre-dwarka"];
+const momentsPreview = ["diwali-rangoli", "centre-dakshinpuri", "art-flowers", "parents-workshop", "friends-gifts", "centre-dwarka"];
 
 export default function Home() {
   return (
