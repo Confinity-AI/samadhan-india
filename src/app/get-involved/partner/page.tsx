@@ -1,5 +1,5 @@
 import { Button, Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
-import { Breadcrumb, EasyRead, PaintHero, Photo, Quote, Section, SectionTitle, TrustBar } from "@/components/blocks";
+import { EasyRead, LinkCard, PaintHero, Quote, Section, SectionTitle, TrustBar } from "@/components/blocks";
 import { org, partners } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
@@ -11,12 +11,12 @@ export const metadata = pageMeta({
 });
 
 const projects = [
-  { image: "girl-early-intervention", title: "Early intervention", body: "Assessment and home programmes for babies and pre-school children." },
-  { image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
-  { image: "child-writing", title: "A classroom for a year", body: "A teacher and materials for five children, for one year." },
-  { image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training, equipment and help with selling." },
-  { image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
-  { image: "vocational-gardening", title: "Pre-vocational unit", body: "Skills for teenagers aged 12 to 16." },
+  { href: "/our-work/early-intervention", image: "girl-early-intervention", title: "Early intervention", body: "Assessment and home programmes for babies and pre-school children." },
+  { href: "/our-work/therapy", image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
+  { href: "/our-work/special-education", image: "child-writing", title: "A classroom for a year", body: "A teacher and materials for five children, for one year." },
+  { href: "/our-work/mothers", image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training, equipment and help with selling." },
+  { href: "/our-work/community", image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
+  { href: "/our-work/special-education", image: "vocational-gardening", title: "Pre-vocational unit", body: "Skills for teenagers aged 12 to 16." },
 ];
 
 const funderQuotes = [
@@ -30,39 +30,42 @@ const funderQuotes = [
   },
 ];
 
+function FundingActions() {
+  return (
+    <Row gap="12" wrap>
+      <Button href={`mailto:${org.email}?subject=${encodeURIComponent("CSR partnership")}`} size="l" prefixIcon="mail">
+        Talk to us about funding
+      </Button>
+      <Button href="/reports/samadhan-brochure.pdf" download size="l" variant="secondary" prefixIcon="download">
+        Our brochure (PDF)
+      </Button>
+    </Row>
+  );
+}
+
 export default function Partner() {
   return (
     <>
       <PaintHero
-        art="art-strokes"
+        art="art-trees"
+        focus="70% 40%"
+        zoom={1.6}
+        flip
+        crumbs={[{ label: "Get involved", href: "/get-involved" }, { label: "Partner with us" }]}
         eyebrow="Partner with us"
         title="Fund one of our programmes"
         intro="For companies, foundations and trusts. You can visit either centre before you decide."
-      />
-      <Section paddingY="64">
-        <Breadcrumb items={[{ label: "Get involved", href: "/get-involved" }, { label: "Partner with us" }]} />
+      >
+        <FundingActions />
         <EasyRead>Companies and foundations can pay for one of our programmes.</EasyRead>
+      </PaintHero>
+      <Section paddingY="64" label="Projects">
         <SectionTitle eyebrow="Projects" title="Choose a project" />
-        <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="24" className="rail">
           {projects.map((p) => (
-            <Column key={p.title} gap="12">
-              <Photo id={p.image} ratio="4 / 3" caption={false} sizes="(max-width: 900px) 100vw, 400px" />
-              <Text variant="heading-strong-l">{p.title}</Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">{p.body}</Text>
-            </Column>
+            <LinkCard key={p.title} href={p.href} image={p.image} title={p.title} body={p.body} />
           ))}
         </Grid>
-        <Row gap="12" wrap>
-          <Button href={`mailto:${org.email}?subject=${encodeURIComponent("CSR partnership")}`} size="l" prefixIcon="mail">
-            Talk to us about funding
-          </Button>
-          <Button href="/reports/samadhan-brochure.pdf" download size="l" variant="secondary" prefixIcon="download">
-            Our brochure (PDF)
-          </Button>
-          <Button href="/accountability" size="l" variant="tertiary">
-            Registrations and annual reports
-          </Button>
-        </Row>
       </Section>
       <Section tone="surface" label="What funders say">
         <SectionTitle title="What funders have told us" />
@@ -75,6 +78,14 @@ export default function Partner() {
       <Section label="Due diligence">
         <SectionTitle eyebrow="Due diligence" title="Registrations" intro="We are confirming our CSR-1 registration. Ask us for its status before you commit CSR funds." />
         <TrustBar />
+        <Row gap="12" wrap>
+          <Button href="/accountability" variant="secondary" suffixIcon="arrowRight">
+            Registrations and annual reports
+          </Button>
+          <Button href="/about/people" variant="secondary" suffixIcon="arrowRight">
+            Board and team
+          </Button>
+        </Row>
       </Section>
       <Section tone="surface" label="Partners">
         <SectionTitle eyebrow="Past and present" title="Who has partnered with us" />
@@ -98,6 +109,12 @@ export default function Partner() {
             </Column>
           ))}
         </Grid>
+      </Section>
+      <Section label="Talk to us">
+        <SectionTitle align="center" title="Fund a programme" intro="Tell us what you would like to support. We can share our annual reports and arrange a visit to either centre." />
+        <Row horizontal="center">
+          <FundingActions />
+        </Row>
       </Section>
     </>
   );

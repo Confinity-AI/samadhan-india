@@ -32,7 +32,7 @@ export function MomentsGallery() {
       <div className="masonry">
         {shown.map((a) => (
           <Column as="figure" key={a.id} gap="8" margin="0">
-            <div className="frame">
+            <div className={a.mono ? "frame frame--mono" : "frame"}>
               <Media src={a.src} alt={a.alt} aspectRatio={a.ratio} sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 320px" enlarge />
             </div>
             <Text as="figcaption" variant="label-default-s" onBackground="neutral-weak">

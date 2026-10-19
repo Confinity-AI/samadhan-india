@@ -6,7 +6,7 @@ const steps = [
     label: "Find",
     title: "We knock on doors",
     body: "Community workers visit homes and local schools to find children who need help.",
-    image: "parents-workshop",
+    image: "legal-awareness",
     href: "/our-work/community",
     link: "Community outreach",
   },
@@ -51,8 +51,8 @@ export function ChildJourney() {
         const a = asset(s.image);
         return (
           <li key={s.label} className="journey__step">
-            <div className="frame">
-              <Media src={a.src} alt={a.alt} aspectRatio="4 / 5" sizes="(max-width: 600px) 72vw, (max-width: 1100px) 40vw, 280px" />
+            <div className={a.mono ? "frame frame--mono" : "frame"}>
+              <Media src={a.src} alt={a.alt} aspectRatio="4 / 5" sizes="(max-width: 600px) 72vw, (max-width: 1100px) 40vw, 280px" style={"position" in s ? ({ "--pos": s.position } as React.CSSProperties) : undefined} />
             </div>
             <div className="journey__label">
               <span className="journey__num" style={{ fontSize: 40 }} aria-hidden>

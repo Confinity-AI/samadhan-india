@@ -1,6 +1,7 @@
-import { Button, Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
-import { EasyRead, PaintHero, Section, SectionTitle, TrustBar } from "@/components/blocks";
-import { org } from "@/content/site";
+import { Column, Grid, Heading, Icon, Row, SmartLink, Text } from "@once-ui-system/core";
+import type { ReactNode } from "react";
+import { DonateBand, EasyRead, PaintHero, Section, SectionTitle, TrustBar } from "@/components/blocks";
+import { org, withBase } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
@@ -37,60 +38,97 @@ const memberships = [
   "IASSIDD",
 ];
 
+const rowLink = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: 16,
+  paddingBlock: 16,
+  color: "inherit",
+  textDecoration: "none",
+  borderBottom: "1px solid var(--neutral-alpha-medium)",
+  minHeight: 44,
+} as const;
+
+function FileLink({ href, label, size, children }: { href: string; label: string; size: string; children: ReactNode }) {
+  return (
+    <a href={withBase(href)} download style={rowLink} aria-label={`${label}, PDF, ${size}`}>
+      {children}
+      <Row gap="8" vertical="center" style={{ flexShrink: 0, whiteSpace: "nowrap" }}>
+        <Text variant="label-default-m" onBackground="neutral-weak">
+          PDF · {size}
+        </Text>
+        <Icon name="download" size="s" onBackground="brand-strong" />
+      </Row>
+    </a>
+  );
+}
+
 export default function Accountability() {
   return (
     <>
-      <PaintHero art="art-flowers" eyebrow="Accountability" title="Our registrations and annual reports" />
-      <Section paddingY="64">
+      <PaintHero
+        art="art-flowers"
+        focus="10% 70%"
+        zoom={2.2}
+        crumbs={[{ label: "About", href: "/about" }, { label: "Accountability" }]}
+        eyebrow="Accountability"
+        title="Our registrations and annual reports"
+      >
         <EasyRead>Here you can check our government registrations and read our yearly reports.</EasyRead>
+      </PaintHero>
+      <Section paddingY="64">
         <SectionTitle eyebrow="Registrations" title="Our registrations" />
         <TrustBar />
         <Text variant="body-default-s" onBackground="neutral-weak">
           Legal name: {org.legalName}. The registered name dates from 1981; we use person-first language everywhere else.
         </Text>
+        <SmartLink href="/about/people" suffixIcon="arrowRight">
+          Who governs SAMADHAN
+        </SmartLink>
       </Section>
       <Section tone="surface" label="Annual reports">
         <SectionTitle eyebrow="Annual reports" title="Our annual reports" intro="Every report from 2014-15 to 2024-25. Download any year as a PDF." />
-        <Grid columns="4" m={{ columns: "3" }} s={{ columns: "2" }} gap="12">
+        <Grid as="ul" columns="2" s={{ columns: "1" }} gap="0" style={{ columnGap: 48, listStyle: "none", margin: 0, padding: 0 }}>
           {reports.map((r) => (
-            <Row key={r.year} padding="16" radius="l" border background="page" horizontal="between" vertical="center" gap="8">
-              <Text variant="heading-strong-m" className="tabular">{r.year}</Text>
-              <Button
-                href={`/reports/samadhan-annual-report-${r.year}.pdf`}
-                download
-                size="s"
-                variant="secondary"
-                prefixIcon="download"
-                aria-label={`Annual report ${r.year}, PDF, ${r.size}`}
-              >
-                PDF, {r.size}
-              </Button>
-            </Row>
+            <li key={r.year}>
+              <FileLink href={`/reports/samadhan-annual-report-${r.year}.pdf`} label={`Annual report ${r.year}`} size={r.size}>
+                <Text className="tabular" onBackground="brand-strong" style={{ fontFamily: "var(--font-heading)", fontSize: 28, lineHeight: 1.1, whiteSpace: "nowrap" }}>
+                  {r.year}
+                </Text>
+              </FileLink>
+            </li>
           ))}
         </Grid>
-        <Column gap="16" paddingTop="32">
+        <Column gap="8" paddingTop="32">
           <Heading as="h3" variant="heading-strong-l">Programme reports and brochure</Heading>
-          {documents.map((d) => (
-            <Row key={d.href} paddingY="12" borderBottom horizontal="between" vertical="center" gap="16" s={{ direction: "column", horizontal: "start" }}>
-              <Column gap="4">
-                <Text variant="body-strong-l">{d.title}</Text>
-                <Text variant="body-default-s" onBackground="neutral-weak">{d.detail}</Text>
-              </Column>
-              <Button href={d.href} download size="s" variant="secondary" prefixIcon="download" aria-label={`${d.title}, PDF, ${d.size}`}>
-                PDF, {d.size}
-              </Button>
-            </Row>
-          ))}
+          <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {documents.map((d) => (
+              <li key={d.href}>
+                <FileLink href={d.href} label={d.title} size={d.size}>
+                  <Column gap="4" style={{ minWidth: 0 }}>
+                    <Text variant="body-strong-l">{d.title}</Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak">{d.detail}</Text>
+                  </Column>
+                </FileLink>
+              </li>
+            ))}
+          </ul>
         </Column>
       </Section>
       <Section label="Memberships">
         <Column gap="16" maxWidth="m">
           <Heading as="h2" variant="display-strong-xs">Memberships</Heading>
-          {memberships.map((m) => (
-            <Row key={m} paddingY="12" borderBottom><Text variant="body-default-l">{m}</Text></Row>
-          ))}
+          <ul className="ruled-list">
+            {memberships.map((m) => (
+              <li key={m}>
+                <Text as="p" variant="body-default-l" style={{ margin: 0, paddingBlock: 12 }}>{m}</Text>
+              </li>
+            ))}
+          </ul>
         </Column>
       </Section>
+      <DonateBand art="art-trees" />
     </>
   );
 }

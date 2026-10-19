@@ -1,5 +1,6 @@
 import { Column, Grid, Heading, Text } from "@once-ui-system/core";
-import { DonateBand, EasyRead, LinkCard, PaintHero, Photo, Quote, Section, SectionTitle, Stat } from "@/components/blocks";
+import { DonateBand, EasyRead, LinkCard, PaintHero, Photo, Section, SectionTitle, Stat } from "@/components/blocks";
+import { awards } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
@@ -12,9 +13,10 @@ export const metadata = pageMeta({
 export default function About() {
   return (
     <>
-      <PaintHero art="art-flowers" eyebrow="About us" title="Working with Delhi’s children since 1981" intro={<>Our name, <span lang="hi">समाधान</span>, means “solution”.</>} />
-      <Section paddingY="64">
+      <PaintHero art="art-flowers" focus="50% 45%" eyebrow="About us" title="Working with Delhi’s children since 1981" intro={<>Our name, <span lang="hi">समाधान</span>, means “solution”.</>}>
         <EasyRead>SAMADHAN started in 1981. We work in Dakshinpuri and Dwarka in Delhi.</EasyRead>
+      </PaintHero>
+      <Section paddingY="64">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
             <SectionTitle eyebrow="Our mission" title="Help close to home" />
@@ -23,8 +25,8 @@ export default function About() {
             </Text>
           </Column>
           <Grid columns="2" gap="12">
-            <Photo id="centre-dakshinpuri" ratio="3 / 4" sizes="300px" />
-            <Photo id="centre-dwarka" ratio="3 / 4" sizes="300px" />
+            <Photo id="centre-dakshinpuri" ratio="3 / 4" sizes="(max-width: 1024px) 50vw, 300px" />
+            <Photo id="centre-dwarka" ratio="3 / 4" sizes="(max-width: 1024px) 50vw, 300px" />
           </Grid>
         </Grid>
         <Grid columns="4" m={{ columns: "2" }} gap="32">
@@ -34,18 +36,34 @@ export default function About() {
           <Stat value="1998" label="Inclusion International award, The Hague" />
         </Grid>
       </Section>
-      <Section tone="surface" label="Founder's words">
-        <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
-          <Quote text="The question we were most often asked was, ‘Is it my karma?’ The answer, of course, was that it was no one's karma." by="Prameela Balasundaram, founder" />
-          <Photo id="art-strokes" ratio="4 / 3" />
+      <Section tone="surface" label="Awards">
+        <Grid columns="2" m={{ columns: "1" }} gap="48">
+          <SectionTitle eyebrow="Recognition" title="Awards for our work" />
+          <ul className="ruled-list">
+            {awards.map((a) => (
+              <li key={a.year + a.title}>
+                <Grid columns="4" gap="16" paddingY="16">
+                  <Text variant="heading-strong-m" onBackground="brand-strong" className="tabular">
+                    {a.year}
+                  </Text>
+                  <Column gap="2" style={{ gridColumn: "span 3" }}>
+                    <Text variant="body-strong-l">{a.title}</Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {a.by}
+                    </Text>
+                  </Column>
+                </Grid>
+              </li>
+            ))}
+          </ul>
         </Grid>
       </Section>
       <Section label="More about us">
         <Heading as="h2" variant="display-strong-s">More about us</Heading>
-        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24" className="rail">
           <LinkCard href="/about/history" image="art-trees" title="Our history" body="45 years, 1981 to today." />
-          <LinkCard href="/about/founder" image="child-handprint-painting" title="Our founder" body="Prameela Balasundaram." />
-          <LinkCard href="/about/people" image="mothers-counselling" title="Our people" body="Board, team and therapists." />
+          <LinkCard href="/about/founder" image="art-strokes" title="Our founder" body="Prameela Balasundaram." />
+          <LinkCard href="/about/people" image="diwali-rangoli" title="Our people" body="Board, team and therapists." />
           <LinkCard href="/accountability" image="legal-awareness" title="Accountability" body="Registrations and reports." />
         </Grid>
       </Section>

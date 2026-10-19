@@ -15,6 +15,8 @@ export type FamiliesCopy = {
   schemesTitle: string;
   schemes: { title: string; body: string }[];
   centresTitle: string;
+  jump: { label: string; cost: string; centres: string; bring: string };
+  storyTitle: string;
   switchLabel: string;
   switchHref: string;
 };
@@ -50,6 +52,8 @@ export const familiesEn: FamiliesCopy = {
     { title: "Legal guardianship", body: "We are on the National Trust committee in Delhi that handles legal guardianship." },
   ],
   centresTitle: "Our centres",
+  jump: { label: "On this page", cost: "What it costs", centres: "Where we are", bring: "What to bring" },
+  storyTitle: "What another mother says",
   switchLabel: "यह पेज हिंदी में पढ़ें",
   switchHref: "/hi/families",
 };
@@ -85,6 +89,8 @@ export const familiesHi: FamiliesCopy = {
     { title: "कानूनी गार्जियनशिप", body: "हम दिल्ली में नेशनल ट्रस्ट की उस कमेटी में हैं जो कानूनी गार्जियन के मामले देखती है।" },
   ],
   centresTitle: "हमारे केंद्र",
+  jump: { label: "इस पेज पर", cost: "खर्च कितना है", centres: "हम कहाँ हैं", bring: "साथ क्या लाएं" },
+  storyTitle: "एक माँ की बात",
   switchLabel: "Read this page in English",
   switchHref: "/families",
 };

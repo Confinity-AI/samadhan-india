@@ -6,6 +6,8 @@ export type Programme = {
   metaDescription: string;
   easyRead: string;
   hero: string;
+  /** Colour photo for cards shown beside other programmes, when the hero is an archive photo */
+  thumb?: string;
   ages?: string;
   where: string;
   steps: { title: string; body: string }[];
@@ -23,7 +25,7 @@ export const programmes: Programme[] = [
     metaDescription:
       "Early intervention for babies and young children with developmental delays in Dakshinpuri and Dwarka, New Delhi. Ask us about fees and government schemes.",
     easyRead: "We help babies and small children who are learning slowly. We also teach parents what to do at home.",
-    hero: "child-handprint-painting",
+    hero: "girl-early-intervention",
     ages: "From birth to 6 years",
     where: "Dakshinpuri and Dwarka",
     steps: [
@@ -36,7 +38,7 @@ export const programmes: Programme[] = [
       { value: "44", label: "children in early intervention, 2020-21" },
       { value: "10", label: "children on the National Trust Disha scheme, 2020-21" },
     ],
-    gallery: ["girl-early-intervention", "child-handprint-painting", "boy-drawing-floor", "child-standing-frame"],
+    gallery: ["children-play-garden", "boy-drawing-floor", "child-drawing-umbrella"],
     quote: {
       text: "Thanks to SAMADHAN, we were able to give her exercises at home after getting instructions from the doctors and teachers.",
       by: "Asha, Navya's mother",
@@ -51,6 +53,7 @@ export const programmes: Programme[] = [
       "Occupational therapy, speech therapy, psychology and drama therapy for children with intellectual disabilities at SAMADHAN's Delhi clinics.",
     easyRead: "Our therapists help children move, speak and play. Drama, music and art are part of therapy too.",
     hero: "therapy-one-to-one",
+    thumb: "child-standing-frame",
     ages: "0 to 16 years",
     where: "Clinic days at Dakshinpuri and Dwarka",
     steps: [
@@ -63,7 +66,7 @@ export const programmes: Programme[] = [
       { value: "15", label: "children given orthotic or prosthetic devices, 2020-21" },
       { value: "35", label: "children enrolled in Niramaya health cover, 2020-21" },
     ],
-    gallery: ["therapy-one-to-one", "child-standing-frame", "child-swing", "child-handprint-painting"],
+    gallery: ["child-handprint-painting", "child-swing"],
     quote: {
       text: "Even during the lockdown, the teachers from SAMADHAN took online classes and we also got assistive devices for Prince for home-use.",
       by: "Hema, Prince's mother",
@@ -90,7 +93,7 @@ export const programmes: Programme[] = [
       { value: "22", label: "children in special education, 2020-21" },
       { value: "6", label: "moved into mainstream schools, 2020-21" },
     ],
-    gallery: ["child-writing", "volunteer-writing", "vocational-pot-painting", "vocational-gardening", "vocational-diyas", "child-drawing-umbrella"],
+    gallery: ["volunteer-writing", "vocational-pot-painting", "vocational-gardening", "vocational-diyas"],
   },
   {
     slug: "mothers",
@@ -100,7 +103,7 @@ export const programmes: Programme[] = [
     metaDescription:
       "SAMADHAN's mothers' group: counselling, training and income from laddoos, spices, Nutri-mix and papier-mâché in New Delhi.",
     easyRead: "Mothers meet and help each other. They make food and crafts to sell.",
-    hero: "mothers-kitchen",
+    hero: "mothers-counselling",
     where: "Dwarka and Dakshinpuri",
     steps: [
       { title: "Support circles", body: "Counselling and time with other mothers who understand." },
@@ -112,7 +115,7 @@ export const programmes: Programme[] = [
       { value: "50 kg", label: "of Nutri-mix made by the group in 2020" },
       { value: "2000", label: "the year the mothers' income units started" },
     ],
-    gallery: ["mothers-kitchen", "laddoo-boxes", "mothers-garden-harvest", "mothers-counselling", "papier-mache-birds"],
+    gallery: ["diwali-rangoli", "mothers-garden-harvest", "friends-gifts"],
     quote: {
       text: "When I joined SAMADHAN 10 years ago, I was not very confident about myself. Today, I have made sure that both my daughters are well educated and I feel more in control of my life.",
       by: "Renu Gupta, mothers' group",
@@ -138,7 +141,7 @@ export const programmes: Programme[] = [
       { value: "1998", label: "community-based rehabilitation began" },
       { value: "300,000+", label: "people live in Dakshinpuri, where our first centre is (2020-21 annual report)" },
     ],
-    gallery: ["parents-workshop", "legal-awareness", "diwali-rangoli", "friends-gifts"],
+    gallery: ["legal-awareness", "centre-dakshinpuri", "centre-dwarka"],
   },
 ];
 

@@ -24,7 +24,8 @@ export const org = {
 
 export const whatsapp = {
   number: "+91 74284 50880",
-  href: "https://wa.me/917428450880",
+  base: "https://wa.me/917428450880",
+  href: `https://wa.me/917428450880?text=${encodeURIComponent("Hello, I would like some information about SAMADHAN.")}`,
   hrefHi: `https://wa.me/917428450880?text=${encodeURIComponent("नमस्ते, मुझे अपने बच्चे के लिए जानकारी चाहिए।")}`,
 };
 
@@ -57,7 +58,7 @@ export const centres: Centre[] = [
     name: "Dwarka centre",
     nameHi: "द्वारका केंद्र",
     role: "Clinic and main office",
-    address: ["Centre for Human Resources, Sector 2, Pocket 2", "Dwarka, New Delhi 110075"],
+    address: ["Centre for Human Resources, Sector 2, Pocket\u00a02", "Dwarka, New Delhi 110075"],
     postal: { street: "Centre for Human Resources, Sector 2, Pocket 2, Dwarka", locality: "New Delhi", code: "110075" },
     phones: [
       { label: "+91 11 4551 6693", href: "tel:+911145516693" },
@@ -91,8 +92,6 @@ export const nav: NavItem[] = [
       { label: "Community outreach", href: "/our-work/community" },
     ],
   },
-  { label: "Stories", href: "/stories" },
-  { label: "Photos", href: "/moments" },
   {
     label: "About",
     href: "/about",
@@ -103,6 +102,7 @@ export const nav: NavItem[] = [
       { label: "Accountability", href: "/accountability" },
     ],
   },
+  { label: "Stories", href: "/stories" },
   {
     label: "Get involved",
     href: "/get-involved",
@@ -110,8 +110,10 @@ export const nav: NavItem[] = [
       { label: "Volunteer", href: "/get-involved/volunteer" },
       { label: "Internships", href: "/get-involved/internships" },
       { label: "Partner with us", href: "/get-involved/partner" },
+      { label: "Donate", href: "/donate" },
     ],
   },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const partners = {

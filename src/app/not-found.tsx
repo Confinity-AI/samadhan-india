@@ -1,10 +1,13 @@
 import { Button, Heading, Row, Text } from "@once-ui-system/core";
+import type { Metadata } from "next";
 import { PaintHero, Section } from "@/components/blocks";
+
+export const metadata: Metadata = { title: "Page not found", robots: { index: false } };
 
 export default function NotFound() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Page not found" title="We can't find this page" intro="Our website is new. The page you wanted may have a new address." />
+      <PaintHero art="art-fish" focus="20% 30%" zoom={1.4} eyebrow="Page not found" title="We can't find this page" intro="Our website is new. The page you wanted may have a new address." />
       <Section paddingY="64">
         <Text variant="body-default-l" onBackground="neutral-weak">Try one of these:</Text>
         <Row gap="12" wrap>

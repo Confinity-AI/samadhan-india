@@ -1,5 +1,5 @@
 import { Button, Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
-import { PhotoHero, Quote, Section, Stat } from "@/components/blocks";
+import { PhotoHero, Quote, Section, SectionTitle, Stat } from "@/components/blocks";
 import { org } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
@@ -37,6 +37,19 @@ const steps = [
   { title: "Sign-off", body: "We confirm your hours for your university." },
 ];
 
+function Actions() {
+  return (
+    <Row gap="12" wrap>
+      <Button href={`mailto:${org.email}?subject=${encodeURIComponent("Internship application")}`} size="l" prefixIcon="mail">
+        Apply by email
+      </Button>
+      <Button href="/reports/samadhan-internship-application-form.docx" download size="l" variant="secondary" prefixIcon="download">
+        Application form (Word)
+      </Button>
+    </Row>
+  );
+}
+
 export default function Internships() {
   return (
     <>
@@ -46,17 +59,8 @@ export default function Internships() {
         title="Train with our therapists and teachers"
         intro="For students and working professionals. Internships are unpaid and dates are flexible."
         easyRead="Students can come and learn with our therapists and teachers."
-        image="therapy-one-to-one"
-        actions={
-          <Row gap="12" wrap>
-            <Button href={`mailto:${org.email}?subject=${encodeURIComponent("Internship application")}`} size="l" prefixIcon="mail">
-              Apply by email
-            </Button>
-            <Button href="/reports/samadhan-internship-application-form.docx" download size="l" variant="secondary" prefixIcon="download">
-              Application form (Word)
-            </Button>
-          </Row>
-        }
+        image="parents-workshop"
+        actions={<Actions />}
       />
       <Section tone="surface" label="What you will work on">
         <Grid columns="2" m={{ columns: "1" }} gap="56">
@@ -96,6 +100,12 @@ export default function Internships() {
               <Text variant="body-default-m" onBackground="neutral-weak">{s.body}</Text>
             </Column>
           ))}
+        </Grid>
+      </Section>
+      <Section label="Apply">
+        <Grid columns="2" m={{ columns: "1" }} gap="32" style={{ alignItems: "center" }}>
+          <SectionTitle title="Apply for an internship" intro="Email us your course, your dates and what you hope to learn. You can send the application form with it." />
+          <Actions />
         </Grid>
       </Section>
     </>

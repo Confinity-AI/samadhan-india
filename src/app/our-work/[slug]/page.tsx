@@ -1,11 +1,12 @@
-import { Button, Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
+import { Button, Column, Grid, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import { notFound } from "next/navigation";
 import { ContactButtons, DonateBand, LinkCard, Photo, PhotoHero, Quote, Section, SectionTitle, Stat } from "@/components/blocks";
+import { asset } from "@/content/assets";
 import { getProgramme, programmes } from "@/content/programmes";
 import { whatsapp } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
-const orderLink = `${whatsapp.href}?text=${encodeURIComponent("Hello, I would like to order from the SAMADHAN mothers' group.")}`;
+const orderLink = `${whatsapp.base}?text=${encodeURIComponent("Hello, I would like to order from the SAMADHAN mothers' group.")}`;
 
 const products = [
   { image: "laddoo-boxes", title: "Laddoos", body: "Nutritious laddoos, evaluated by the Nutrition Foundation of India. Boxed for Diwali and office gifts." },
@@ -29,6 +30,8 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
   const p = getProgramme((await params).slug);
   if (!p) notFound();
   const others = programmes.filter((o) => o.slug !== p.slug);
+  const shop = p.slug === "mothers";
+  const gallery = p.gallery.filter((id) => id !== p.hero && !(shop && products.some((pr) => pr.image === id)));
 
   return (
     <>
@@ -74,7 +77,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
         </Grid>
       </Section>
 
-      {p.slug === "mothers" && (
+      {shop && (
         <Section id="shop" label="What the mothers make">
           <Row horizontal="between" vertical="end" wrap gap="24">
             <SectionTitle eyebrow="Buy from the mothers" title="What the mothers make" intro="Message us to ask what is available and what it costs." />
@@ -101,55 +104,95 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
         </Section>
       )}
 
-      <Section label="Gallery">
-        <div className="masonry">
-          {p.gallery.filter((id) => id !== p.hero && !(p.slug === "mothers" && products.some((pr) => pr.image === id))).map((id) => (
-            <Photo key={id} id={id} sizes="(max-width: 900px) 50vw, 360px" />
-          ))}
-        </div>
-      </Section>
+      {gallery.length > 0 && (
+        <Section label="In pictures" tone={shop ? "surface" : "page"}>
+          {gallery.length === 3 ? (
+            <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
+              <SectionTitle title="In pictures" intro={`${gallery.map((id) => asset(id).caption).join(". ")}.`} />
+              <div className="mosaic">
+                {gallery.map((id, i) => {
+                  const a = asset(id);
+                  return (
+                    <div key={id} className={a.mono ? "frame frame--mono" : "frame"}>
+                      <Media
+                        src={a.src}
+                        alt={a.alt}
+                        fillWidth
+                        aspectRatio="auto"
+                        sizes={i === 0 ? "(max-width: 1024px) 100vw, 580px" : "(max-width: 1024px) 50vw, 290px"}
+                        style={{ height: "100%" }}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </Grid>
+          ) : gallery.length === 2 ? (
+            <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
+              <SectionTitle title="In pictures" />
+              <Grid columns="2" gap="12">
+                {gallery.map((id) => (
+                  <Photo key={id} id={id} ratio="3 / 4" sizes="(max-width: 1024px) 50vw, 290px" />
+                ))}
+              </Grid>
+            </Grid>
+          ) : (
+            <>
+              <SectionTitle title="In pictures" />
+              <div className="masonry" style={{ columns: "3 160px" }}>
+                {gallery.map((id) => (
+                  <Photo key={id} id={id} sizes="(max-width: 600px) 50vw, 400px" />
+                ))}
+              </div>
+            </>
+          )}
+        </Section>
+      )}
 
-      <Section tone="surface" label="In numbers and words">
-        <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
-          <Grid columns="2" gap="32">
+      <Section tone={shop ? "page" : "surface"} label="In numbers and words">
+        {p.quote ? (
+          <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
+            <Grid columns="2" gap="32">
+              {p.facts.map((f) => (
+                <Stat key={f.label} value={f.value} label={f.label} />
+              ))}
+            </Grid>
+            <Quote text={p.quote.text} by={p.quote.by} />
+          </Grid>
+        ) : (
+          <Grid columns="2" gap="32" style={{ maxWidth: 640 }}>
             {p.facts.map((f) => (
               <Stat key={f.label} value={f.value} label={f.label} />
             ))}
           </Grid>
-          {p.quote ? <Quote text={p.quote.text} by={p.quote.by} /> : (
-            <Column gap="16">
-              <Heading as="h2" variant="display-strong-xs">Need help for your child?</Heading>
-              <ContactButtons />
-            </Column>
-          )}
+        )}
+        <Grid columns="2" m={{ columns: "1" }} gap="32" padding="40" s={{ padding: "24" }} radius="l" background={shop ? "surface" : "page"} style={{ alignItems: "center" }}>
+          <Column gap="8">
+            <Heading as="h2" variant="display-strong-xs">Need help for your child?</Heading>
+            <Text variant="body-default-l" onBackground="neutral-weak">Call either centre, or send us a WhatsApp message.</Text>
+          </Column>
+          <Column gap="16">
+            <ContactButtons />
+            <SmartLink href="/families" suffixIcon="arrowRight">
+              What to bring and what it costs
+            </SmartLink>
+          </Column>
         </Grid>
       </Section>
 
-      {p.quote && (
-        <Section label="Get help">
-          <Grid columns="2" m={{ columns: "1" }} gap="32" style={{ alignItems: "center" }}>
-            <Heading as="h2" variant="display-strong-s">Need help for your child?</Heading>
-            <Column gap="16">
-              <Text variant="body-default-l" onBackground="neutral-weak">Call either centre, or send us a WhatsApp message.</Text>
-              <ContactButtons />
-            </Column>
-          </Grid>
-        </Section>
-      )}
-
-      <Section tone="surface" label="More of our work">
+      <Section tone={shop ? "surface" : "page"} label="More of our work">
         <Row horizontal="between" vertical="end" wrap gap="16">
           <SectionTitle title="More of our work" />
           <Button href="/our-work" variant="tertiary" suffixIcon="arrowRight">All programmes</Button>
         </Row>
-        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24" className="rail">
           {others.map((o) => (
-            <LinkCard key={o.slug} href={`/our-work/${o.slug}`} image={o.hero} title={o.title} body={o.short} />
+            <LinkCard key={o.slug} href={`/our-work/${o.slug}`} image={o.thumb ?? o.hero} title={o.title} body={o.short} />
           ))}
         </Grid>
       </Section>
 
-      <DonateBand />
+      <DonateBand art={p.slug === "community" ? "art-flowers" : "art-trees"} />
     </>
   );
 }

@@ -1,9 +1,9 @@
-import { Column, Grid, Media, Text } from "@once-ui-system/core";
+import { Column, Grid, Text } from "@once-ui-system/core";
 import { notFound } from "next/navigation";
-import { Breadcrumb, DonateBand, Eyebrow, LinkCard, Quote, Section, SectionTitle } from "@/components/blocks";
-import { asset } from "@/content/assets";
+import { DonateBand, LinkCard, PaintHero, Quote, Section, SectionTitle } from "@/components/blocks";
 import { getStory, stories } from "@/content/stories";
 import { pageMeta } from "@/lib/meta";
+import { storyImage } from "../story-art";
 
 export const dynamicParams = false;
 
@@ -20,27 +20,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function StoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const s = getStory((await params).slug);
   if (!s) notFound();
-  const a = asset(s.image);
+  const image = storyImage(s);
   const others = stories.filter((o) => o.slug !== s.slug);
 
   return (
     <>
-      <Section paddingY="40" width="l">
-        <Breadcrumb items={[{ label: "Stories", href: "/stories" }, { label: s.person }]} />
-        <Column gap="16">
-          <Eyebrow>{s.programme.label}</Eyebrow>
-          <Text as="h1" variant="display-strong-l">
-            {s.title}
-          </Text>
-        </Column>
-        <Column as="figure" gap="8" margin="0">
-          <div className="frame">
-            <Media src={a.src} alt={a.alt} aspectRatio="21 / 9" priority sizes="(max-width: 1200px) 100vw, 1200px" />
-          </div>
-          <Text as="figcaption" variant="label-default-s" onBackground="neutral-weak">
-            {s.imageNote}
-          </Text>
-        </Column>
+      <PaintHero
+        art={image}
+        focus="50% 50%"
+        flip={stories.indexOf(s) % 2 === 1}
+        crumbs={[{ label: "Stories", href: "/stories" }, { label: s.title }]}
+        eyebrow={s.programme.label}
+        title={s.title}
+      />
+      <Section paddingY="64" width="l">
         <Grid columns="2" m={{ columns: "1" }} gap="48">
           <Quote text={s.quote} by={`${s.person}, ${s.role}`} />
           <Column gap="16">
@@ -49,19 +42,22 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                 {p}
               </Text>
             ))}
+            <Text variant="label-default-s" onBackground="neutral-weak">
+              {s.imageNote}
+            </Text>
           </Column>
         </Grid>
       </Section>
       <Section tone="surface" label="More stories">
         <SectionTitle title="More stories" />
-        <Grid columns="3" m={{ columns: "1" }} gap="32">
+        <Grid columns="3" s={{ columns: "1" }} gap="32" className="rail">
           {others.map((o) => (
-            <LinkCard key={o.slug} href={`/stories/${o.slug}`} image={o.image} title={o.title} body={`${o.person}, ${o.role}`} />
+            <LinkCard key={o.slug} href={`/stories/${o.slug}`} image={storyImage(o)} title={o.title} body={`${o.person}, ${o.role}`} />
           ))}
           <LinkCard href={s.programme.href} image="children-play-garden" title={s.programme.label} body="How this programme works" />
         </Grid>
       </Section>
-      <DonateBand />
+      <DonateBand art={image === "art-trees" ? "art-flowers" : "art-trees"} />
     </>
   );
 }

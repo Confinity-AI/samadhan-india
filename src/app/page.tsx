@@ -27,27 +27,27 @@ export const metadata = pageMeta({
 
 const heroImages = ["children-play-garden", "vocational-diyas", "boy-drawing-floor"];
 const yearTiles = [
-  { image: "vocational-pot-painting", index: 0 },
-  { image: "volunteer-writing", index: 1 },
-  { image: "child-drawing-umbrella", index: 2 },
+  { image: "girl-early-intervention", index: 0 },
+  { image: "vocational-pot-painting", index: 1 },
+  { image: "volunteer-writing", index: 2 },
 ];
-const momentsPreview = ["diwali-rangoli", "mothers-counselling", "centre-dakshinpuri", "legal-awareness", "friends-gifts", "centre-dwarka"];
+const momentsPreview = ["diwali-rangoli", "centre-dakshinpuri", "art-flowers", "child-drawing-umbrella", "friends-gifts", "centre-dwarka"];
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <Column fillWidth horizontal="center" paddingX="24" paddingTop="48" paddingBottom="64" s={{ paddingTop: "32", paddingBottom: "48" }}>
-        <Grid maxWidth="xl" columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
+        <Grid maxWidth="xl" columns="2" m={{ columns: "1" }} gap="56" s={{ gap: "24" }} className="home-hero" style={{ alignItems: "center" }}>
           <Column gap="24">
-            <Eyebrow>Dakshinpuri and Dwarka, New Delhi · since 1981</Eyebrow>
+            <Eyebrow>Dakshinpuri and Dwarka, New Delhi</Eyebrow>
             <Heading as="h1" variant="display-strong-xl">
               Therapy and school for children with intellectual disabilities
             </Heading>
             <Text variant="body-default-xl" onBackground="neutral-medium" style={{ maxWidth: 560 }}>
               Early help for babies, small classes for older children, and support for their mothers.
             </Text>
-            <Row gap="12" wrap>
+            <Row gap="12" wrap className="hero-actions">
               <Button href="/families" size="l" prefixIcon="person">
                 Get help for your child
               </Button>
@@ -69,7 +69,7 @@ export default function Home() {
                     aspectRatio="auto"
                     sizes={i === 0 ? "(max-width: 900px) 100vw, 680px" : "(max-width: 900px) 50vw, 340px"}
                     priority={i === 0}
-                    style={{ height: "100%" }}
+                    style={{ height: "100%", ...(i === 0 ? { "--pos": "40% 60%" } : {}) } as React.CSSProperties}
                   />
                 </div>
               );
@@ -120,7 +120,7 @@ export default function Home() {
             </Row>
           </Column>
           <Row horizontal="center">
-            <Photo id="girl-early-intervention" ratio="4 / 5" cap sizes="(max-width: 900px) 100vw, 420px" />
+            <Photo id="mothers-counselling" ratio="4 / 3" cap sizes="(max-width: 900px) 100vw, 660px" />
           </Row>
         </Grid>
       </Section>
@@ -150,13 +150,13 @@ export default function Home() {
       {/* Year in numbers */}
       <Section tone="surface" label="A year in numbers">
         <SectionTitle eyebrow="A year in numbers" title={`What we did in ${yearInNumbers.year}`} />
-        <Grid columns="3" m={{ columns: "2" }} gap="24">
+        <Grid columns="3" gap="24" className="rail">
           {yearTiles.map((t) => {
             const item = yearInNumbers.items[t.index];
             return <PhotoStat key={item.label} image={t.image} value={item.value} label={item.label} />;
           })}
         </Grid>
-        <Text variant="body-default-m" onBackground="neutral-weak">
+        <Text variant="body-default-m" onBackground="neutral-weak" style={{ maxWidth: "68ch" }}>
           Also that year, 35 children joined Niramaya health cover, 15 received orthotic or prosthetic devices, and the mothers' group made 50 kg of Nutri-mix. Figures from our {yearInNumbers.year} annual report.
         </Text>
       </Section>
@@ -165,11 +165,11 @@ export default function Home() {
       <Section label="Stories">
         <Row horizontal="between" vertical="end" gap="24" wrap>
           <SectionTitle eyebrow="Stories" title="What mothers tell us" />
-          <Button href="/stories" variant="tertiary" suffixIcon="arrowRight">
+          <SmartLink href="/stories" suffixIcon="arrowRight">
             All stories
-          </Button>
+          </SmartLink>
         </Row>
-        <Grid columns="3" m={{ columns: "1" }} gap="24">
+        <Grid columns="3" m={{ columns: "1" }} gap="24" className="rail">
           {stories.map((s) => (
             <StoryCard key={s.slug} href={`/stories/${s.slug}`} quote={s.quote} by={`${s.person}, ${s.role}`} />
           ))}
@@ -180,9 +180,9 @@ export default function Home() {
       <Section tone="surface" label="Photos">
         <Row horizontal="between" vertical="end" gap="24" wrap>
           <SectionTitle eyebrow="Photos" title="Children, mothers and our centres" />
-          <Button href="/moments" variant="tertiary" suffixIcon="arrowRight">
+          <SmartLink href="/moments" suffixIcon="arrowRight">
             See every photo
-          </Button>
+          </SmartLink>
         </Row>
         <Grid columns="3" m={{ columns: "2" }} gap="16">
           {momentsPreview.map((id) => (
@@ -196,7 +196,7 @@ export default function Home() {
       {/* Trust */}
       <Section label="Awards and partners">
         <SectionTitle eyebrow="Recognition" title="Awards and partners" />
-        <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="4" m={{ columns: "2" }} gap="24">
           {awards.map((a) => (
             <Column key={a.year} gap="8" borderTop="brand-alpha-strong" paddingTop="16">
               <Text className="stat-value" onBackground="accent-strong" style={{ fontSize: 36 }}>

@@ -4,6 +4,8 @@
   --brand-solid-weak: oklch(0.42 0.1 265.16) !important;
   --brand-background-strong: oklch(0.36 0.1 265.16) !important;
   --neutral-on-background-weak: #5b5348 !important;
+  --page-background: #fbf7ef !important;
+  --surface-background: #f3ecdf !important;
 }
 
 :root {
@@ -75,6 +77,69 @@ h2,
 .display {
   font-variation-settings: "opsz" 60;
   letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+main {
+  overflow-x: clip;
+}
+
+.focus-ring:focus-visible {
+  outline-width: 3px;
+}
+
+/* Current page in the header */
+.header nav a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--accent-solid-strong);
+  border-radius: 0;
+}
+
+/* Painted strip used as a divider */
+.paint-rule {
+  height: 10px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Archive photos: warm the black and white set and crop the vignette */
+.frame--mono img {
+  filter: sepia(0.35) contrast(1.06) brightness(1.02);
+  transform: scale(1.16);
+}
+a:hover .frame--mono img,
+.frame--mono:hover img {
+  transform: scale(1.2);
+}
+
+/* Bleed the painting in the donate band */
+.donate-art {
+  align-self: stretch;
+  min-height: 320px;
+  margin-right: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+}
+.donate-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reports and data lists */
+.ruled-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ruled-list > li {
+  border-top: 1px solid var(--neutral-alpha-medium);
+}
+.ruled-list > li:last-child {
+  border-bottom: 1px solid var(--neutral-alpha-medium);
 }
 
 .tabular {
@@ -85,11 +150,11 @@ h2,
 .frame {
   overflow: hidden;
   border-radius: 12px;
-  background: var(--neutral-alpha-weak);
-  box-shadow: 0 0 0 1px var(--neutral-alpha-weak);
+  background: #e9e0cf;
 }
 .frame img {
   transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  object-position: var(--pos, center);
 }
 a:hover .frame img,
 .frame:hover img {
@@ -157,6 +222,7 @@ a:hover .frame img,
 .paint-hero__art {
   position: relative;
   min-height: 100%;
+  overflow: hidden;
 }
 .paint-hero__art img {
   position: absolute;
@@ -164,6 +230,18 @@ a:hover .frame img,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: var(--focus, center);
+  transform: scale(var(--zoom, 1));
+  transform-origin: var(--focus, center);
+}
+.paint-hero--short {
+  min-height: clamp(220px, 20vw, 280px);
+}
+.paint-hero--flip .paint-hero__art {
+  order: -1;
+}
+.paint-hero--flip {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
 }
 
 /* Masonry gallery */
@@ -303,6 +381,7 @@ a:hover .frame img,
   border-left: 3px solid var(--accent-solid-strong);
   padding: 2px 0 2px 14px;
   max-width: 44ch;
+  text-wrap: pretty;
 }
 
 /* Phone action bar */
@@ -316,6 +395,7 @@ a:hover .frame img,
   text-decoration: none;
   display: flex !important;
   height: 100%;
+  align-self: stretch;
 }
 .story-card__mark {
   font-family: var(--font-heading);
@@ -357,6 +437,44 @@ a:hover .frame img,
 .chip-row > * {
   flex: 0 0 auto;
 }
+@media (max-width: 600px) {
+  .chip-row {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+}
+
+/* Paint band pause control */
+.paint-band__toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+}
+.paint-band[data-paused="true"] .paint-band__track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+  .rail {
+    display: grid !important;
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    scroll-padding-inline: 24px;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .rail > * {
+    scroll-snap-align: start;
+  }
+}
 
 @media (max-width: 1100px) {
   .journey {
@@ -390,14 +508,32 @@ a:hover .frame img,
     grid-template-columns: 1fr;
     min-height: 0;
   }
-  .paint-hero__art {
+  .paint-hero__art,
+  .paint-hero--flip .paint-hero__art {
     order: -1;
     height: 140px;
     min-height: 0;
   }
+  .paint-hero--short {
+    min-height: 0;
+  }
+  .paint-hero--flip {
+    grid-template-columns: 1fr;
+  }
+  .donate-art {
+    margin-right: 0;
+    border-radius: 16px;
+    min-height: 200px;
+  }
+  .home-hero .mosaic {
+    order: -1;
+  }
+}
+
+@media (max-width: 1024px) {
   .action-bar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
     position: fixed;
     left: 0;
@@ -409,8 +545,15 @@ a:hover .frame img,
     backdrop-filter: blur(8px);
     border-top: 1px solid var(--neutral-alpha-medium);
   }
-  body {
-    padding-bottom: 76px;
+  .action-bar a {
+    min-width: 0 !important;
+    padding-inline: 8px !important;
+  }
+  body.p-0 {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+  }
+  html {
+    scroll-padding-bottom: 84px;
   }
   footer a {
     display: inline-flex;
@@ -477,5 +620,37 @@ a:hover .frame img,
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-actions > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 370px) {
+  .action-bar a svg {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .mosaic {
+    aspect-ratio: 16 / 11;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "a c";
+  }
+  .paint-rule {
+    height: 8px;
   }
 }

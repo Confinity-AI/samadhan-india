@@ -1,5 +1,6 @@
-import { Column, Grid, Text } from "@once-ui-system/core";
-import { Breadcrumb, EasyRead, PaintHero, Photo, Section } from "@/components/blocks";
+import { Column, Grid, Media, Text } from "@once-ui-system/core";
+import { DonateBand, EasyRead, PaintHero, Section } from "@/components/blocks";
+import { asset } from "@/content/assets";
 import { milestones } from "@/content/history";
 import { pageMeta } from "@/lib/meta";
 
@@ -9,15 +10,15 @@ export const metadata = pageMeta({
   path: "/about/history",
 });
 
-const photos = ["centre-dakshinpuri", "child-handprint-painting", "mothers-kitchen", "centre-dwarka", "boy-drawing-floor"];
+const photos = ["centre-dakshinpuri", "centre-dwarka", "boy-drawing-floor"];
 
 export default function History() {
   return (
     <>
-      <PaintHero art="art-trees" eyebrow="Our history" title="45 years in Delhi, 1981 to 2026" />
-      <Section paddingY="64">
-        <Breadcrumb items={[{ label: "About", href: "/about" }, { label: "Our history" }]} />
+      <PaintHero art="art-flowers" focus="25% 40%" zoom={1.8} flip crumbs={[{ label: "About", href: "/about" }, { label: "Our history" }]} eyebrow="Our history" title="45 years in Delhi, 1981 to 2026">
         <EasyRead>This is what happened at SAMADHAN, year by year.</EasyRead>
+      </PaintHero>
+      <Section paddingY="64">
         <Grid columns="2" m={{ columns: "1" }} gap="56">
           <ol className="timeline">
             {milestones.map((m) => (
@@ -33,13 +34,24 @@ export default function History() {
               </li>
             ))}
           </ol>
-          <Column gap="16" m={{ hide: true }}>
-            {photos.map((id) => (
-              <Photo key={id} id={id} sizes="560px" />
-            ))}
+          <Column as="figure" gap="12" margin="0" m={{ hide: true }} style={{ position: "sticky", top: 96, alignSelf: "start" }}>
+            <div className="mosaic">
+              {photos.map((id, i) => {
+                const a = asset(id);
+                return (
+                  <div key={id} className="frame">
+                    <Media src={a.src} alt={a.alt} fillWidth aspectRatio="auto" sizes={i === 0 ? "580px" : "290px"} style={{ height: "100%" }} />
+                  </div>
+                );
+              })}
+            </div>
+            <Text as="figcaption" variant="label-default-s" onBackground="neutral-weak">
+              The Dakshinpuri centre, opened in 1994. The Dwarka centre, completed in 2003. A child at home during the 2020 lockdown.
+            </Text>
           </Column>
         </Grid>
       </Section>
+      <DonateBand art="art-trees" />
     </>
   );
 }

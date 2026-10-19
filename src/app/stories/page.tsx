@@ -1,8 +1,9 @@
-import { Column, Grid, Heading, Media, SmartLink, Text } from "@once-ui-system/core";
+import { Column, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import { DonateBand, EasyRead, Eyebrow, PaintHero, Section } from "@/components/blocks";
 import { asset } from "@/content/assets";
 import { stories } from "@/content/stories";
 import { pageMeta } from "@/lib/meta";
+import { storyImage } from "./story-art";
 
 export const metadata = pageMeta({
   title: "Stories",
@@ -13,19 +14,22 @@ export const metadata = pageMeta({
 export default function Stories() {
   return (
     <>
-      <PaintHero art="art-fish" eyebrow="Stories" title="Mothers, in their own words" />
-      <Section paddingY="64">
+      <PaintHero art="art-fish" focus="35% 45%" eyebrow="Stories" title="Mothers, in their own words">
         <EasyRead>Mothers say what changed for their family.</EasyRead>
-        <Column gap="64">
+      </PaintHero>
+      <Section paddingY="64">
+        <Column gap="64" s={{ gap: "48" }}>
           {stories.map((s, i) => {
-            const a = asset(s.image);
+            const a = asset(storyImage(s));
             return (
               <SmartLink key={s.slug} href={`/stories/${s.slug}`} unstyled className="link-card">
-                <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
-                  <div className="frame" style={{ order: i % 2 ? 2 : 0 }}>
-                    <Media src={a.src} alt="" aspectRatio="3 / 2" sizes="(max-width: 900px) 100vw, 50vw" />
-                  </div>
-                  <Column gap="16">
+                <Row gap="48" vertical="center" direction={i % 2 ? "row-reverse" : "row"} m={{ direction: "column", horizontal: "start", gap: "20" }}>
+                  <Column flex={1} fillWidth>
+                    <div className={a.mono ? "frame frame--mono" : "frame"}>
+                      <Media src={a.src} alt="" aspectRatio="3 / 2" sizes="(max-width: 1024px) 100vw, 50vw" />
+                    </div>
+                  </Column>
+                  <Column flex={1} gap="16" fillWidth>
                     <Eyebrow>{s.programme.label}</Eyebrow>
                     <Text className="quote link-card__title" onBackground="brand-strong">
                       “{s.quote}”
@@ -34,7 +38,7 @@ export default function Stories() {
                       {s.person}, {s.role}
                     </Heading>
                   </Column>
-                </Grid>
+                </Row>
               </SmartLink>
             );
           })}
@@ -43,7 +47,7 @@ export default function Stories() {
           Children are named by first name only, as published in our annual report.
         </Text>
       </Section>
-      <DonateBand />
+      <DonateBand art="art-trees" />
     </>
   );
 }

@@ -9,9 +9,9 @@ export function CopyValue({ value, label }: { value: string; label: string }) {
     <IconButton
       icon={copied ? "copied" : "copy"}
       variant="tertiary"
-      size="s"
-      tooltip={copied ? "Copied" : `Copy ${label.toLowerCase()}`}
-      ariaLabel={`Copy ${label.toLowerCase()}`}
+      size="l"
+      tooltip={copied ? "Copied" : `Copy ${label}`}
+      ariaLabel={copied ? `${label} copied` : `Copy ${label}`}
       onClick={() => {
         navigator.clipboard?.writeText(value).then(() => {
           setCopied(true);

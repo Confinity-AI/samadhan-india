@@ -1,6 +1,6 @@
-import { Button, Column, Grid, Heading, Text } from "@once-ui-system/core";
-import { Photo, PhotoHero, Quote, Section } from "@/components/blocks";
-import { org } from "@/content/site";
+import { Button, Column, Grid, Heading, Row, Text } from "@once-ui-system/core";
+import { Photo, PhotoHero, Quote, Section, SectionTitle } from "@/components/blocks";
+import { org, whatsapp } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({
@@ -9,6 +9,9 @@ export const metadata = pageMeta({
     "Volunteer at SAMADHAN in Dakshinpuri or Dwarka, New Delhi: classroom help, therapy support, art and play, community work and professional skills.",
   path: "/get-involved/volunteer",
 });
+
+const emailLink = `mailto:${org.email}?subject=${encodeURIComponent("Volunteering at SAMADHAN")}`;
+const whatsappLink = `${whatsapp.base}?text=${encodeURIComponent("Hello, I would like to volunteer at SAMADHAN.")}`;
 
 const roles = [
   { title: "In the classroom", body: "Help teachers with the daily routine, or run an activity for a small group." },
@@ -27,6 +30,19 @@ const quotes = [
   { text: "Even though I worked with Samadhan for a very short period they made me feel welcomed and gave me the required exposure.", by: "Nikita, volunteer" },
 ];
 
+function Actions() {
+  return (
+    <Row gap="12" wrap>
+      <Button href={emailLink} size="l" prefixIcon="mail">
+        Email us to volunteer
+      </Button>
+      <Button href={whatsappLink} size="l" variant="secondary" prefixIcon="whatsapp">
+        WhatsApp us
+      </Button>
+    </Row>
+  );
+}
+
 export default function Volunteer() {
   return (
     <>
@@ -37,17 +53,13 @@ export default function Volunteer() {
         intro="Volunteering is unpaid. We may cover some costs of your work with us."
         easyRead="You can come and help at our centres. Tell us what you are good at."
         image="volunteer-writing"
-        actions={
-          <Button href={`mailto:${org.email}?subject=${encodeURIComponent("Volunteering at SAMADHAN")}`} size="l" prefixIcon="mail">
-            Email us to volunteer
-          </Button>
-        }
+        actions={<Actions />}
       />
       <Section tone="surface" label="Ways to volunteer">
         <Heading as="h2" variant="display-strong-s">Ways to volunteer</Heading>
-        <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="24">
+        <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="16">
           {roles.map((r) => (
-            <Column key={r.title} gap="8" paddingTop="16" borderTop="accent-alpha-strong">
+            <Column key={r.title} gap="8" padding="24" radius="l" background="page">
               <Text variant="heading-strong-l">{r.title}</Text>
               <Text variant="body-default-m" onBackground="neutral-weak">{r.body}</Text>
             </Column>
@@ -62,9 +74,15 @@ export default function Volunteer() {
           ))}
         </Grid>
         <Grid columns="3" s={{ columns: "1" }} gap="12">
-          <Photo id="vocational-diyas" ratio="4 / 3" />
-          <Photo id="diwali-rangoli" ratio="4 / 3" />
-          <Photo id="child-swing" ratio="4 / 3" />
+          <Photo id="vocational-diyas" ratio="4 / 3" sizes="(max-width: 768px) 100vw, 400px" />
+          <Photo id="diwali-rangoli" ratio="4 / 3" sizes="(max-width: 768px) 100vw, 400px" />
+          <Photo id="children-play-garden" ratio="4 / 3" sizes="(max-width: 768px) 100vw, 400px" />
+        </Grid>
+      </Section>
+      <Section tone="surface" label="Get in touch">
+        <Grid columns="2" m={{ columns: "1" }} gap="32" style={{ alignItems: "center" }}>
+          <SectionTitle title="Tell us how you would like to help" intro="Say which centre suits you, when you are free and what you are good at." />
+          <Actions />
         </Grid>
       </Section>
     </>

@@ -10,6 +10,7 @@ export type Asset = {
   alt: string;
   caption: string;
   gallery?: false;
+  mono?: true;
 };
 
 const list: Asset[] = [
@@ -18,12 +19,12 @@ const list: Asset[] = [
   { id: "art-strokes", width: 1192, height: 495, theme: "art", alt: "Bold pink, green and brown brushstrokes on yellow, painted by a child", caption: "Brushstrokes, painted at SAMADHAN" },
   { id: "art-trees", width: 1191, height: 714, theme: "art", alt: "A child's painting of red trees on a bright green and yellow field", caption: "Trees, painted at SAMADHAN" },
   { id: "children-play-garden", width: 960, height: 737, theme: "children", alt: "Children playing on a green lawn, one girl raising her arm", caption: "Playtime on the lawn" },
-  { id: "therapy-one-to-one", width: 1172, height: 978, theme: "children", alt: "A therapist and a child working together at a table outdoors", caption: "One-to-one therapy" },
-  { id: "child-handprint-painting", width: 860, height: 1154, theme: "children", alt: "A small boy beside a sketchbook of painted handprints, opening pots of paint", caption: "Handprints become elephants" },
+  { id: "therapy-one-to-one", width: 1172, height: 978, theme: "children", alt: "A therapist and a child working together at a table outdoors", caption: "One-to-one therapy", mono: true },
+  { id: "child-handprint-painting", width: 860, height: 1154, theme: "children", alt: "A small boy beside a sketchbook of painted handprints, opening pots of paint", caption: "Handprints become elephants", mono: true },
   { id: "girl-early-intervention", width: 415, height: 618, theme: "children", alt: "A young girl looking to the side, with a woman sitting behind her", caption: "Early intervention at SAMADHAN" },
   { id: "boy-drawing-floor", width: 463, height: 618, theme: "children", alt: "A smiling boy kneeling on a bright patterned bedsheet, tracing the pattern with his finger", caption: "At home during lockdown" },
   { id: "child-standing-frame", width: 376, height: 618, theme: "children", alt: "A child supported in a wooden standing frame", caption: "A standing frame for daily practice" },
-  { id: "child-swing", width: 494, height: 709, theme: "children", alt: "A boy sitting on outdoor exercise equipment in a garden", caption: "Exercise in the garden" },
+  { id: "child-swing", width: 494, height: 709, theme: "children", alt: "A boy sitting on outdoor exercise equipment in a garden", caption: "Exercise in the garden", mono: true },
   { id: "child-drawing-umbrella", width: 341, height: 554, theme: "children", alt: "A child's drawing of an umbrella and a potted plant", caption: "An umbrella and a plant" },
   { id: "child-writing", width: 346, height: 554, theme: "children", alt: "A boy bent over a worksheet, writing carefully", caption: "Writing practice" },
   { id: "volunteer-writing", width: 432, height: 460, theme: "children", alt: "A boy writing at a purple table while a smiling volunteer holds a camera", caption: "Writing with a volunteer" },

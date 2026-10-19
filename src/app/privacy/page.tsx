@@ -1,4 +1,4 @@
-import { Column, Heading, Text } from "@once-ui-system/core";
+import { Column, Heading, SmartLink, Text } from "@once-ui-system/core";
 import { Section } from "@/components/blocks";
 import { org } from "@/content/site";
 import { pageMeta } from "@/lib/meta";
@@ -28,7 +28,9 @@ export default function Privacy() {
             <Text variant="body-default-l" onBackground="neutral-medium">{s.body}</Text>
           </Column>
         ))}
-        <Text variant="body-default-m" onBackground="neutral-weak">Questions: {org.email}</Text>
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          Questions: <SmartLink href={`mailto:${org.email}`}>{org.email}</SmartLink>
+        </Text>
       </Column>
     </Section>
   );

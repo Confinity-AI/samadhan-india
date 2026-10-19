@@ -1,6 +1,7 @@
 import { Button, Column, Grid, Heading, Media, Row, SmartLink, Text } from "@once-ui-system/core";
 import type { ReactNode } from "react";
-import { artworks, asset } from "@/content/assets";
+import { asset } from "@/content/assets";
+export { PaintBand } from "./PaintBand";
 import { centres, registrations, whatsapp } from "@/content/site";
 
 type Tone = "page" | "surface" | "brand";
@@ -29,10 +30,10 @@ export function Section({
       horizontal="center"
       paddingX="24"
       paddingY={paddingY}
+      m={{ paddingY: paddingY === "104" ? "80" : paddingY }}
+      s={{ paddingY: paddingY === "40" ? "40" : "48" }}
       background={tone === "brand" ? "brand-strong" : tone === "surface" ? "surface" : "page"}
       theme={tone === "brand" ? "dark" : undefined}
-      borderTop={tone === "surface" ? true : undefined}
-      borderBottom={tone === "surface" ? true : undefined}
     >
       <Column maxWidth={width} gap="40">
         {children}
@@ -96,7 +97,7 @@ export function Photo({
   const a = asset(id);
   return (
     <Column as="figure" gap="8" margin="0" fillWidth style={cap ? { maxWidth: a.width } : undefined}>
-      <div className="frame">
+      <div className={a.mono ? "frame frame--mono" : "frame"}>
         <Media src={a.src} alt={a.alt} aspectRatio={ratio ?? a.ratio} sizes={sizes} priority={priority} />
       </div>
       {caption && (
@@ -108,20 +109,6 @@ export function Photo({
   );
 }
 
-export function PaintBand() {
-  const loop = [...artworks, ...artworks];
-  return (
-    <div className="paint-band" role="img" aria-label="A strip of children's paintings made at SAMADHAN: fish, flowers, brushstrokes and trees">
-      <div className="paint-band__track">
-        {loop.map((a, i) => (
-          // biome-ignore lint/performance/noImgElement: decorative strip, natural width
-          <img key={`${a.id}-${i}`} src={a.src} alt="" width={a.width} height={a.height} loading="lazy" />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function PaintHero({
   art,
   eyebrow,
@@ -129,6 +116,10 @@ export function PaintHero({
   intro,
   children,
   lang,
+  focus,
+  zoom,
+  flip,
+  crumbs,
 }: {
   art: string;
   eyebrow?: string;
@@ -136,13 +127,22 @@ export function PaintHero({
   intro?: ReactNode;
   children?: ReactNode;
   lang?: "hi";
+  /** CSS object-position for the painting, e.g. "20% 40%" */
+  focus?: string;
+  /** Scale the painting to show a detail, e.g. 1.6 */
+  zoom?: number;
+  flip?: boolean;
+  crumbs?: { label: string; href?: string }[];
 }) {
   const a = asset(art);
+  const short = !intro && !children;
+  const cls = ["paint-hero", short && "paint-hero--short", flip && "paint-hero--flip"].filter(Boolean).join(" ");
   return (
     <Column fillWidth horizontal="center" paddingX="24" paddingTop="24">
-      <Column maxWidth="xl">
-        <div className="paint-hero">
-          <Column theme="dark" padding="48" m={{ padding: "32" }} s={{ padding: "24" }} gap="16" vertical="end">
+      <Column maxWidth="xl" gap="16">
+        {crumbs && <Breadcrumb items={crumbs} />}
+        <div className={cls} style={{ ["--focus" as string]: focus, ["--zoom" as string]: zoom }}>
+          <Column theme="dark" padding="48" m={{ padding: "32" }} s={{ padding: "24" }} gap="16" vertical={short ? "center" : "end"}>
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
             <Heading as="h1" variant="display-strong-l" onBackground="neutral-strong" lang={lang}>
               {title}
@@ -192,19 +192,23 @@ export function Stat({ value, label }: { value: string; label: string }) {
 
 export function TrustBar() {
   return (
-    <Grid columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="16">
+    <Grid as="dl" columns="3" m={{ columns: "2" }} s={{ columns: "1" }} gap="0" style={{ columnGap: 32, margin: 0 }}>
       {registrations.map((r) => (
-        <Column key={r.label} gap="4" padding="20" radius="l" border background="surface">
-          <Text variant="label-default-s" onBackground="neutral-weak">
+        <Column key={r.label} gap="4" paddingY="16" borderTop>
+          <Text as="dt" variant="label-default-s" onBackground="neutral-weak">
             {r.label}
           </Text>
-          <Text variant="heading-strong-s" className="tabular">
+          <Text as="dd" variant="heading-strong-s" className="tabular" style={{ margin: 0 }}>
             {r.value}
           </Text>
         </Column>
       ))}
     </Grid>
   );
+}
+
+export function PaintRule({ art = "art-strokes", position = "center" }: { art?: string; position?: string }) {
+  return <div className="paint-rule" aria-hidden style={{ backgroundImage: `url(${asset(art).src})`, backgroundPosition: position }} />;
 }
 
 export function ContactButtons({ lang }: { lang?: "hi" }) {
@@ -228,7 +232,7 @@ export function LinkCard({ href, title, body, image, ratio = "4 / 3" }: { href: 
   return (
     <SmartLink href={href} unstyled className="link-card">
       <Column gap="12">
-        <div className="frame">
+        <div className={a.mono ? "frame frame--mono" : "frame"}>
           <Media src={a.src} alt="" aspectRatio={ratio} sizes="(max-width: 900px) 100vw, 33vw" />
         </div>
         <Column gap="4">
@@ -313,11 +317,11 @@ export function PhotoHero({
   );
 }
 
-export function DonateBand({ art = "art-trees" }: { art?: string }) {
+export function DonateBand({ art = "art-trees", focus }: { art?: string; focus?: string }) {
   const painting = asset(art);
   return (
     <Section tone="brand" label="Donate">
-      <Grid columns="2" m={{ columns: "1" }} gap="40" style={{ alignItems: "center" }}>
+      <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
         <Column gap="16">
           <Heading as="h2" variant="display-strong-m" onBackground="neutral-strong">
             Keep a child in therapy this year
@@ -334,18 +338,19 @@ export function DonateBand({ art = "art-trees" }: { art?: string }) {
             </Button>
           </Row>
         </Column>
-        <div className="frame">
-          <Media src={painting.src} alt={painting.alt} aspectRatio="16 / 9" sizes="(max-width: 900px) 100vw, 50vw" />
+        <div className="donate-art">
+          {/* biome-ignore lint/performance/noImgElement: decorative painting, full bleed */}
+          <img src={painting.src} alt={painting.alt} width={painting.width} height={painting.height} loading="lazy" style={focus ? { objectPosition: focus } : undefined} />
         </div>
       </Grid>
     </Section>
   );
 }
 
-export function StoryCard({ href, quote, by }: { href: string; quote: string; by: string }) {
+export function StoryCard({ href, quote, by, background = "surface" }: { href: string; quote: string; by: string; background?: "surface" | "page" }) {
   return (
     <SmartLink href={href} unstyled className="story-card">
-      <Column gap="20" padding="32" s={{ padding: "24" }} radius="l" background="surface" border fillWidth>
+      <Column gap="20" padding="32" s={{ padding: "24" }} radius="l" background={background} fillWidth>
         <span className="story-card__mark" aria-hidden>
           “
         </span>
