@@ -14,7 +14,7 @@ const projects = [
   { href: "/our-work/early-intervention", image: "girl-early-intervention", title: "Early intervention", body: "Assessment and home programmes for babies and pre-school children." },
   { href: "/our-work/therapy", image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
   { href: "/our-work/special-education", image: "child-writing", title: "A classroom for a year", body: "A teacher and materials for five children, for one year." },
-  { href: "/our-work/mothers", image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training, equipment and help with selling." },
+  { href: "/our-work/mothers", image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training for the spice, Nutri-mix and papier-m�ch� units." },
   { href: "/our-work/community", image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
   { href: "/our-work/special-education", image: "vocational-gardening", title: "Pre-vocational unit", body: "Skills for teenagers aged 12 to 16." },
 ];
@@ -111,7 +111,7 @@ export default function Partner() {
         </Grid>
       </Section>
       <Section label="Talk to us">
-        <SectionTitle align="center" title="Fund a programme" intro="Tell us what you would like to support. We can share our annual reports and arrange a visit to either centre." />
+        <SectionTitle align="center" title="Tell us what you would like to fund" intro="We can send our annual reports and arrange a visit to either centre." />
         <Row horizontal="center">
           <FundingActions />
         </Row>

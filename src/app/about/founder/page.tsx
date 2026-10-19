@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 
 const training = [
   "MA in English Literature and Semantics, Bangalore University",
-  "Trained in drama therapy with Dr Sue Jennings, a founder of dramatherapy in the UK",
+  "Trained in drama therapy with Dr Sue Jennings, a founder of drama therapy in the UK",
   "Hands-on training in Germany, sponsored by Lebenshilfe, before she started SAMADHAN",
   "Has presented papers at more than 20 international conferences",
   "Member of the National Trust's Local Level Committee for guardianship in Delhi",
@@ -21,7 +21,7 @@ const training = [
 const facts = [
   { year: "1981", text: "Founds SAMADHAN in New Delhi." },
   { year: "1993", text: "President of the YWCA of Delhi, 1993 to 1994." },
-  { year: "1998", text: "Inclusion International gives SAMADHAN its Award of Recognition at its World Congress in The Hague." },
+  { year: "1998", text: "Inclusion International gives SAMADHAN its Award of Recognition in The Hague." },
   { year: "2005", text: "Dr Kiran Bedi releases Sunny's Story." },
   { year: "2011", text: "Receives the Hind Prabha award from the Uttar Pradeshiya Mahila Manch." },
 ];

@@ -21,7 +21,7 @@ const roles = [
   { title: "In the community", body: "Help at health camps, events, conferences and art exhibitions." },
   { title: "Research and training", body: "Support our research, workshops and training programmes." },
   { title: "Professional skills", body: "Advise us on HR, marketing, finance, logistics or our online presence." },
-  { title: "Proposals and stories", body: "Write grant proposals, or interview parents and staff for stories." },
+  { title: "Proposals and stories", body: "Write grant proposals, or stories about our work." },
   { title: "Fundraising", body: "Hold a fundraising event, or introduce us at your workplace." },
 ];
 

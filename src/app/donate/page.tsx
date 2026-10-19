@@ -55,7 +55,7 @@ function Details({ rows }: { rows: DetailRow[] }) {
 }
 
 const uses = [
-  { image: "children-play-garden", title: "Therapy", body: "Speech, movement and play therapy." },
+  { image: "children-play-garden", title: "Therapy", body: "Speech, occupational and creative therapies." },
   { image: "child-standing-frame", title: "Devices", body: "Standing frames and orthotic devices." },
   { image: "child-writing", title: "School", body: "Teachers and materials for small classes." },
   { image: "mothers-counselling", title: "Mothers", body: "Counselling and training for mothers." },
@@ -94,7 +94,7 @@ export default function Donate() {
             </Heading>
             <Details rows={india} />
             <Text variant="body-default-s" onBackground="neutral-weak">
-              After you give, email us your name, PAN, address and the transfer reference. We will send your 80G receipt. You can also post a cheque made out to SAMADHAN to our Dwarka office.
+              After you give, email us your name, PAN, address and the transfer reference. We will send your 80G receipt. You can also post a cheque made out to SAMADHAN to our Dwarka centre.
             </Text>
             <Button href={`mailto:${org.email}?subject=${encodeURIComponent("80G receipt for my donation")}`} variant="secondary" prefixIcon="mail">
               Email for your 80G receipt

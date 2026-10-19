@@ -324,7 +324,7 @@ export function DonateBand({ art = "art-trees", focus }: { art?: string; focus?:
       <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
         <Column gap="16">
           <Heading as="h2" variant="display-strong-m" onBackground="neutral-strong">
-            Keep a child in therapy this year
+            Help pay for a child's therapy and school
           </Heading>
           <Text variant="body-default-xl" onBackground="neutral-medium">
             If you pay tax in India, you can claim a deduction under section 80G. Donors abroad can give through our FCRA account.

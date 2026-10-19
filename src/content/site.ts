@@ -160,7 +160,7 @@ export const yearInNumbers = {
   items: [
     { value: "44", label: "children in early intervention" },
     { value: "22", label: "children in special education" },
-    { value: "6", label: "moved into mainstream schools" },
+    { value: "6", label: "moved on to regular schools" },
     { value: "35", label: "enrolled in Niramaya health cover" },
     { value: "15", label: "given orthotic or prosthetic devices" },
     { value: "50 kg", label: "of Nutri-mix made by the mothers' group" },

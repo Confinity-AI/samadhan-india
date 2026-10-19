@@ -9,8 +9,8 @@ import { pageMeta } from "@/lib/meta";
 const orderLink = `${whatsapp.base}?text=${encodeURIComponent("Hello, I would like to order from the SAMADHAN mothers' group.")}`;
 
 const products = [
-  { image: "laddoo-boxes", title: "Laddoos", body: "Nutritious laddoos, evaluated by the Nutrition Foundation of India. Boxed for Diwali and office gifts." },
-  { image: "mothers-kitchen", title: "Spices and Nutri-mix", body: "Samadhan Spices and Nutri-mix, made by the mothers at our Dwarka centre." },
+  { image: "laddoo-boxes", title: "Laddoos", body: "Laddoos made and packed by the mothers' group." },
+  { image: "mothers-kitchen", title: "Spices and Nutri-mix", body: "SAMADHAN Spices from the mothers at our Dwarka centre, and Nutri-mix made by the group." },
   { image: "papier-mache-birds", title: "Papier-mâché", body: "Painted birds and decorations, made by hand." },
 ];
 
@@ -99,7 +99,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
             ))}
           </Grid>
           <Text variant="body-default-s" onBackground="neutral-weak">
-            Companies can order in bulk. For Diwali 2016, one company ordered 250 boxes of laddoos.
+            Companies can order in bulk. Message us early for Diwali.
           </Text>
         </Section>
       )}
@@ -129,10 +129,10 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
             </Grid>
           ) : gallery.length === 2 ? (
             <Grid columns="2" m={{ columns: "1" }} gap="48" style={{ alignItems: "center" }}>
-              <SectionTitle title="In pictures" />
+              <SectionTitle title="In pictures" intro={`${gallery.map((id) => asset(id).caption).join(". ")}.`} />
               <Grid columns="2" gap="12">
                 {gallery.map((id) => (
-                  <Photo key={id} id={id} ratio="3 / 4" sizes="(max-width: 1024px) 50vw, 290px" />
+                  <Photo key={id} id={id} ratio="3 / 4" caption={false} sizes="(max-width: 1024px) 50vw, 290px" />
                 ))}
               </Grid>
             </Grid>

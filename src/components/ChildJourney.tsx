@@ -12,7 +12,7 @@ const steps = [
   },
   {
     label: "Assess",
-    title: "Doctors and therapists meet the child",
+    title: "A doctor and therapists meet the child",
     body: "A paediatrician, therapists and a psychologist see how the child moves, speaks and learns.",
     image: "therapy-one-to-one",
     href: "/our-work/therapy",

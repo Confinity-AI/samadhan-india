@@ -14,7 +14,7 @@ export const metadata = pageMeta({
 export default function OurWork() {
   return (
     <>
-      <PaintHero art="art-strokes" focus="30% 50%" eyebrow="Our work" title="Our five programmes" intro="From the first months of life to the teenage years, with support for mothers too.">
+      <PaintHero art="art-strokes" focus="30% 50%" eyebrow="Our work" title="Our five programmes" intro="Special education is at Dakshinpuri. Everything else runs at both centres.">
         <EasyRead>We help children from birth to age 16. We help their mothers too.</EasyRead>
       </PaintHero>
       <Section paddingY="64">

@@ -390,10 +390,18 @@ a:hover .frame img,
 }
 
 /* Quote-led story cards */
+@media (min-width: 901px) {
+  .sticky-col {
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+  }
+}
+
 .story-card {
   color: inherit;
   text-decoration: none;
   display: flex !important;
+  align-items: stretch !important;
   height: 100%;
   align-self: stretch;
 }
@@ -555,7 +563,8 @@ a:hover .frame img,
   html {
     scroll-padding-bottom: 84px;
   }
-  footer a {
+  footer a,
+  footer .footer-heading {
     display: inline-flex;
     min-height: 40px;
     align-items: center;

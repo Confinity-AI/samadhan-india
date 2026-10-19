@@ -47,10 +47,10 @@ export const programmes: Programme[] = [
   {
     slug: "therapy",
     title: "Therapy",
-    kicker: "Ages 0 to 16",
+    kicker: "Movement, speech and creative therapy",
     short: "Speech, movement and creative therapies at both centres.",
     metaDescription:
-      "Occupational therapy, speech therapy, psychology and drama therapy for children with intellectual disabilities at SAMADHAN's Delhi clinics.",
+      "Occupational therapy, speech therapy, psychology and drama therapy for children with intellectual disabilities at SAMADHAN's two centres in Delhi.",
     easyRead: "Our therapists help children move, speak and play. Drama, music and art are part of therapy too.",
     hero: "therapy-one-to-one",
     thumb: "child-standing-frame",
@@ -63,7 +63,7 @@ export const programmes: Programme[] = [
       { title: "Creative therapies", body: "Drama, music, art and creative movement." },
     ],
     facts: [
-      { value: "15", label: "children given orthotic or prosthetic devices, 2020-21" },
+      { value: "15", label: "children given braces, splints or artificial limbs, 2020-21" },
       { value: "35", label: "children enrolled in Niramaya health cover, 2020-21" },
     ],
     gallery: ["child-handprint-painting", "child-swing"],
@@ -75,7 +75,7 @@ export const programmes: Programme[] = [
   {
     slug: "special-education",
     title: "Special education",
-    kicker: "Ages 6 to 14",
+    kicker: "Our school at Dakshinpuri",
     short: "Small classes with a plan for each child. Some children move on to a regular school.",
     metaDescription:
       "Special education for children aged 6 to 14 with intellectual disabilities: small classes, individual plans and a pre-vocational unit in New Delhi.",
@@ -87,18 +87,18 @@ export const programmes: Programme[] = [
       { title: "Small classes", body: "About one teacher for every five children." },
       { title: "A plan for each child", body: "Teachers write a learning plan for each child." },
       { title: "Moving to a regular school", body: "When a child is ready, we help them join a regular school nearby." },
-      { title: "Pre-vocational unit", body: "Block printing, card making, bookbinding, gardening and housekeeping for ages 12 to 16." },
+      { title: "Pre-vocational unit", body: "Work skills for ages 12 to 16: block printing, card making, bookbinding, gardening and housekeeping." },
     ],
     facts: [
       { value: "22", label: "children in special education, 2020-21" },
-      { value: "6", label: "moved into mainstream schools, 2020-21" },
+      { value: "6", label: "moved on to regular schools, 2020-21" },
     ],
     gallery: ["volunteer-writing", "vocational-pot-painting", "vocational-gardening", "vocational-diyas"],
   },
   {
     slug: "mothers",
     title: "Support for mothers",
-    kicker: "For mothers",
+    kicker: "The mothers' group",
     short: "Counselling for mothers, and food and craft units that earn an income.",
     metaDescription:
       "SAMADHAN's mothers' group: counselling, training and income from laddoos, spices, Nutri-mix and papier-mâché in New Delhi.",
@@ -108,12 +108,12 @@ export const programmes: Programme[] = [
     steps: [
       { title: "Support circles", body: "Counselling and time with other mothers who understand." },
       { title: "Training", body: "Training for the food and craft units." },
-      { title: "Income units", body: "Nutritious laddoos, SAMADHAN Spices, Nutri-mix and papier-mâché, made by the mothers." },
+      { title: "Food and crafts to sell", body: "Nutritious laddoos, SAMADHAN Spices, Nutri-mix and papier-mâché, made by the mothers." },
       { title: "Garden project", body: "Started in 2020." },
     ],
     facts: [
       { value: "50 kg", label: "of Nutri-mix made by the group in 2020" },
-      { value: "2000", label: "the year the mothers' income units started" },
+      { value: "2000", label: "the year mothers started earning through SAMADHAN" },
     ],
     gallery: ["diwali-rangoli", "mothers-garden-harvest", "friends-gifts"],
     quote: {
@@ -138,7 +138,7 @@ export const programmes: Programme[] = [
       { title: "Training local women", body: "Women from the neighbourhood train as community workers." },
     ],
     facts: [
-      { value: "1998", label: "community-based rehabilitation began" },
+      { value: "1998", label: "we began working in homes and neighbourhoods (community-based rehabilitation)" },
       { value: "300,000+", label: "people live in Dakshinpuri, where our first centre is (2020-21 annual report)" },
     ],
     gallery: ["legal-awareness", "centre-dakshinpuri", "centre-dwarka"],

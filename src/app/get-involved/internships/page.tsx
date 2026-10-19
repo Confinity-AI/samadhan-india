@@ -57,7 +57,7 @@ export default function Internships() {
         crumbs={[{ label: "Get involved", href: "/get-involved" }, { label: "Internships" }]}
         eyebrow="Internships"
         title="Train with our therapists and teachers"
-        intro="For students and working professionals. Internships are unpaid and dates are flexible."
+        intro="For students. Internships are unpaid and dates are flexible."
         easyRead="Students can come and learn with our therapists and teachers."
         image="parents-workshop"
         actions={<Actions />}
@@ -73,7 +73,7 @@ export default function Internships() {
           <Column gap="40">
             <Grid columns="2" gap="32">
               <Stat value="4 weeks" label="a typical placement" />
-              <Stat value="120 hours" label="the usual placement for university credit" />
+              <Stat value="120 hours" label="counts for 4 university credits" />
             </Grid>
             <Quote text="I had the opportunity to work in all of the departments." by="Simran, psychology intern" />
           </Column>

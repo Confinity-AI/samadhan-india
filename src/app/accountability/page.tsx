@@ -27,7 +27,7 @@ const reports = [
 const documents = [
   { title: "Using ICT for inclusive education in India", detail: "National workshop report, February 2015", href: "/reports/samadhan-ict-workshop-report.pdf", size: "3 MB" },
   { title: "AFID 2013 India conference", detail: "Conference report, 2013", href: "/reports/samadhan-afid-2013-report.pdf", size: "1 MB" },
-  { title: "SAMADHAN brochure", detail: "Who we are and what we do", href: "/reports/samadhan-brochure.pdf", size: "496 KB" },
+  { title: "SAMADHAN brochure", detail: "One-page overview", href: "/reports/samadhan-brochure.pdf", size: "496 KB" },
 ];
 
 const memberships = [

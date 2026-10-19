@@ -22,8 +22,13 @@ export function Footer() {
             <Column gap="16" className="footer-brand">
               <Brand light />
               <Text variant="body-default-s" onBackground="neutral-medium">
-                Therapy and school for children with intellectual disabilities in Dakshinpuri and Dwarka, New Delhi.
+                Help for children who learn slowly, and for their mothers, in Dakshinpuri and Dwarka.
               </Text>
+              <SmartLink href={`mailto:${org.email}`}>
+                <Text variant="body-default-s" onBackground="neutral-strong">
+                  {org.email}
+                </Text>
+              </SmartLink>
               <Row gap="8">
                 <IconButton icon="whatsapp" variant="secondary" href={whatsapp.href} ariaLabel="WhatsApp" />
                 <IconButton icon="facebook" variant="secondary" href={org.social.facebook} ariaLabel="Facebook" />
@@ -50,7 +55,7 @@ export function Footer() {
                 </Column>
               ))}
             <Column gap="8">
-              <Text variant="label-strong-m" onBackground="neutral-strong">
+              <Text variant="label-strong-m" onBackground="neutral-strong" className="footer-heading">
                 More
               </Text>
               {more.map((l) => (
@@ -60,11 +65,6 @@ export function Footer() {
                   </Text>
                 </SmartLink>
               ))}
-              <SmartLink href={`mailto:${org.email}`}>
-                <Text variant="body-default-s" onBackground="neutral-medium" style={{ overflowWrap: "anywhere" }}>
-                  {org.email}
-                </Text>
-              </SmartLink>
             </Column>
           </Grid>
           <Grid columns="2" s={{ columns: "1" }} gap="32">

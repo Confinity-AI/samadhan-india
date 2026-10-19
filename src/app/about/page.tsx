@@ -19,7 +19,7 @@ export default function About() {
       <Section paddingY="64">
         <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
           <Column gap="24">
-            <SectionTitle eyebrow="Our mission" title="Help close to home" />
+            <SectionTitle eyebrow="Our mission" title="Help close to home" intro="Therapy and school in the neighbourhoods where families live, with local people trained to help. Our mission statement says:" />
             <Text variant="body-default-xl" onBackground="neutral-medium">
               To establish an infrastructure of accessible service for persons with intellectual disability living in low socio-economic areas and primarily for infants and pre-school children, using as far as possible human resources available within the target communities with active community participation leading towards an inclusive society.
             </Text>
@@ -61,7 +61,7 @@ export default function About() {
       <Section label="More about us">
         <Heading as="h2" variant="display-strong-s">More about us</Heading>
         <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24" className="rail">
-          <LinkCard href="/about/history" image="art-trees" title="Our history" body="45 years, 1981 to today." />
+          <LinkCard href="/about/history" image="art-trees" title="Our history" body="From one classroom in 1983 to two centres." />
           <LinkCard href="/about/founder" image="art-strokes" title="Our founder" body="Prameela Balasundaram." />
           <LinkCard href="/about/people" image="diwali-rangoli" title="Our people" body="Board, team and therapists." />
           <LinkCard href="/accountability" image="legal-awareness" title="Accountability" body="Registrations and reports." />

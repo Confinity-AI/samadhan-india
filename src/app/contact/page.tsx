@@ -51,9 +51,9 @@ export default function Contact() {
           ))}
         </Grid>
       </Section>
-      <Section tone="surface" paddingY="40" label="Before you visit">
+      <Section tone="surface" paddingY="40" label="Visiting, giving or volunteering">
         <Row gap="24" vertical="center" wrap s={{ direction: "column", horizontal: "start", gap: "12" }}>
-          <Heading as="h2" variant="heading-strong-l">Before you visit</Heading>
+          <Heading as="h2" variant="heading-strong-l">Visiting, giving or volunteering</Heading>
           <SmartLink href="/families" suffixIcon="arrowRight">What to bring and what it costs</SmartLink>
           <SmartLink href="/donate" suffixIcon="arrowRight">Donate</SmartLink>
           <SmartLink href="/get-involved/volunteer" suffixIcon="arrowRight">Volunteer with us</SmartLink>

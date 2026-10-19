@@ -82,7 +82,7 @@ export default function Home() {
       <Column fillWidth horizontal="center" paddingX="24" paddingBottom="64">
         <Grid maxWidth="xl" columns="4" m={{ columns: "2" }} gap="32">
           <Stat value="45" label="years in Delhi" />
-          <Stat value="50,000+" label="families reached since 1981, according to our founder" />
+          <Stat value="50,000+" label="families reached since 1981, by our founder's count" />
           <Stat value="2" label="centres, in Dakshinpuri and Dwarka" />
           <Stat value="0–16" label="the ages we work with" />
         </Grid>
@@ -127,8 +127,8 @@ export default function Home() {
 
       {/* Mothers */}
       <Section label="Mothers">
-        <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "center" }}>
-          <Column gap="24">
+        <Grid columns="2" m={{ columns: "1" }} gap="56" style={{ alignItems: "start" }}>
+          <Column gap="24" className="sticky-col">
             <SectionTitle
               eyebrow="Mothers"
               title="Support and income for mothers"
