@@ -60,13 +60,13 @@ export const programmes: Programme[] = [
       { title: "Occupational therapy", body: "Movement, balance and everyday skills like eating and dressing." },
       { title: "Speech therapy", body: "Words, signs and other ways for a child to be understood." },
       { title: "Psychology", body: "Assessments and counselling for parents." },
-      { title: "Creative therapies", body: "Drama, music, art and creative movement. Our drama therapy began as THE A.R.T.S: art, recreation, therapy and song, adapted to Indian culture." },
+      { title: "Creative therapies", body: "Drama, music, art and creative movement. Drama therapy is its own programme." },
     ],
     facts: [
       { value: "15", label: "children given braces, splints or artificial limbs, 2020-21" },
       { value: "35", label: "children enrolled in Niramaya health cover, 2020-21" },
     ],
-    gallery: ["child-handprint-painting", "child-swing"],
+    gallery: ["child-swing"],
     quote: {
       text: "Even during the lockdown, the teachers from SAMADHAN took online classes and we also got assistive devices for Prince for home-use.",
       by: "Hema, Prince's mother",
@@ -141,7 +141,51 @@ export const programmes: Programme[] = [
       { value: "1998", label: "we began working in homes and neighbourhoods (community-based rehabilitation)" },
       { value: "300,000+", label: "people live in Dakshinpuri, where our first centre is (2020-21 annual report)" },
     ],
-    gallery: ["legal-awareness", "centre-dakshinpuri", "centre-dwarka"],
+    gallery: ["centre-dakshinpuri", "centre-dwarka"],
+  },
+  {
+    slug: "drama-therapy",
+    title: "Drama therapy",
+    kicker: "Art, play and song",
+    short: "Drama, stories, music and movement, used as therapy in the classroom.",
+    metaDescription:
+      "SAMADHAN's drama therapy programme: creative drama, stories, music and movement for children and adults with intellectual disabilities in New Delhi.",
+    easyRead: "Children act, sing and play. This is part of their therapy.",
+    hero: "child-handprint-painting",
+    thumb: "child-drawing-umbrella",
+    ages: "School age, and adults",
+    where: "Both centres",
+    steps: [
+      { title: "In the classroom", body: "Creative drama, story dramatization and play, with the children making up the words and the action." },
+      { title: "Everyday problems", body: "Work on confidence, self-esteem and problems such as bullying, for school-going children and for adults." },
+      { title: "An Indian form", body: "The approach was adapted to Indian culture, with music, rhythm, movement, song and dance." },
+      { title: "How it began", body: "It started as THE A.R.T.S, a Saturday programme of art, recreation, therapy and song for teenagers, then developed with the British Institute of Drama Therapists." },
+    ],
+    facts: [
+      { value: "1992", label: "SAMADHAN's first national drama therapy workshop" },
+    ],
+    gallery: ["child-drawing-umbrella", "vocational-diyas"],
+  },
+  {
+    slug: "communication-network",
+    title: "Communication network on disability",
+    kicker: "A new programme",
+    short: "Collecting and sharing information on intellectual disability in India.",
+    metaDescription:
+      "SAMADHAN's communication network on disability: a new programme compiling information on intellectual disability in India, and sharing it with families.",
+    easyRead: "We collect information about intellectual disability in India, so families can find the right help.",
+    hero: "legal-awareness",
+    where: "Online, from our Delhi centres",
+    steps: [
+      { title: "What it is for", body: "An online place for information on intellectual disability: events, research, shared concerns, and where to go for help." },
+      { title: "Where it stands", body: "This is a new programme. So far we are compiling information on intellectual disability in India. There is still no single national source for this." },
+      { title: "Who we can reach", body: "SAMADHAN is a member of Inclusion International and of the Asian Federation on Intellectual Disabilities, so we can share local, national and international information." },
+    ],
+    facts: [
+      { value: "1988", label: "first member from India of Inclusion International" },
+      { value: "2011", label: "elected President of the Asian Federation on Intellectual Disabilities" },
+    ],
+    gallery: ["parents-workshop"],
   },
 ];
 

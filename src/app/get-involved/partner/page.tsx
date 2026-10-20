@@ -11,12 +11,12 @@ export const metadata = pageMeta({
 });
 
 const projects = [
-  { href: "/our-work/early-intervention", image: "boy-drawing-floor", title: "Early intervention", body: "Assessment and home programmes for babies and pre-school children." },
-  { href: "/our-work/therapy", image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
-  { href: "/our-work/special-education", image: "child-writing", title: "A classroom for a year", body: "A teacher and materials for five children, for one year." },
-  { href: "/our-work/mothers", image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training for the spice, Nutri-mix and papier-mâché units." },
-  { href: "/our-work/community", image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
-  { href: "/our-work/special-education", image: "vocational-gardening", title: "Pre-vocational unit", body: "Skills for teenagers aged 12 to 16." },
+  { href: "/programmes/early-intervention", image: "boy-drawing-floor", title: "Early intervention", body: "Assessment and home programmes for babies and pre-school children." },
+  { href: "/programmes/therapy", image: "child-standing-frame", title: "Therapy and devices", body: "Therapist time, orthotic and prosthetic devices." },
+  { href: "/programmes/special-education", image: "child-writing", title: "A classroom for a year", body: "A teacher and materials for five children, for one year." },
+  { href: "/programmes/mothers", image: "mothers-kitchen", title: "Mothers' food and craft units", body: "Training for the spice, Nutri-mix and papier-mâché units." },
+  { href: "/programmes/community", image: "parents-workshop", title: "Community outreach", body: "Surveys, camps and rights workshops." },
+  { href: "/programmes/special-education", image: "vocational-gardening", title: "Pre-vocational unit", body: "Skills for teenagers aged 12 to 16." },
 ];
 
 const funderQuotes = [

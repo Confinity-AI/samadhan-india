@@ -16,7 +16,7 @@ export const stories: Story[] = [
     title: "Exercises at home",
     person: "Asha",
     role: "Navya's mother",
-    programme: { label: "Early intervention", href: "/our-work/early-intervention" },
+    programme: { label: "Early intervention", href: "/programmes/early-intervention" },
     image: "art-flowers",
     imageNote: "Painting by a child at SAMADHAN. Navya is not pictured.",
     quote:
@@ -30,7 +30,7 @@ export const stories: Story[] = [
     title: "Classes that kept going",
     person: "Hema",
     role: "Prince's mother",
-    programme: { label: "Therapy", href: "/our-work/therapy" },
+    programme: { label: "Therapy", href: "/programmes/therapy" },
     image: "art-fish",
     imageNote: "Painting by a child at SAMADHAN. Prince is not pictured.",
     quote:
@@ -45,7 +45,7 @@ export const stories: Story[] = [
     title: "More in control",
     person: "Renu Gupta",
     role: "Mothers' group",
-    programme: { label: "Support for mothers", href: "/our-work/mothers" },
+    programme: { label: "Support for mothers", href: "/programmes/mothers" },
     image: "mothers-kitchen",
     imageNote: "The mothers' kitchen at SAMADHAN.",
     quote:

@@ -13,7 +13,7 @@ export default function NotFound() {
         <Row gap="12" wrap>
           <Button href="/">Home</Button>
           <Button href="/families" variant="secondary">For families</Button>
-          <Button href="/our-work" variant="secondary">Our work</Button>
+          <Button href="/programmes" variant="secondary">Programmes</Button>
           <Button href="/donate" variant="secondary">Donate</Button>
         </Row>
         <Heading as="h2" variant="heading-strong-m" lang="hi" className="hindi">यह पेज नहीं मिला।</Heading>

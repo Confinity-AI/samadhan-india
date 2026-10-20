@@ -134,7 +134,7 @@ export default function Home() {
               title="Support and income for mothers"
               intro="Mothers meet for support. They make laddoos, spices, Nutri-mix and papier-mâché birds to sell."
             />
-            <SmartLink href="/our-work/mothers" suffixIcon="arrowRight">
+            <SmartLink href="/programmes/mothers" suffixIcon="arrowRight">
               More about support for mothers
             </SmartLink>
           </Column>

@@ -82,14 +82,16 @@ export type NavItem = { label: string; href: string; children?: { label: string;
 
 export const nav: NavItem[] = [
   {
-    label: "Our work",
-    href: "/our-work",
+    label: "Programmes",
+    href: "/programmes",
     children: [
-      { label: "Early intervention", href: "/our-work/early-intervention" },
-      { label: "Therapy", href: "/our-work/therapy" },
-      { label: "Special education", href: "/our-work/special-education" },
-      { label: "Support for mothers", href: "/our-work/mothers" },
-      { label: "Community outreach", href: "/our-work/community" },
+      { label: "Early intervention", href: "/programmes/early-intervention" },
+      { label: "Therapy", href: "/programmes/therapy" },
+      { label: "Drama therapy", href: "/programmes/drama-therapy" },
+      { label: "Special education", href: "/programmes/special-education" },
+      { label: "Support for mothers", href: "/programmes/mothers" },
+      { label: "Community outreach", href: "/programmes/community" },
+      { label: "Communication network", href: "/programmes/communication-network" },
     ],
   },
   {

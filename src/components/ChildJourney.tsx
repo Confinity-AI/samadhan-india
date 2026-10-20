@@ -7,7 +7,7 @@ const steps = [
     title: "We knock on doors",
     body: "Community workers visit homes and local schools to find children who need help.",
     image: "legal-awareness",
-    href: "/our-work/community",
+    href: "/programmes/community",
     link: "Community outreach",
   },
   {
@@ -15,7 +15,7 @@ const steps = [
     title: "A doctor and therapists meet the child",
     body: "A paediatrician, therapists and a psychologist see how the child moves, speaks and learns.",
     image: "therapy-one-to-one",
-    href: "/our-work/therapy",
+    href: "/programmes/therapy",
     link: "Therapy",
   },
   {
@@ -23,7 +23,7 @@ const steps = [
     title: "Help in the first years",
     body: "Parents learn exercises to do at home every day, with regular visits to the centre.",
     image: "boy-drawing-floor",
-    href: "/our-work/early-intervention",
+    href: "/programmes/early-intervention",
     link: "Early intervention",
   },
   {
@@ -31,7 +31,7 @@ const steps = [
     title: "Small classes",
     body: "About one teacher to five children. When a child is ready, we help them join a regular school.",
     image: "child-writing",
-    href: "/our-work/special-education",
+    href: "/programmes/special-education",
     link: "Special education",
   },
   {
@@ -39,7 +39,7 @@ const steps = [
     title: "Practical skills, ages 12 to 16",
     body: "Block printing, card making, bookbinding and gardening.",
     image: "vocational-gardening",
-    href: "/our-work/special-education",
+    href: "/programmes/special-education",
     link: "Pre-vocational unit",
   },
 ];

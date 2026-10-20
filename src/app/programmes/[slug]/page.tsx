@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const p = getProgramme((await params).slug);
   if (!p) return {};
-  return pageMeta({ title: p.title, description: p.metaDescription, path: `/our-work/${p.slug}` });
+  return pageMeta({ title: p.title, description: p.metaDescription, path: `/programmes/${p.slug}` });
 }
 
 export default async function ProgrammePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -36,7 +36,7 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
   return (
     <>
       <PhotoHero
-        crumbs={[{ label: "Our work", href: "/our-work" }, { label: p.title }]}
+        crumbs={[{ label: "Programmes", href: "/programmes" }, { label: p.title }]}
         eyebrow={p.kicker}
         title={p.title}
         intro={p.short}
@@ -180,14 +180,14 @@ export default async function ProgrammePage({ params }: { params: Promise<{ slug
         </Grid>
       </Section>
 
-      <Section tone={shop ? "surface" : "page"} label="More of our work">
+      <Section tone={shop ? "surface" : "page"} label="More programmes">
         <Row horizontal="between" vertical="end" wrap gap="16">
-          <SectionTitle title="More of our work" />
-          <Button href="/our-work" variant="tertiary" suffixIcon="arrowRight">All programmes</Button>
+          <SectionTitle title="More programmes" />
+          <Button href="/programmes" variant="tertiary" suffixIcon="arrowRight">All programmes</Button>
         </Row>
         <Grid columns="4" m={{ columns: "2" }} s={{ columns: "1" }} gap="24" className="rail">
           {others.map((o) => (
-            <LinkCard key={o.slug} href={`/our-work/${o.slug}`} image={o.thumb ?? o.hero} title={o.title} body={o.short} />
+            <LinkCard key={o.slug} href={`/programmes/${o.slug}`} image={o.thumb ?? o.hero} title={o.title} body={o.short} />
           ))}
         </Grid>
       </Section>

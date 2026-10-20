@@ -145,7 +145,7 @@ export default function Donate() {
             <Text variant="body-default-m" onBackground="neutral-weak">
               Laddoos, spices and Nutri-mix made by the mothers' group, for Diwali or office gifts.
             </Text>
-            <Button href="/our-work/mothers#shop" variant="tertiary" suffixIcon="arrowRight" size="s">
+            <Button href="/programmes/mothers#shop" variant="tertiary" suffixIcon="arrowRight" size="s">
               See what they make
             </Button>
           </Column>
