@@ -4,7 +4,9 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { GATE_COOKIE, gatePassword, gateToken, safeNextPath } from "@/lib/gate";
 
-export async function unlockSite(_prev: { error?: string }, formData: FormData) {
+export type UnlockState = { error: string | null };
+
+export async function unlockSite(_prev: UnlockState, formData: FormData): Promise<UnlockState> {
   const next = safeNextPath(formData.get("next"));
   const password = String(formData.get("password") ?? "");
 
