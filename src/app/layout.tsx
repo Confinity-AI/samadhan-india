@@ -6,11 +6,13 @@ import { Column, ThemeInit } from "@once-ui-system/core";
 import { Analytics } from "@vercel/analytics/next";
 import classNames from "classnames";
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
 import { Providers } from "@/components/Providers";
 import { basePath } from "@/content/site";
+import { GATE_COOKIE, isValidGateToken } from "@/lib/gate";
 import { rootMetadata } from "@/lib/meta";
 import { fonts, style } from "@/resources/once-ui.config";
 
@@ -20,7 +22,9 @@ export const viewport: Viewport = {
   themeColor: "#233A73",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const unlocked = await isValidGateToken((await cookies()).get(GATE_COOKIE)?.value);
+
   return (
     <html
       lang="en-IN"
@@ -42,13 +46,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a className="skip-link" href="#main">
             Skip to content
           </a>
-          <OrganizationSchema />
-          <Header />
+          {unlocked && <OrganizationSchema />}
+          {unlocked && <Header />}
           <Column as="main" id="main" fillWidth horizontal="center" flex={1}>
             {children}
           </Column>
-          <Footer />
-          {!basePath && <Analytics />}
+          {unlocked && <Footer />}
+          {unlocked && !basePath && <Analytics />}
         </Column>
       </Providers>
     </html>
